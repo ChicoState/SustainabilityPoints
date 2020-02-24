@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import { Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
 import { CustomButton } from './CustomButton.js';
+import logo from './assets/SPplaceholder.png';
 
 export default function App() {
 
   return (
     <View style={{padding: 50}}>
       <View>
-      <Image source={require('./SPplaceholder.png')} />
+      <Image source={logo} />
       <Text style={styles.titleText}>Sustainability Points</Text>
       <TextInput placeholder="Username"
        style={{borderColor: 'black',borderWidth: 1,padding:10, marginBottom: "8%"}}/>
