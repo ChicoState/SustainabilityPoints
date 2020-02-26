@@ -1,28 +1,45 @@
 import React, {useState} from 'react';
-import { Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
+import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
 import { CustomButton } from './CustomButton.js';
 
 export default function App() {
 
   return (
-    <View style={{padding: 50}}>
-      <View>
-      <Image source={require('./SPplaceholder.png')} />
+    <View style={{padding: 50, backgroundColor: '#FFFFFF'}}>
+    <View>
+    <View style={{
+  justifyContent: 'center',
+  alignItems: 'center',
+}}>
+      <Image source={require('./assests/SPplaceholder-02.png')} style={{marginBottom: "2%"}} />
+</View>
+
       <Text style={styles.titleText}>Sustainability Points</Text>
-      <TextInput placeholder="Username"
-       style={{borderColor: 'black',borderWidth: 1,padding:10, marginBottom: "8%"}}/>
+
+
+      <TextInput  placeholder="Username"
+placeholderTextColor = "#4D786E"
+       style={{backgroundColor: 'rgba(247,247,247,0.6)', borderRadius: 5, borderColor: '#00B78D',borderWidth: 1,padding:10,
+        marginBottom: "8%", height:50}}
+        />
 
        <TextInput placeholder="Password"
-        style={{borderColor: 'black',borderWidth: 1,padding:10, marginBottom: "8%"}}/>
+       placeholderTextColor = "#4D786E"
+        style={{backgroundColor: 'rgba(247,247,247,0.6)',borderRadius: 5, height: 50, borderColor: '#00B78D',borderWidth: 1,padding:10,
+        marginBottom: "8%"}}/>
+
         <CustomButton
                     title="Login"
                     onPress={() => Alert.alert(`Why you opened me? Go away, it's mine!`)}
-                    style={{ /* some styles for button */ }}
-                    textStyle={{ /* styles for button title */ }}
+                    style={{backgroundColor: "#00B78D"}}
+                    textStyle={{ color:"#FFF" }}
                 />
-      <Text>Don't have an account?</Text><Button title="Sign Up Now"/>
 
-      <Button title="Forgot Password?"/>
+
+      <Button title="Sign Up" color="#00B78D"/>
+
+
+      <Button color="#B7002A" title="Forgot Password?"/>
       </View>
     </View>
 
@@ -32,7 +49,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#00b09b',
+    backgroundColor: '#00B09B',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -53,9 +70,17 @@ const styles = StyleSheet.create({
          fontSize: 16,
          textTransform: 'uppercase',
          color: '#FFFFFF',
+         alignItems: 'center',
+         marginBottom: "8%",
+           alignItems: 'center',
 },
-         titleText: {
-        fontSize: 20,
+   titleText: {
+        fontSize: 40,
+        textAlign: 'center',
         fontWeight: 'bold',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#2BB700',
+        marginBottom: "8%"
       },
 });
