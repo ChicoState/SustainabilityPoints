@@ -1,18 +1,25 @@
 import React, {useState} from 'react';
 import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
 import { CustomButton } from './CustomButton.js';
+import logo from './assets/SPplaceholder-02.png';
+import * as Font from 'expo-font'
+
 
 export default function App() {
 
   return (
+
     <View style={{padding: 50, backgroundColor: '#FFFFFF'}}>
     <View>
     <View style={{
   justifyContent: 'center',
   alignItems: 'center',
 }}>
-      <Image source={require('./assests/SPplaceholder-02.png')} style={{marginBottom: "2%"}} />
+      <Image source={logo} style={{marginBottom: "2%"}} />
 </View>
+
+
+
 
       <Text style={styles.titleText}>Sustainability Points</Text>
 
@@ -31,13 +38,13 @@ placeholderTextColor = "#4D786E"
         <CustomButton
                     title="Login"
                     onPress={() => Alert.alert(`Why you opened me? Go away, it's mine!`)}
-                    style={{backgroundColor: "#00B78D"}}
+                    style={{backgroundColor: "#00B78D", }}
                     textStyle={{ color:"#FFF" }}
                 />
 
-
+<View style={{padding:30}}>
       <Button title="Sign Up" color="#00B78D"/>
-
+</View>
 
       <Button color="#B7002A" title="Forgot Password?"/>
       </View>
@@ -76,6 +83,7 @@ const styles = StyleSheet.create({
 },
    titleText: {
         fontSize: 40,
+      
         textAlign: 'center',
         fontWeight: 'bold',
         alignItems: 'center',

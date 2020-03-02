@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
 
-        backgroundColor: '#FFFFFF',
-        shadowColor: '#FFFFFF',
+        backgroundColor: '#2AC062',
+        shadowColor: '#2AC062',
         shadowOpacity: 0.4,
         shadowOffset: { height: 10, width: 0 },
         shadowRadius: 20,
@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 16,
         textTransform: 'uppercase',
-        color: '#4300B0',
+        color: '#FFFFFF',
     },
 });
