@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import * as React from 'react';
 import { Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
 import { CustomButton } from './CustomButton.js';
 import logo from './assets/SPplaceholder.png';
+//import useLinking from './navigation/useLinking';
+import HomeScreen from '../screens/HomeScreen.js';
 
 export default function App() {
 
