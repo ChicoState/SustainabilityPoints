@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
-//import { CustomButton } from './CustomButton.js';
-//import logo from './assets/SPplaceholder-02.png';
+import logo from '../assets/SPplaceholder.png';
+import { CustomButton } from '../components/CustomButton.js'
 import * as Font from 'expo-font'
 
 
