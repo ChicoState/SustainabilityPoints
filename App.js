@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-import * as React from 'react';
-import { Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
-import { CustomButton } from './CustomButton.js';
-import logo from './assets/SPplaceholder.png';
-//import useLinking from './navigation/useLinking';
-import HomeScreen from '../screens/HomeScreen.js';
-=======
 import React, {useState} from 'react';
 import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
 import { CustomButton } from './CustomButton.js';
 import logo from './assets/SPplaceholder-02.png';
 import * as Font from 'expo-font'
 
->>>>>>> e291c3a8b733c3219f6aa00b2cb6c651869b7ba0
 
 export default function App() {
 
