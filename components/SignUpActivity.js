@@ -50,6 +50,12 @@ placeholderTextColor = "#4D786E"
         marginBottom: "8%"}}/>
 
         
+<CustomButton
+                    title="Sign up"
+                    onPress={() => Alert.alert(`Why you opened me? Go away, it's mine!`)}
+                    style={{backgroundColor: "#00B78D", }}
+                    textStyle={{ color:"#FFF" }}
+                />
 
 <View style={{padding:30}}>
       <Button title="Login" color="#00B78D" onPress={() => this.props.navigation.goBack()}/>
