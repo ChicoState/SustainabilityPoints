@@ -43,7 +43,7 @@ placeholderTextColor = "#4D786E"
                 />
 
 <View style={{padding:30}}>
-      <Button title="Sign Up" color="#00B78D"/>
+      <Button title="Sign Up" color="#00B78D" onPress={() => this.props.navigation.navigate('SignUp')}/>
 </View>
 
       <Button color="#B7002A" title="Forgot Password?"/>
