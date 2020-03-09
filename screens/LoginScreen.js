@@ -36,7 +36,7 @@ function LoginScreen ({navigation}) {
 
 		<CustomButton
 		title="Login"
-		onPress={() => navigation.navigate('ProfileScreen')  }
+		onPress={() => navigation.navigate('Profile')  }
 		style={{backgroundColor: "#00B78D", }}
 		textStyle={{ color:"#FFF" }}
 		/>
