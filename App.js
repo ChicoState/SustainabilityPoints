@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, {useState} from 'react';
 import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
 import { CustomButton } from './components/CustomButton.js'
