@@ -5,6 +5,8 @@ import SignUpScreen from './screens/SignUpScreen';
 import LoginScreen from './screens/LoginScreen';
 import * as Font from 'expo-font'
 
+import Firebase from './apis/Firebase'
+
 
 export default function App() {
 
