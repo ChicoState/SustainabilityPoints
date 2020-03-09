@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
-import logo from '../assets/SPplaceholder.png';
+import logo from '../assets/SPplaceholder-02.png';
 import { CustomButton } from '../components/CustomButton.js'
 
 function SignUpScreen({navigation}) {
@@ -43,7 +43,7 @@ function SignUpScreen({navigation}) {
 		/>
 
 		<View style={{padding:30}}>
-		<Button title="Logi" color="#00B78D"/>
+		<Button title="Login" color="#00B78D"/>
 		</View>
 
 		<Button color="#B7002A" title="Forgot Password?"/>
