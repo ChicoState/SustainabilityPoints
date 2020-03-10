@@ -1,13 +1,13 @@
 import 'react-native-gesture-handler';
-import React, {useState} from 'react';
-import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
-import { CustomButton } from './components/CustomButton.js'
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import SignUpScreen from './screens/SignUpScreen.js';
 import LoginScreen from './screens/LoginScreen.js';
 import ProfileScreen from './screens/ProfileScreen.js';
-import * as Font from 'expo-font'
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+import Firebase from './apis/Firebase'
 
 const Stack = createStackNavigator();
 
