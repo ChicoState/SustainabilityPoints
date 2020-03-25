@@ -20,15 +20,17 @@ class LoginScreen extends React.Component {
 	  	this.state = {
 			email: "",
 			password: ""
-	  	};
+		  };
 	}
 	Login = (email, password) => {
+		const { navigation } = this.props;
 		try {
 			Firebase
 				.auth()
 				.signInWithEmailAndPassword(email, password)
 				.then(res => { 
 				   console.log(res.user.email);
+				   navigation.navigate("Profile");
 			 	});
   		} catch (error) {
 			console.log(error.toString(error));
@@ -58,7 +60,7 @@ class LoginScreen extends React.Component {
 				</View>
 			</View>
 		);
-	const { navigation } = this.props;
+	//const { navigation } = this.props;
 	}
 }
 
