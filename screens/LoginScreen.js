@@ -1,12 +1,23 @@
 import React, { useState } from "react";
-import {Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from "react-native";
+import {
+  Alert,
+  LinearGradient,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  Button,
+  StyleSheet,
+  Text,
+  View
+} from "react-native";
+import { ScrollView } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
 import ProfileScreen from "./ProfileScreen";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-
 import Firebase from "./../apis/Firebase";
+import SignUpScreen from "./SignUpScreen";
 
 Firebase.auth().onAuthStateChanged(user => {
   if (user != null) {
@@ -15,53 +26,93 @@ Firebase.auth().onAuthStateChanged(user => {
 });
 
 class LoginScreen extends React.Component {
-	constructor(props) {
-		super(props);
-	  	this.state = {
-			email: "",
-			password: ""
-		  };
-	}
-	Login = (email, password) => {
-		const { navigation } = this.props;
-		try {
-			Firebase
-				.auth()
-				.signInWithEmailAndPassword(email, password)
-				.then(res => { 
-				   console.log(res.user.email);
-				   navigation.navigate("Profile");
-			 	});
-  		} catch (error) {
-			console.log(error.toString(error));
-		}
-	};
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
 
-	render() {
+  Login = (email, password) => {
+    const { navigation } = this.props;
+    try {
+      Firebase.auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(res => {
+          console.log(res.user.email);
+          navigation.navigate("Profile");
+        });
+    } catch (error) {
+      console.log(error.toString(error));
+    }
+  };
+
+  render() {
     return (
-      <View style={{ padding: 50, backgroundColor: "#FFFFFF" }}>
-        <View>
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image source={logo} style={{ marginBottom: "2%" }} />
-          </View>
+      <ScrollView>
+        <View style={{ padding: 50, backgroundColor: "#FFFFFF" }}>
+          <View>
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
+              <Image source={logo} style={{ marginBottom: "2%" }} />
+            </View>
 
-					<Text style={styles.titleText}>Sustainability Points</Text>
-					<TextInput  placeholder="Username" placeholderTextColor = "#4D786E" style={styles.textbox}/>
-					<TextInput  placeholder="Email"	placeholderTextColor = "#4D786E" style={styles.textbox} 
-						onChangeText={email => this.setState({ email })}/>
-					<TextInput placeholder="Password" placeholderTextColor = "#4D786E" style={styles.textbox}
-						onChangeText={password => this.setState({ password })}/>
-					<CustomButton title="Login" onPress={ () => this.Login(this.state.email, this.state.password) }
-						style={{backgroundColor: "#00B78D", }} 	textStyle={{ color:"#FFF" }}/>
-					<View style={{padding:30}}>
-						<Button title="Sign Up" color="#00B78D"	onPress={() => navigation.navigate('SignUpScreen')  }/>
-					</View>
-					<Button color="#B7002A" title="Forgot Password?"/>
-				</View>
-			</View>
-		);
-	//const { navigation } = this.props;
-	}
+            <Text style={styles.titleText}>Sustainability Points</Text>
+            <TextInput
+              placeholder="Username"
+              placeholderTextColor="#4D786E"
+              style={styles.textbox}
+            />
+
+            <TextInput
+              placeholder="Email"
+              placeholderTextColor="#4D786E"
+              style={styles.textbox}
+              onChangeText={email => this.setState({ email })}
+            />
+
+            <TextInput
+              placeholder="Password"
+              placeholderTextColor="#4D786E"
+              style={styles.textbox}
+              onChangeText={password => this.setState({ password })}
+            />
+
+            <CustomButton
+              title="Login"
+              onPress={() => this.Login(this.state.email, this.state.password)}
+              style={{ backgroundColor: "#00B78D" }}
+              textStyle={{ color: "#FFF" }}
+            />
+
+            <View style={{ padding: 15 }}>
+              <Button
+                title="Sign Up"
+                color="#00B78D"
+                onPress={() => this.SignUpFunc()}
+              />
+            </View>
+
+            <Button
+              title="Forgot Password?"
+              color="#B7002A"
+              onPress={() => this.RecoveryPage()}
+            />
+          </View>
+        </View>
+      </ScrollView>
+    );
+  }
+
+  SignUpFunc() {
+    const { navigation } = this.props;
+    navigation.navigate("Register");
+  }
+
+  RecoveryPage() {
+    const { navigation } = this.props;
+    navigation.navigate("Recovery");
+  }
 }
 
 const styles = StyleSheet.create({

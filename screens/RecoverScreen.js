@@ -23,7 +23,7 @@ Firebase.auth().onAuthStateChanged(user => {
   }
 });
 
-class SignUpScreen extends React.Component {
+class RecoverScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +31,7 @@ class SignUpScreen extends React.Component {
       password: ""
     };
   }
-  SignUp = (email, password) => {
+  Recover = (email, password) => {
     try {
       Firebase.auth()
         .createUserWithEmailAndPassword(email, password)
@@ -63,34 +63,26 @@ class SignUpScreen extends React.Component {
               style={styles.textbox}
               onChangeText={email => this.setState({ email })}
             />
-            <TextInput
-              placeholder="Password"
-              placeholderTextColor="#4D786E"
-              style={styles.textbox}
-              onChangeText={password => this.setState({ password })}
-            />
+
             <CustomButton
-              title="Register"
-              onPress={() => this.SignUp(this.state.email, this.state.password)}
+              title="Recover Password"
+              onPress={() => this.Recover(this.state.email, this.state.password)}
               style={{ backgroundColor: "#00B78D" }}
               textStyle={{ color: "#FFF" }}
             />
 
             <View style={{ padding: 15 }}>
-              <Button
-                title="Already a User? Login"
-                color="#00B78D"
-                onPress={() => this.LoginFunc()}
-              />
+			  <Button title="Already a User? Login" 
+			  color="#00B78D" 
+			  onPress={() => this.LoginFunc()}
+			  />
             </View>
 
-            <View style={{ padding: 0 }}>
-              <Button
-                title="Forgot Password?"
-                color="#B7002A"
-                onPress={() => this.RecoveryPage()}
-              />
-            </View>
+			<Button title="Sign Up" 
+			  color="#00B78D" 
+			  onPress={() => this.SignUpFunc()}
+			  />
+
           </View>
         </View>
       </ScrollView>
@@ -103,9 +95,9 @@ class SignUpScreen extends React.Component {
     navigation.navigate("Login");
   }
 
-  RecoveryPage() {
+  SignUpFunc() {
     const { navigation } = this.props;
-    navigation.navigate("Recovery");
+    navigation.navigate("Register");
   }
 }
 
@@ -139,5 +131,5 @@ const styles = StyleSheet.create({
 
 export default function(props) {
   const navigation = useNavigation();
-  return <SignUpScreen {...props} navigation={navigation} />;
+  return <RecoverScreen {...props} navigation={navigation} />;
 }
