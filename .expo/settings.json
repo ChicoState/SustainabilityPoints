@@ -1,8 +1,8 @@
 {
+  "urlRandomness": "b5-kpv",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": "mb-pd4",
   "https": false
 }
