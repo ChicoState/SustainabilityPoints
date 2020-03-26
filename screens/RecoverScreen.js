@@ -33,8 +33,9 @@ class RecoverScreen extends React.Component {
   }
   Recover = (email, password) => {
     try {
-      Firebase.auth()
-        .createUserWithEmailAndPassword(email, password)
+    s
+        Firebase.auth()
+        .sendPasswordResetEmail(email)
         .then(user => {
           console.log(user);
         });
