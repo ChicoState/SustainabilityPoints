@@ -33,11 +33,12 @@ class RecoverScreen extends React.Component {
   }
   Recover = (email, password) => {
     try {
-    s
         Firebase.auth()
         .sendPasswordResetEmail(email)
-        .then(user => {
-          console.log(user);
+        .then(res => {
+          //console.log(res.user.email);
+          navigation.navigate("Login");
+
         });
     } catch (error) {
       console.log(error.toString(error));
@@ -57,11 +58,13 @@ class RecoverScreen extends React.Component {
               placeholder="Username"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
+              autoCapitalize = 'none'
             />
             <TextInput
               placeholder="Email"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
+              autoCapitalize = 'none'
               onChangeText={email => this.setState({ email })}
             />
 

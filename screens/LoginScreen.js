@@ -62,12 +62,14 @@ class LoginScreen extends React.Component {
               placeholder="Username"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
+              autoCapitalize = 'none'
             />
 
             <TextInput
               placeholder="Email"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
+              autoCapitalize = 'none'
               onChangeText={email => this.setState({ email })}
             />
 
@@ -75,6 +77,7 @@ class LoginScreen extends React.Component {
               placeholder="Password"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
+              autoCapitalize = 'none'
               onChangeText={password => this.setState({ password })}
             />
 
