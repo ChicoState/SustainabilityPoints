@@ -68,6 +68,7 @@ class SignUpScreen extends React.Component {
             <TextInput
               placeholder="Password"
               placeholderTextColor="#4D786E"
+              secureTextEntry={true}
               style={styles.textbox}
               autoCapitalize = 'none'
               onChangeText={password => this.setState({ password })}
@@ -76,7 +77,6 @@ class SignUpScreen extends React.Component {
               title="Register"
               onPress={() => this.SignUp(this.state.email, this.state.password)}
               style={{ backgroundColor: "#00B78D" }}
-              autoCapitalize = 'none'
               textStyle={{ color: "#FFF" }}
             />
 
