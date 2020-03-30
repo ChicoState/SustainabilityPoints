@@ -16,6 +16,9 @@ import { ScrollView } from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import Firebase from "./../apis/Firebase";
+//import firebase from 'firebase';
+
+let db = Firebase.firestore();
 
 Firebase.auth().onAuthStateChanged(user => {
   if (user != null) {
@@ -36,6 +39,11 @@ class SignUpScreen extends React.Component {
       Firebase.auth()
         .createUserWithEmailAndPassword(email, password)
         .then(user => {
+          var user_id = Firebase.auth().uid;
+          db.collection("users").doc(user_id).set({
+            points_current: 0,
+            points_lifetime: 0
+          });
           console.log(user);
         });
     } catch (error) {
@@ -80,13 +88,6 @@ class SignUpScreen extends React.Component {
               textStyle={{ color: "#FFF" }}
             />
 
-<<<<<<< HEAD
-		<TextInput placeholder="Password"
-	secureTextEntry={true}
-	placeholderTextColor = "#4D786E"
-	style={{backgroundColor: 'rgba(247,247,247,0.6)',borderRadius: 5, height: 50, borderColor: '#00B78D',borderWidth: 1,padding:10,
-			marginBottom: "8%"}}/>
-=======
             <View style={{ padding: 15 }}>
               <Button
                 title="Already a User? Login"
@@ -94,7 +95,6 @@ class SignUpScreen extends React.Component {
                 onPress={() => this.LoginFunc()}
               />
             </View>
->>>>>>> 3668013f69cd6a4218f3edca01bac39dea08dde1
 
             <View style={{ padding: 0 }}>
               <Button
