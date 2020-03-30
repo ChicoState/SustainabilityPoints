@@ -1,62 +1,5 @@
-<<<<<<< HEAD
-import React, {useState} from 'react';
-import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
-import logo from '../assets/SPplaceholder-02.png';
-import { CustomButton } from '../components/CustomButton.js'
-import * as Font from 'expo-font'
-import ProfileScreen from './ProfileScreen';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+/** @format */
 
-
-
-function LoginScreen ({navigation}) {
-
-	return (
-
-		<View style={{padding: 50, backgroundColor: '#FFFFFF'}}>
-		<View>
-		<View style={{
-			justifyContent: 'center',
-				alignItems: 'center',
-		}}>
-		<Image source={logo} style={{marginBottom: "2%"}} />
-		</View>
-
-		<Text style={styles.titleText}>Sustainability Points</Text>
-
-		<TextInput  placeholder="Username"
-		placeholderTextColor = "#4D786E"
-		style={{backgroundColor: 'rgba(247,247,247,0.6)', borderRadius: 5, borderColor: '#00B78D',borderWidth: 1,padding:10,
-				marginBottom: "8%", height:50}}
-		/>
-
-		<TextInput placeholder="Password"
-		secureTextEntry = {true}
-		placeholderTextColor = "#4D786E"
-		style={{backgroundColor: 'rgba(247,247,247,0.6)',borderRadius: 5, height: 50, borderColor: '#00B78D',borderWidth: 1,padding:10,
-				marginBottom: "8%"}}/>
-
-		<CustomButton
-		title="Login"
-		onPress={() => navigation.navigate('ProfileScreen')  }
-		style={{backgroundColor: "#00B78D", }}
-		textStyle={{ color:"#FFF" }}
-		/>
-
-		<CustomTextInput/>
-
-		<View style={{padding:30}}>
-		<Button title="Sign Up" color="#00B78D"
-		onPress={() => navigation.navigate('SignUpScreen')  }/>
-		</View>
-
-		<Button color="#B7002A" title="Forgot Password?"/>
-		</View>
-		</View>
-
-	);
-=======
 import React, { useState } from "react";
 import {
   Alert,
@@ -72,11 +15,9 @@ import {
 import { ScrollView } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
-import ProfileScreen from "./ProfileScreen";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import Firebase from "./../apis/Firebase";
-import SignUpScreen from "./SignUpScreen";
+import { AuthContext } from "./context.js";
 
 Firebase.auth().onAuthStateChanged(user => {
   if (user != null) {
@@ -100,7 +41,8 @@ class LoginScreen extends React.Component {
         .signInWithEmailAndPassword(email, password)
         .then(res => {
           console.log(res.user.email);
-          navigation.navigate("Profile");
+          navigation.navigate("Profile")
+          //signIn();
         });
     } catch (error) {
       console.log(error.toString(error));
@@ -121,14 +63,14 @@ class LoginScreen extends React.Component {
               placeholder="Username"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
             />
 
             <TextInput
               placeholder="Email"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
               onChangeText={email => this.setState({ email })}
             />
 
@@ -136,7 +78,7 @@ class LoginScreen extends React.Component {
               placeholder="Password"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
               onChangeText={password => this.setState({ password })}
             />
 
@@ -175,7 +117,6 @@ class LoginScreen extends React.Component {
     const { navigation } = this.props;
     navigation.navigate("Recovery");
   }
->>>>>>> 3668013f69cd6a4218f3edca01bac39dea08dde1
 }
 
 const styles = StyleSheet.create({
@@ -229,5 +170,6 @@ const styles = StyleSheet.create({
 
 export default function(props) {
   const navigation = useNavigation();
+  const { signIn } = React.useContext(AuthContext);
   return <LoginScreen {...props} navigation={navigation} />;
 }
