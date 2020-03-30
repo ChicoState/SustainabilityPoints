@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import {
   Alert,
@@ -33,12 +35,11 @@ class RecoverScreen extends React.Component {
   }
   Recover = (email, password) => {
     try {
-        Firebase.auth()
+      Firebase.auth()
         .sendPasswordResetEmail(email)
         .then(res => {
           //console.log(res.user.email);
           navigation.navigate("Login");
-
         });
     } catch (error) {
       console.log(error.toString(error));
@@ -58,35 +59,38 @@ class RecoverScreen extends React.Component {
               placeholder="Username"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
             />
             <TextInput
               placeholder="Email"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
               onChangeText={email => this.setState({ email })}
             />
 
             <CustomButton
               title="Recover Password"
-              onPress={() => this.Recover(this.state.email, this.state.password)}
+              onPress={() =>
+                this.Recover(this.state.email, this.state.password)
+              }
               style={{ backgroundColor: "#00B78D" }}
               textStyle={{ color: "#FFF" }}
             />
 
             <View style={{ padding: 15 }}>
-			  <Button title="Already a User? Login" 
-			  color="#00B78D" 
-			  onPress={() => this.LoginFunc()}
-			  />
+              <Button
+                title="Already a User? Login"
+                color="#00B78D"
+                onPress={() => this.LoginFunc()}
+              />
             </View>
 
-			<Button title="Sign Up" 
-			  color="#00B78D" 
-			  onPress={() => this.SignUpFunc()}
-			  />
-
+            <Button
+              title="Sign Up"
+              color="#00B78D"
+              onPress={() => this.SignUpFunc()}
+            />
           </View>
         </View>
       </ScrollView>

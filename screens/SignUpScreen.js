@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import {
   Alert,
@@ -64,13 +66,13 @@ class SignUpScreen extends React.Component {
               placeholder="Username"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
             />
             <TextInput
               placeholder="Email"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
               onChangeText={email => this.setState({ email })}
             />
             <TextInput
@@ -78,7 +80,7 @@ class SignUpScreen extends React.Component {
               placeholderTextColor="#4D786E"
               secureTextEntry={true}
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
               onChangeText={password => this.setState({ password })}
             />
             <CustomButton
@@ -90,18 +92,18 @@ class SignUpScreen extends React.Component {
 
             <View style={{ padding: 15 }}>
               <Button
-                title="Already a User? Login"
-                color="#00B78D"
-                onPress={() => this.LoginFunc()}
-              />
-            </View>
-
-            <View style={{ padding: 0 }}>
-              <Button
                 title="Forgot Password?"
                 color="#B7002A"
                 onPress={() => this.RecoveryPage()}
               />
+
+              <View style={{ padding: 10 }}>
+                <Button
+                  title="Already a User? Login"
+                  color="#00B78D"
+                  onPress={() => this.LoginFunc()}
+                />
+              </View>
             </View>
           </View>
         </View>

@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import {
   Alert,
@@ -13,11 +15,9 @@ import {
 import { ScrollView } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
-import ProfileScreen from "./ProfileScreen";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import Firebase from "./../apis/Firebase";
-import SignUpScreen from "./SignUpScreen";
+import { AuthContext } from "./context.js";
 
 Firebase.auth().onAuthStateChanged(user => {
   if (user != null) {
@@ -41,7 +41,8 @@ class LoginScreen extends React.Component {
         .signInWithEmailAndPassword(email, password)
         .then(res => {
           console.log(res.user.email);
-          navigation.navigate("Profile");
+          navigation.navigate("Profile")
+          //signIn();
         });
     } catch (error) {
       console.log(error.toString(error));
@@ -62,14 +63,14 @@ class LoginScreen extends React.Component {
               placeholder="Username"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
             />
 
             <TextInput
               placeholder="Email"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
               onChangeText={email => this.setState({ email })}
             />
 
@@ -77,7 +78,7 @@ class LoginScreen extends React.Component {
               placeholder="Password"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
-              autoCapitalize = 'none'
+              autoCapitalize="none"
               onChangeText={password => this.setState({ password })}
             />
 
@@ -169,5 +170,6 @@ const styles = StyleSheet.create({
 
 export default function(props) {
   const navigation = useNavigation();
+  const { signIn } = React.useContext(AuthContext);
   return <LoginScreen {...props} navigation={navigation} />;
 }
