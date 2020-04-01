@@ -9,7 +9,7 @@ import {
   Text,
   View
 } from "react-native";
-import { ScrollView } from "react-native";
+import { ScrollView, KeyboardAvoidingView, Keyboard, Platform } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
 import Firebase from "./../apis/Firebase";
@@ -36,6 +36,10 @@ class LoginScreen extends React.Component {
   render() {
     return (
       <ScrollView>
+        <KeyboardAvoidingView
+      behavior={Platform.Os == "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
         <View style={styles.container}>
           <View>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -82,6 +86,7 @@ class LoginScreen extends React.Component {
             />
           </View>
         </View>
+        </KeyboardAvoidingView>
       </ScrollView>
     );
   }
