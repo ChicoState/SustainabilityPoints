@@ -1,11 +1,8 @@
 /** @format */
 
-import React, { useState } from "react";
+import React from "react";
 import {
-  Alert,
-  LinearGradient,
   Image,
-  TouchableOpacity,
   TextInput,
   Button,
   StyleSheet,
@@ -15,7 +12,9 @@ import {
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
 import { ScrollView } from "react-native";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
+
+import { Colors, Spacing, Typography } from '../styles'
 
 import Firebase from "./../apis/Firebase";
 
@@ -49,7 +48,7 @@ class RecoverScreen extends React.Component {
   render() {
     return (
       <ScrollView>
-        <View style={{ padding: 50, backgroundColor: "#FFFFFF" }}>
+        <View style={style.container}>
           <View>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <Image source={logo} style={{ marginBottom: "2%" }} />
@@ -110,30 +109,24 @@ class RecoverScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
-    padding: 0,
-    alignItems: "center"
-  },
-
-  titleText: {
-    fontSize: 40,
-    textAlign: "center",
-    fontWeight: "bold",
+    backgroundColor: Colors.background,
     alignItems: "center",
     justifyContent: "center",
-    color: "#2BB700",
-    marginBottom: "8%"
+    ...Spacing.screen
   },
-
+  titleText: {
+    alignItems: "center",
+    justifyContent: "center",
+    color: Colors.titleText,
+    ...Typography.titleText
+  },
   textbox: {
-    backgroundColor: "rgba(247,247,247,0.6)",
     borderRadius: 5,
-    borderColor: "#00B78D",
     borderWidth: 1,
-    padding: 10,
-    marginBottom: "8%",
-    height: 50
+    ...Colors.textbox,
+    ...Spacing.textbox
   }
 });
 

@@ -1,11 +1,8 @@
 /** @format */
 
-import React, { useState } from "react";
+import React from "react";
 import {
-  Alert,
-  LinearGradient,
   Image,
-  TouchableOpacity,
   TextInput,
   Button,
   StyleSheet,
@@ -15,12 +12,11 @@ import {
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
 import { ScrollView } from "react-native";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
-import Firebase from "./../apis/Firebase";
-//import firebase from 'firebase';
+import { Colors, Spacing, Typography } from '../styles'
 
-let db = Firebase.firestore();
+import Firebase, { db } from "./../apis/Firebase";
 
 Firebase.auth().onAuthStateChanged(user => {
   if (user != null) {
@@ -33,21 +29,27 @@ class SignUpScreen extends React.Component {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      password2: ""
     };
   }
   SignUp = (email, password) => {
     try {
-      Firebase.auth()
-        .createUserWithEmailAndPassword(email, password)
-        .then(user => {
-          var user_id = Firebase.auth().uid;
-          db.collection("users").doc(user_id).set({
-            points_current: 0,
-            points_lifetime: 0
-          });
-          console.log(user);
-        });
+        const response = Firebase.auth().createUserWithEmailAndPassword(email, password)
+        if (response.user.uid) {
+          db.collection('users')
+            .doc(response.user.uid)
+            .set({
+              points_current: 0,
+              points_lifetime: 0
+            })
+        }
+
+      // Firebase.auth()
+      //   .createUserWithEmailAndPassword(email, password)
+      //   .then(user => {
+      //     console.log(user);
+      //   });
     } catch (error) {
       console.log(error.toString(error));
     }
@@ -56,18 +58,12 @@ class SignUpScreen extends React.Component {
   render() {
     return (
       <ScrollView>
-        <View style={{ padding: 50, backgroundColor: "#FFFFFF" }}>
+        <View style={styles.container}>
           <View>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <Image source={logo} style={{ marginBottom: "2%" }} />
             </View>
             <Text style={styles.titleText}>Sustainability Points</Text>
-            <TextInput
-              placeholder="Username"
-              placeholderTextColor="#4D786E"
-              style={styles.textbox}
-              autoCapitalize="none"
-            />
             <TextInput
               placeholder="Email"
               placeholderTextColor="#4D786E"
@@ -82,6 +78,14 @@ class SignUpScreen extends React.Component {
               style={styles.textbox}
               autoCapitalize="none"
               onChangeText={password => this.setState({ password })}
+            />
+            <TextInput
+              placeholder="Confirm Password"
+              placeholderTextColor="#4D786E"
+              secureTextEntry={true}
+              style={styles.textbox}
+              autoCapitalize="none"
+              onChangeText={password2 => this.setState({ password2 })}
             />
             <CustomButton
               title="Register"
@@ -124,30 +128,24 @@ class SignUpScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
-    padding: 0,
-    alignItems: "center"
-  },
-
-  titleText: {
-    fontSize: 40,
-    textAlign: "center",
-    fontWeight: "bold",
+    backgroundColor: Colors.background,
     alignItems: "center",
     justifyContent: "center",
-    color: "#2BB700",
-    marginBottom: "8%"
+    ...Spacing.screen
   },
-
+  titleText: {
+    alignItems: "center",
+    justifyContent: "center",
+    color: Colors.titleText,
+    ...Typography.titleText
+  },
   textbox: {
-    backgroundColor: "rgba(247,247,247,0.6)",
     borderRadius: 5,
-    borderColor: "#00B78D",
     borderWidth: 1,
-    padding: 10,
-    marginBottom: "8%",
-    height: 50
+    ...Colors.textbox,
+    ...Spacing.textbox
   }
 });
 
