@@ -10,10 +10,22 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AuthContext } from "./screens/context.js";
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import thunkMiddleware from 'redux-thunk'
+import reducer from './reducers'
+
+import { decode, encode } from 'base-64'
+
+if ( !global.btoa ) { global.btoa = encode }
+if ( !global.atob ) { global.atob = decode }
 
 const Tab = createBottomTabNavigator();
 const LoginStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
+
+const middleware = applyMiddleware(thunkMiddleware)
+const store = createStore(reducer, middleware)
 
 const ProfileStackScreen = () => (
   <ProfileStack.Navigator initialRouteName="Profile">
@@ -42,6 +54,7 @@ function App() {
   }, []);
 
   return (
+    <Provider store={store}>
     <AuthContext.Provider value={AuthContext}>
       <NavigationContainer>
         {UserToken ? (
@@ -58,6 +71,7 @@ function App() {
         )}
       </NavigationContainer>
     </AuthContext.Provider>
+    </Provider>
   );
 };
 

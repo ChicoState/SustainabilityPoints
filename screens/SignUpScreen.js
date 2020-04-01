@@ -12,48 +12,17 @@ import {
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
 import { ScrollView } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import { Colors, Spacing, Typography } from '../styles'
 
-import Firebase, { db } from "./../apis/Firebase";
-
-Firebase.auth().onAuthStateChanged(user => {
-  if (user != null) {
-    console.log("we are authenticated now!");
-  }
-});
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { updateEmail, updatePassword, signup } from '../actions/user'
 
 class SignUpScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-      password2: ""
-    };
+  SignUp = () => {
+    this.props.signup()
   }
-  SignUp = (email, password) => {
-    try {
-        const response = Firebase.auth().createUserWithEmailAndPassword(email, password)
-        if (response.user.uid) {
-          db.collection('users')
-            .doc(response.user.uid)
-            .set({
-              points_current: 0,
-              points_lifetime: 0
-            })
-        }
-
-      // Firebase.auth()
-      //   .createUserWithEmailAndPassword(email, password)
-      //   .then(user => {
-      //     console.log(user);
-      //   });
-    } catch (error) {
-      console.log(error.toString(error));
-    }
-  };
 
   render() {
     return (
@@ -69,7 +38,7 @@ class SignUpScreen extends React.Component {
               placeholderTextColor="#4D786E"
               style={styles.textbox}
               autoCapitalize="none"
-              onChangeText={email => this.setState({ email })}
+              onChangeText={email => this.props.updateEmail( email )}
             />
             <TextInput
               placeholder="Password"
@@ -77,19 +46,11 @@ class SignUpScreen extends React.Component {
               secureTextEntry={true}
               style={styles.textbox}
               autoCapitalize="none"
-              onChangeText={password => this.setState({ password })}
-            />
-            <TextInput
-              placeholder="Confirm Password"
-              placeholderTextColor="#4D786E"
-              secureTextEntry={true}
-              style={styles.textbox}
-              autoCapitalize="none"
-              onChangeText={password2 => this.setState({ password2 })}
+              onChangeText={password => this.props.updatePassword( password )}
             />
             <CustomButton
               title="Register"
-              onPress={() => this.SignUp(this.state.email, this.state.password)}
+              onPress={this.SignUp}
               style={{ backgroundColor: "#00B78D" }}
               textStyle={{ color: "#FFF" }}
             />
@@ -147,9 +108,19 @@ const styles = StyleSheet.create({
     ...Colors.textbox,
     ...Spacing.textbox
   }
-});
+})
 
-export default function(props) {
-  const navigation = useNavigation();
-  return <SignUpScreen {...props} navigation={navigation} />;
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ updateEmail, updatePassword, signup }, dispatch)
 }
+
+const mapStateToProps = state => {
+  return {
+      user: state.user
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignUpScreen)

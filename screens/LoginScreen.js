@@ -12,41 +12,26 @@ import {
 import { ScrollView } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
-import { useNavigation } from "@react-navigation/native";
 import Firebase from "./../apis/Firebase";
-import { AuthContext } from "./context.js";
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+
+import { updateEmail, updatePassword, login, getUser } from '../actions/user'
 
 import { Colors, Spacing, Typography } from '../styles'
 
-Firebase.auth().onAuthStateChanged(user => {
-  if (user != null) {
-    console.log("we are authenticated now!");
-  }
-});
-
 class LoginScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: ""
-    };
+  componentDidMount = () => {
+    Firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            this.props.getUser(user.uid)
+            if (this.props.user != null) {
+                this.props.navigation.navigate('Profile')
+            }
+        }
+    })
   }
-
-  Login = (email, password) => {
-    const { navigation } = this.props;
-    try {
-      Firebase.auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(res => {
-          console.log(res.user.email);
-          navigation.navigate("Profile")
-          //signIn();
-        });
-    } catch (error) {
-      console.log(error.toString(error));
-    }
-  };
 
   render() {
     return (
@@ -58,19 +43,13 @@ class LoginScreen extends React.Component {
             </View>
 
             <Text style={styles.titleText}>Sustainability Points</Text>
-            <TextInput
-              placeholder="Username"
-              placeholderTextColor="#4D786E"
-              style={styles.textbox}
-              autoCapitalize="none"
-            />
 
             <TextInput
               placeholder="Email"
               placeholderTextColor="#4D786E"
               style={styles.textbox}
               autoCapitalize="none"
-              onChangeText={email => this.setState({ email })}
+              onChangeText={email => this.props.updateEmail( email )}
             />
 
             <TextInput
@@ -78,12 +57,12 @@ class LoginScreen extends React.Component {
               placeholderTextColor="#4D786E"
               style={styles.textbox}
               autoCapitalize="none"
-              onChangeText={password => this.setState({ password })}
+              onChangeText={password => this.props.updatePassword( password )}
             />
 
             <CustomButton
               title="Login"
-              onPress={() => this.Login(this.state.email, this.state.password)}
+              onPress={() => this.props.login()}
               style={{ backgroundColor: "#00B78D" }}
               textStyle={{ color: "#FFF" }}
             />
@@ -140,8 +119,23 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function(props) {
-  const navigation = useNavigation();
-  const { signIn } = React.useContext(AuthContext);
-  return <LoginScreen {...props} navigation={navigation} />;
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ updateEmail, updatePassword, login, getUser }, dispatch)
 }
+
+const mapStateToProps = state => {
+	return {
+		user: state.user
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(LoginScreen)
+
+// export default function(props) {
+//   const navigation = useNavigation();
+//   const { signIn } = React.useContext(AuthContext);
+//   return <LoginScreen {...props} navigation={navigation} />;
+// }

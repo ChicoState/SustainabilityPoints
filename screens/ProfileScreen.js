@@ -1,27 +1,32 @@
-import React, {useState} from 'react';
-import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
-import { CustomButton } from '../components/CustomButton.js'
-import * as Font from 'expo-font'
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
+import { Button, Image, StyleSheet, Text, View } from 'react-native';
+import { connect } from 'react-redux'
+import Firebase from '../apis/Firebase'
 
-function ProfileScreen ({navigation}) {
 
-	return (
-		<View style={styles.container}>
-		<View style={styles.header}>
-		<View style={styles.headerContent}>
-		<Image style={styles.avatar}
-		source={{uri: 'https://i.kym-cdn.com/entries/icons/original/000/020/260/nilesyy-nilez.jpg'}}/>
+class ProfileScreen extends React.Component {
+	handleSignout = () => {
+		Firebase.auth().signOut()
+		this.props.navigation.navigate('Login')
+	}
 
-		<Text style={styles.name}>Anthony </Text>
-		<Text style={styles.userInfo}>California State University, Chico </Text>
-		<Text style={styles.userInfo}>Sustainability Points: 28 </Text>
-		</View>
-		</View>
+	render() {
+		return (
+			<View style={styles.container}>
+			<View style={styles.header}>
+			<View style={styles.headerContent}>
+			<Image style={styles.avatar}
+			source={{uri: 'https://i.kym-cdn.com/entries/icons/original/000/020/260/nilesyy-nilez.jpg'}}/>
 
-		</View>
-	);
+			<Text style={styles.name}>Anthony </Text>
+			<Text style={styles.userInfo}>California State University, Chico </Text>
+			<Text style={styles.userInfo}>Sustainability Points: {this.props.user.points_current} </Text>
+			</View>
+			</View>
+				<Button title='Logout' onPress={this.handleSignout} />
+			</View>
+		)
+		}
 }
 
 const styles = StyleSheet.create({
@@ -50,6 +55,12 @@ const styles = StyleSheet.create({
 		color:"#000000",
 		fontWeight:'600',
 	}
-});
+})
 
-export default ProfileScreen;
+const mapStateToProps = state => {
+	return {
+		user: state.user
+	}
+}
+
+export default connect(mapStateToProps)(ProfileScreen)
