@@ -6,6 +6,7 @@ import SignUpScreen from "./screens/SignUpScreen.js";
 import LoginScreen from "./screens/LoginScreen.js";
 import RecoverScreen from "./screens/RecoverScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
+import MyLocationScreen from "./screens/MyLocationScreen.js";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -23,6 +24,7 @@ if ( !global.atob ) { global.atob = decode }
 const Tab = createBottomTabNavigator();
 const LoginStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
+const MyLocationStack = createStackNavigator();
 
 const middleware = applyMiddleware(thunkMiddleware)
 const store = createStore(reducer, middleware)
@@ -67,6 +69,7 @@ function App() {
             <LoginStack.Screen name="Register" component={SignUpScreen} />
             <LoginStack.Screen name="Recovery" component={RecoverScreen} />
             <LoginStack.Screen name="Profile" component={ProfileScreen} />
+            <LoginStack.Screen name="MyLocation" component={MyLocationScreen} />
           </LoginStack.Navigator>
         )}
       </NavigationContainer>

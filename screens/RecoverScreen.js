@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
-import { ScrollView } from "react-native";
+import { ScrollView, KeyboardAvoidingView, Keyboard, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { Colors, Spacing, Typography } from '../styles'
@@ -48,6 +48,10 @@ class RecoverScreen extends React.Component {
   render() {
     return (
       <ScrollView>
+        <KeyboardAvoidingView
+      behavior={Platform.Os == "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
         <View style={style.container}>
           <View>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -92,6 +96,7 @@ class RecoverScreen extends React.Component {
             />
           </View>
         </View>
+        </KeyboardAvoidingView>
       </ScrollView>
     );
     const { navigation } = this.props;

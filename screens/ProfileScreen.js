@@ -23,10 +23,16 @@ class ProfileScreen extends React.Component {
 			<Text style={styles.userInfo}>Sustainability Points: {this.props.user.points_current} </Text>
 			</View>
 			</View>
+			<Button title='MyLocation' onPress={() => this.MyLocationFunc()} />
 				<Button title='Logout' onPress={this.handleSignout} />
 			</View>
 		)
 		}
+
+		MyLocationFunc() {
+			const { navigation } = this.props;
+			navigation.navigate("MyLocation");
+		  }
 }
 
 const styles = StyleSheet.create({
@@ -62,5 +68,8 @@ const mapStateToProps = state => {
 		user: state.user
 	}
 }
+
+
+
 
 export default connect(mapStateToProps)(ProfileScreen)
