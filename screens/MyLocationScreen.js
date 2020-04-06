@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Pedometer} from 'expo-sensors';
 import { Location } from 'expo-location';
+import GoogleFit, { Scopes } from 'react-native-google-fit'
 import * as Permissions from 'expo-permissions';
 import MapView, {
 	Marker,
@@ -33,6 +34,7 @@ class MyLocationScreen extends React.Component {
 		  longitude: LONGITUDE,
 		  routeCoordinates: [],
 		  distanceTravelled: 0,
+		  Speed: 0,
 		  prevLatLng: {},
 		  coordinate: new AnimatedRegion({
 			latitude: LATITUDE,
@@ -56,14 +58,67 @@ class MyLocationScreen extends React.Component {
 	
 	  
 	  componentDidMount() {
-		this._subscribe();
+	
+	  }
+TrackFunc (){
+	this._subscribe();
 		
+	
+}
+	  getLocationAsync = async () => {
+		alert("ssdsg");
+		const { status } = await Permissions.askAsync(Permissions.LOCATION);
+	 alert('status'+status);
+		if (status !== 'granted') {
+			alert("no");
+		  this.setState({
+			errorMessage: 'Permission to access location was denied',
+		  });
+		  return;
+		}
+		else{
+			alert("yes");
+		}
+	 
+		const location = await Location.getCurrentPositionAsync({});
+		this.setState({ location });
+	  };
+	
+	  componentWillUnmount() {
+	
+	  }
+
+	  UnTrackFunc(){
+		  console.log("stop");
+		this._unsubscribe();
+		navigator.geolocation.clearWatch(this.watchID);
+	  }
+	  getMapRegion = () => ({
+		latitude: this.state.latitude,
+		longitude: this.state.longitude,
+		latitudeDelta: LATITUDE_DELTA,
+		longitudeDelta: LONGITUDE_DELTA
+	  });
+	
+	  calcDistance = newLatLng => {
+		  console.log("yeah");
+		const { prevLatLng } = this.state;
+		console.log(haversine(prevLatLng, newLatLng));
+		return haversine(prevLatLng, newLatLng) || 0;
+	  };
+	  _subscribe = () => {
+		this._subscription = Pedometer.watchStepCount(result => {
+		  this.setState({
+			currentStepCount: result.steps
+		  });
+		});
+	
 		const { coordinate } = this.state;
 	
 		this.watchID = navigator.geolocation.watchPosition(
 		  position => {
 			  console.log("samsung");
-			const { routeCoordinates, distanceTravelled } = this.state;
+			const { routeCoordinates, distanceTravelled, Speed } = this.state;
 			const { latitude, longitude } = position.coords;
 	
 			const newCoordinate = {
@@ -88,6 +143,7 @@ class MyLocationScreen extends React.Component {
 			  routeCoordinates: routeCoordinates.concat([newCoordinate]),
 			  distanceTravelled:
 				distanceTravelled + this.calcDistance(newCoordinate),
+				Speed: position.coords.speed,
 			  prevLatLng: newCoordinate
 			});
 		  },
@@ -99,52 +155,6 @@ class MyLocationScreen extends React.Component {
 			distanceFilter: 10
 		  }
 		);
-	  }
-	
-	  getLocationAsync = async () => {
-		alert("ssdsg");
-		const { status } = await Permissions.askAsync(Permissions.LOCATION);
-	 alert('status'+status);
-		if (status !== 'granted') {
-			alert("no");
-		  this.setState({
-			errorMessage: 'Permission to access location was denied',
-		  });
-		  return;
-		}
-		else{
-			alert("yes");
-		}
-	 
-		const location = await Location.getCurrentPositionAsync({});
-		this.setState({ location });
-	  };
-	
-	  componentWillUnmount() {
-		this._unsubscribe();
-		navigator.geolocation.clearWatch(this.watchID);
-	  }
-
-	  getMapRegion = () => ({
-		latitude: this.state.latitude,
-		longitude: this.state.longitude,
-		latitudeDelta: LATITUDE_DELTA,
-		longitudeDelta: LONGITUDE_DELTA
-	  });
-	
-	  calcDistance = newLatLng => {
-		  console.log("yeah");
-		const { prevLatLng } = this.state;
-		console.log(haversine(prevLatLng, newLatLng));
-		return haversine(prevLatLng, newLatLng) || 0;
-	  };
-	  _subscribe = () => {
-		this._subscription = Pedometer.watchStepCount(result => {
-		  this.setState({
-			currentStepCount: result.steps
-		  });
-		});
-	
 		Pedometer.isAvailableAsync().then(
 		  result => {
 			this.setState({
@@ -158,8 +168,24 @@ class MyLocationScreen extends React.Component {
 		  }
 		);
 	
+	
+
 		const end = new Date();
 		const start = new Date();
+
+
+
+		const options = {
+			startDate: start.toISOString(), // required ISO8601Timestamp
+			endDate: end.toISOString() // required ISO8601Timestamp
+		  };
+
+		GoogleFit.getDailyStepCountSamples(options)
+		.then((res) => {
+			console.log('Daily steps >>> ', res)
+		})
+		.catch((err) => {console.warn(err)})
+	   
 		start.setDate(end.getDate() - 1);
 		Pedometer.getStepCountAsync(start, end).then(
 		  result => {
@@ -176,6 +202,10 @@ class MyLocationScreen extends React.Component {
 		this._subscription && this._subscription.remove();
 		this._subscription = null;
 	  };
+
+	 
+	  
+	 
 		
 	render() {
 	return (
@@ -211,13 +241,19 @@ class MyLocationScreen extends React.Component {
         <Text>
           Steps taken in the last 24 hours: {this.state.pastStepCount}
         </Text>
-        <Text>Walk! And watch this go up: {this.state.currentStepCount}</Text>
+        <Text>Number of Steps: {this.state.currentStepCount}</Text>
+		<Text style={styles.bottomBarContent}>
+      Distance Travelled: {parseFloat(this.state.distanceTravelled).toFixed(2)} km
+    </Text>
+	<Text style={styles.bottomBarContent}>
+      Speed: {parseFloat(this.state.Speed).toFixed(2)} km/hr
+    </Text>
+		<Button title='Start Tracking' onPress={() => this.TrackFunc()}/>
+				<Button title='Stop Tracking'  onPress={() => this.UnTrackFunc()}/>
       </View>
 	  <View style={styles.buttonContainer}>
   <TouchableOpacity style={[styles.bubble, styles.button]}>
-    <Text style={styles.bottomBarContent}>
-      {parseFloat(this.state.distanceTravelled).toFixed(2)} km
-    </Text>
+    
   </TouchableOpacity>
 </View>
 		</View>
