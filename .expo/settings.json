@@ -1,8 +1,13 @@
 {
+<<<<<<< HEAD
   "urlRandomness": "gr-6y4",
   "hostType": "lan",
+=======
+  "urlRandomness": "q2-kb6",
+  "hostType": "tunnel",
+>>>>>>> ad5e8694fd629757c4820d3787717ef7c97e6ef8
   "lanType": "ip",
-  "dev": true,
-  "minify": false,
+  "dev": false,
+  "minify": true,
   "https": false
 }
