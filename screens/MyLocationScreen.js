@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Pedometer} from 'expo-sensors';
-import { Location } from 'expo-location';
-import GoogleFit, { Scopes } from 'react-native-google-fit'
+import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import MapView, {
 	Marker,
@@ -25,242 +24,151 @@ const LATITUDE = 37.78825;
 const LONGITUDE = -122.4324;
 
 class MyLocationScreen extends React.Component {
-	constructor(props) {
-		const { navigation } = props;
-		super(props);
-	
-		this.state = {
-		  latitude: LATITUDE,
-		  longitude: LONGITUDE,
-		  routeCoordinates: [],
-		  distanceTravelled: 0,
-		  Speed: 0,
-		  prevLatLng: {},
-		  coordinate: new AnimatedRegion({
-			latitude: LATITUDE,
-			longitude: LONGITUDE,
-			latitudeDelta: 0,
-			longitudeDelta: 0
-		  })
-		};
-		//alert("sdsws");
-		//this.getLocationAsync();
-	  }
-
-
-
 	state = {
-		isPedometerAvailable: "checking",
-		location: null,
-		pastStepCount: 0,
-		currentStepCount: 0
+		mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 0.0922, longitudeDelta: 0.0421 },
+		locationResult: "dfdf",
+		routeCoordinates: [],
+    distanceTravelled: 0,
+    prevLatLng: {},
+		location: {coords: { latitude: 37.78825, longitude: -122.4324}},
+		coordinate: new AnimatedRegion({
+			latitude: LATITUDE,
+			longitude: LONGITUDE
+		   })
 	  };
 	
-	  
 	  componentDidMount() {
-	
-	  }
-TrackFunc (){
-	this._subscribe();
+		  console.log("yeah");
 		
-	
-}
-	  getLocationAsync = async () => {
-		alert("ssdsg");
-		const { status } = await Permissions.askAsync(Permissions.LOCATION);
-	 alert('status'+status);
-		if (status !== 'granted') {
-			alert("no");
-		  this.setState({
-			errorMessage: 'Permission to access location was denied',
-		  });
-		  return;
-		}
-		else{
-			alert("yes");
-		}
-	 
-		const location = await Location.getCurrentPositionAsync({});
-		this.setState({ location });
+		  console.log("bye"+this.watchID);
+		this._getLocationAsync();
+
+		this.watchID = navigator.geolocation.watchPosition(
+			  
+			position => {
+			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
+			  const { latitude, longitude } = position.coords;
+			  console.log("latitude2-"+latitude);
+			  const newCoordinate = {
+				latitude,
+				longitude
+			  };
+			  if (Platform.OS === "android") {
+				if (this.marker) {
+				  this.marker._component.animateMarkerToCoordinate(
+					newCoordinate,
+					500
+				  );
+				 }
+			   } else {
+				 coordinate.timing(newCoordinate).start();
+			   }
+			   this.setState({
+				 latitude,
+				 longitude,
+				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
+				 distanceTravelled:
+				 distanceTravelled + this.calcDistance(newCoordinate),
+				 prevLatLng: newCoordinate
+			   });
+			 },
+			 error => console.log(error),
+			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
+		  );
+
+		 
+	  }
+	  
+	  _handleMapRegionChange = mapRegion => {
+		  console.log("yeah");
+		this.setState({ mapRegion });
 	  };
 	
-	  componentWillUnmount() {
-	
-	  }
+	  _getLocationAsync = async () => {
+	   let { status } = await Permissions.askAsync(Permissions.LOCATION);
+	   if (status !== 'granted') {
+		 this.setState({
+		   locationResult: 'Permission to access location was denied',
+		   location,
+		 });
+		 console.log('Starting watchPositionAsync')
+		 this.watchId = Location.watchPositionAsync({
+		   enableHighAccuracy: false,
+		   distanceInterval: 2000,
+		   timeInterval: 200000
+		 }, newLoc => {
+		   if(newLoc.timestamp && !!this.props.currentRecords) {
+			 console.log('newLoc ', counter)
+			 this.updateLoc(newLoc)
+			 counter++
+		   } else {
+			 console.log('ignored newLoc')
+		   }
+		 })
+	   }
+	   else{
 
-	  UnTrackFunc(){
-		  console.log("stop");
-		this._unsubscribe();
-		navigator.geolocation.clearWatch(this.watchID);
-	  }
-	  getMapRegion = () => ({
-		latitude: this.state.latitude,
-		longitude: this.state.longitude,
-		latitudeDelta: LATITUDE_DELTA,
-		longitudeDelta: LONGITUDE_DELTA
-	  });
+	   }
+	 
+	   console.log("chii");
+	   //alert("chi");
+	   let location = await Location.getCurrentPositionAsync({});
+	   //alert(location.coords.latitude);
+	   console.log("locationResult_ latitude-"+location.coords.latitude);
+	   console.log("locationResult_longitude-"+location.coords.longitude);
+	   this.setState({ locationResult: JSON.stringify(location), location, });
+	 };
 	
-	  calcDistance = newLatLng => {
-		  console.log("yeah");
+	
+
+	 calcDistance = newLatLng => {
 		const { prevLatLng } = this.state;
-		console.log(haversine(prevLatLng, newLatLng));
+		console.log("latitude3-"+newLatLng.latitude);
+		console.log("latitude4-"+prevLatLng.latitude);
+		console.log("distance-"+haversine(prevLatLng, newLatLng));
 		return haversine(prevLatLng, newLatLng) || 0;
 	  };
-	  _subscribe = () => {
-		this._subscription = Pedometer.watchStepCount(result => {
-		  this.setState({
-			currentStepCount: result.steps
-		  });
-		});
 	
-		const { coordinate } = this.state;
-	
-		this.watchID = navigator.geolocation.watchPosition(
-		  position => {
-			  console.log("samsung");
-			const { routeCoordinates, distanceTravelled, Speed } = this.state;
-			const { latitude, longitude } = position.coords;
-	
-			const newCoordinate = {
-			  latitude,
-			  longitude
-			};
-	
-			if (Platform.OS === "android") {
-			  if (this.marker) {
-				this.marker._component.animateMarkerToCoordinate(
-				  newCoordinate,
-				  500
-				);
-			  }
-			} else {
-			  coordinate.timing(newCoordinate).start();
-			}
-	
-			this.setState({
-			  latitude,
-			  longitude,
-			  routeCoordinates: routeCoordinates.concat([newCoordinate]),
-			  distanceTravelled:
-				distanceTravelled + this.calcDistance(newCoordinate),
-				Speed: position.coords.speed,
-			  prevLatLng: newCoordinate
-			});
-		  },
-		  error => console.log("error-"+error.message),
-		  {
-			enableHighAccuracy: true,
-			timeout: 20000,
-			maximumAge: 1000,
-			distanceFilter: 10
-		  }
-		);
-		Pedometer.isAvailableAsync().then(
-		  result => {
-			this.setState({
-			  isPedometerAvailable: String(result)
-			});
-		  },
-		  error => {
-			this.setState({
-			  isPedometerAvailable: "Could not get isPedometerAvailable: " + error
-			});
-		  }
-		);
-	
-	
-
-		const end = new Date();
-		const start = new Date();
-
-
-
-		const options = {
-			startDate: start.toISOString(), // required ISO8601Timestamp
-			endDate: end.toISOString() // required ISO8601Timestamp
-		  };
-
-		GoogleFit.getDailyStepCountSamples(options)
-		.then((res) => {
-			console.log('Daily steps >>> ', res)
-		})
-		.catch((err) => {console.warn(err)})
-	   
-		start.setDate(end.getDate() - 1);
-		Pedometer.getStepCountAsync(start, end).then(
-		  result => {
-			this.setState({ pastStepCount: result.steps });
-		  },
-		  error => {
-			this.setState({
-			  pastStepCount: "Could not get stepCount: " + error
-			});
-		  }
-		);
-	  };
-	  _unsubscribe = () => {
-		this._subscription && this._subscription.remove();
-		this._subscription = null;
-	  };
-
 	 
-	  
-	 
+	
 		
 	render() {
-	return (
-		<View style={styles.container}>
-		<View style={styles.header}>
-		<View style={styles.headerContent}>
-		<Image style={styles.avatar}
-		source={{uri: 'https://i.kym-cdn.com/entries/icons/original/000/020/260/nilesyy-nilez.jpg'}}/>
+	
+		return (
+			<View style={styles.container}>
+			 
+			 <MapView
+          style={{ alignSelf: 'stretch', height: 200 }}
+          region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
+        >
+			<Polyline coordinates={this.state.routeCoordinates} strokeWidth={5} />
+  <MapView.Marker
+    coordinate={{ "latitude": this.state.location.coords.latitude,   
+    "longitude": this.state.location.coords.longitude }}
+    title={"Your Location"}
+    draggable />
+	
+        </MapView>
+			
+			  <Text>
+				Location: {this.state.locationResult}
+			  </Text>
 
-		
-  
-	<MapView
-  style={styles.mapStyle}
-  showUserLocation
-  followUserLocation
-  loadingEnabled
-  region={this.getMapRegion()}
->
-  <Polyline coordinates={this.state.routeCoordinates} strokeWidth={5} />
-  <Marker.Animated
-    ref={marker => {
-      this.marker = marker;
-    }}
-    coordinate={this.state.coordinate}
-  />
-</MapView>
-		<Text style={styles.name}>Anthony </Text>
-		<Text style={styles.userInfo}>California Stat University, Chico </Text>
-		<Text style={styles.userInfo}>Sustainability Points: 28 </Text>
-		<Text>
-          Pedometer.isAvailableAsync(): {this.state.isPedometerAvailable}
-        </Text>
-        <Text>
-          Steps taken in the last 24 hours: {this.state.pastStepCount}
-        </Text>
-        <Text>Number of Steps: {this.state.currentStepCount}</Text>
-		<Text style={styles.bottomBarContent}>
-      Distance Travelled: {parseFloat(this.state.distanceTravelled).toFixed(2)} km
-    </Text>
-	<Text style={styles.bottomBarContent}>
-      Speed: {parseFloat(this.state.Speed).toFixed(2)} km/hr
-    </Text>
-		<Button title='Start Tracking' onPress={() => this.TrackFunc()}/>
-				<Button title='Stop Tracking'  onPress={() => this.UnTrackFunc()}/>
+			  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>{JSON.stringify(this.state.location)}</Text>
       </View>
-	  <View style={styles.buttonContainer}>
+			  <View style={styles.buttonContainer}>
   <TouchableOpacity style={[styles.bubble, styles.button]}>
-    
+    <Text style={styles.bottomBarContent}>
+      {parseFloat(this.state.distanceTravelled).toFixed(2)} km
+    </Text>
   </TouchableOpacity>
 </View>
-		</View>
-		</View>
+			  <Text>
 
-
-	);
+</Text>
+			</View>
+		  );
 };
 }
 /*
@@ -301,6 +209,11 @@ const styles = StyleSheet.create({
 	  alignItems: 'center',
 	  justifyContent: 'center',
 	},
+	paragraph: {
+		margin: 24,
+		fontSize: 18,
+		textAlign: 'center',
+	  },
 	mapStyle: {
 	  width: Dimensions.get('window').width,
 	  height: Dimensions.get('window').height/2,
