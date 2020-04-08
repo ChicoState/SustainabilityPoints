@@ -129,6 +129,7 @@ class MyLocationScreen extends React.Component {
 		console.log("latitude3-"+newLatLng.latitude);
 		console.log("latitude4-"+prevLatLng.latitude);
 		console.log("distance-"+haversine(prevLatLng, newLatLng));
+		console.log("speed-"+this.state.speed);
 		return haversine(prevLatLng, newLatLng) || 0;
 	  };
 	
