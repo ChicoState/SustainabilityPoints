@@ -11,58 +11,60 @@ class ProfileScreen extends React.Component {
 	}
 	registerForPushNotificationsAsync = async () => {
 
-	  const { status } = await Permissions.askAsync
-	(Permissions.NOTIFICATIONS);
+		const { status } = await Permissions.askAsync
+		(Permissions.NOTIFICATIONS);
 
-	  // only asks if permissions have not already been determined, because
-	  // iOS won't necessarily prompt the user a second time.
-	  // On Android, permissions are granted on app installation, so
-	  // `askAsync` will never prompt the user
+		// only asks if permissions have not already been determined, because
+		// iOS won't necessarily prompt the user a second time.
+		// On Android, permissions are granted on app installation, so
+		// `askAsync` will never prompt the user
 
-	  // Stop here if the user did not grant permissions
-	  if (status !== 'granted') {
-	console.log('Enable permissions')
-	    alert('Enable permissions in settings!');
-	    return;
-	  }
+		// Stop here if the user did not grant permissions
+		if (status !== 'granted') {
+			console.log('Enable permissions')
+			alert('Enable permissions in settings!');
+			return;
+		}
 
-	try{
-	  // Get the token that identifies this device
-	  let token = await Notifications.getExpoPushTokenAsync();
-	console.log('TOKEN', token)
-	console.log('USER', db.collection('users'))
+		try{
+			// Get the token that identifies this device
+			let token = await Notifications.getExpoPushTokenAsync();
+			console.log('TOKEN', token)
+			console.log('USER', db.collection('users'))
 
-	console.log(this.currentUser)
-	 db
-	 .collection('users')
-	 .doc(this.props.user.uid)
-	 .update({
-	 'pushToken': token,
-	 })
-	 }
-	 catch(error){
-	 console.log(error);
-	 }
+			console.log(this.currentUser)
+			db
+				.collection('users')
+				.doc(this.props.user.uid)
+				.update({
+					'pushToken': token,
+				})
+		}
+		catch(error){
+			console.log(error);
+		}
 	};
-	async componentDidMount(){
-	this.currentUser = await Firebase.auth().currentUser
-	await this.registerForPushNotificationsAsync();
-	}
-	sendPushNotification = () => {
-	let response = fetch('https://exp.host/--/api/v2/push/send',{
-	method: 'POST',
-	headers: {
-	Accept: 'application/json',
-	'Content-Type': 'application/json'
-	},
-	body:JSON.stringify({
-	to:this.props.users.pushToken,
-	sound:'default',
-	title:'Demo',
-	body:'Demo notification'
-	})
 
-	})
+	async componentDidMount(){
+		this.currentUser = await Firebase.auth().currentUser
+		await this.registerForPushNotificationsAsync();
+	}
+
+	sendPushNotification = () => {
+		let response = fetch('https://exp.host/--/api/v2/push/send',{
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body:JSON.stringify({
+				to:this.props.users.pushToken,
+				sound:'default',
+				title:'Demo',
+				body:'Demo notification'
+			})
+
+		})
 	};
 	render() {
 		return (
@@ -78,15 +80,15 @@ class ProfileScreen extends React.Component {
 			</View>
 			</View>
 			<Button title='MyLocation' onPress={() => this.MyLocationFunc()} />
-				<Button title='Logout' onPress={this.handleSignout} />
+			<Button title='Logout' onPress={this.handleSignout} />
 			</View>
 		)
-		}
+	}
 
-		MyLocationFunc() {
-			const { navigation } = this.props;
-			navigation.navigate("MyLocation");
-		  }
+	MyLocationFunc() {
+		const { navigation } = this.props;
+		navigation.navigate("MyLocation");
+	}
 }
 
 const styles = StyleSheet.create({
