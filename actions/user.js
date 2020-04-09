@@ -2,6 +2,8 @@ import Firebase, { db } from '../apis/Firebase.js'
 
 export const UPDATE_EMAIL = 'UPDATE_EMAIL'
 export const UPDATE_PASSWORD = 'UPDATE_PASSWORD'
+export const UPDATE_DISPLAYNAME = 'UPDATE_DISPLAYNAME'
+export const UPDATE_ORGNAME = 'UPDATE_ORGNAME'
 export const LOGIN = 'LOGIN'
 export const SIGNUP = 'SIGNUP'
 
@@ -16,6 +18,20 @@ export const updatePassword = password => {
     return {
         type: UPDATE_PASSWORD,
         payload: password
+    }
+}
+
+export const updateDisplayName = displayname => {
+    return {
+        type: UPDATE_DISPLAYNAME,
+        payload: displayname
+    }
+}
+
+export const updateOrgName = orgname => {
+    return {
+        type: UPDATE_ORGNAME,
+        payload: orgname
     }
 }
 
@@ -65,6 +81,26 @@ export const signup = () => {
 
                 dispatch({ type: SIGNUP, payload: user })
             }
+        } catch (e) {
+            alert(e)
+        }
+    }
+}
+
+export const updateProfile = () => {
+    return async (dispatch, getState) => {
+        try {
+            const { displayname, orgname, uid } = getState().user
+            const user = {
+                displayName: displayname,
+                org_name: orgname,
+            }
+
+            db.collection('users')
+                .doc(uid)
+                .update(user)
+
+            dispatch(getUser(uid))
         } catch (e) {
             alert(e)
         }

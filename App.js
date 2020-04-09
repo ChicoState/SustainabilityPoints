@@ -7,6 +7,7 @@ import LoginScreen from "./screens/LoginScreen.js";
 import RecoverScreen from "./screens/RecoverScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
 import MyLocationScreen from "./screens/MyLocationScreen.js";
+import ProfileUpdateScreen from './screens/ProfileUpdateScreen'
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -70,6 +71,7 @@ function App() {
             <LoginStack.Screen name="Recovery" component={RecoverScreen} />
             <LoginStack.Screen name="Profile" component={ProfileScreen} />
             <LoginStack.Screen name="MyLocation" component={MyLocationScreen} />
+            <LoginStack.Screen name="ProfileUpdate" component={ProfileUpdateScreen} />
           </LoginStack.Navigator>
         )}
       </NavigationContainer>

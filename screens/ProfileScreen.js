@@ -13,17 +13,18 @@ class ProfileScreen extends React.Component {
 	render() {
 		return (
 			<View style={styles.container}>
-			<View style={styles.header}>
-			<View style={styles.headerContent}>
-			<Image style={styles.avatar}
-			source={{uri: 'https://i.kym-cdn.com/entries/icons/original/000/020/260/nilesyy-nilez.jpg'}}/>
+				<View style={styles.header}>
+					<View style={styles.headerContent}>
+						<Image style={styles.avatar}
+						source={{uri: 'https://i.kym-cdn.com/entries/icons/original/000/020/260/nilesyy-nilez.jpg'}}/>
 
-			<Text style={styles.name}>Anthony </Text>
-			<Text style={styles.userInfo}>California State University, Chico </Text>
-			<Text style={styles.userInfo}>Sustainability Points: {this.props.user.points_current} </Text>
-			</View>
-			</View>
+						{this.props.user.displayName ? <Text style={styles.name}> {this.props.user.displayName} </Text> : <Text style={styles.name}> {this.props.user.email} </Text> }
+						<Text style={styles.userInfo}> {this.props.user.org_name} </Text>
+						<Text style={styles.userInfo}>Sustainability Points: {this.props.user.points_current} </Text>
+					</View>
+				</View>
 			<Button title='MyLocation' onPress={() => this.MyLocationFunc()} />
+			<Button title='Update Profile' onPress={() => this.ProfileUpdateFunc()} />
 				<Button title='Logout' onPress={this.handleSignout} />
 			</View>
 		)
@@ -32,6 +33,11 @@ class ProfileScreen extends React.Component {
 		MyLocationFunc() {
 			const { navigation } = this.props;
 			navigation.navigate("MyLocation");
+		  }
+
+		  ProfileUpdateFunc() {
+			const { navigation } = this.props;
+			navigation.navigate("ProfileUpdate");
 		  }
 }
 

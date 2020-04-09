@@ -18,12 +18,6 @@ import { Colors, Spacing, Typography } from '../styles'
 
 import Firebase from "./../apis/Firebase";
 
-Firebase.auth().onAuthStateChanged(user => {
-  if (user != null) {
-    console.log("we are authenticated now!");
-  }
-});
-
 class RecoverScreen extends React.Component {
   constructor(props) {
     super(props);
