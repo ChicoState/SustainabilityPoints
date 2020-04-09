@@ -26,9 +26,10 @@ const LONGITUDE = -122.4324;
 class MyLocationScreen extends React.Component {
 	state = {
 		mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 0.0922, longitudeDelta: 0.0421 },
-		locationResult: "dfdf",
+		locationResult: null,
 		routeCoordinates: [],
-    distanceTravelled: 0,
+	distanceTravelled: 0,
+	speed: 0,
     prevLatLng: {},
 		location: {coords: { latitude: 37.78825, longitude: -122.4324}},
 		coordinate: new AnimatedRegion({
@@ -38,9 +39,9 @@ class MyLocationScreen extends React.Component {
 	  };
 	
 	  componentDidMount() {
-		  console.log("yeah");
+		  //console.log("yeah");
 		
-		  console.log("bye"+this.watchID);
+		//  console.log("bye"+this.watchID);
 		this._getLocationAsync();
 
 		this.watchID = navigator.geolocation.watchPosition(
@@ -48,7 +49,7 @@ class MyLocationScreen extends React.Component {
 			position => {
 			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
 			  const { latitude, longitude } = position.coords;
-			  console.log("latitude2-"+latitude);
+			 // console.log("latitude2-"+latitude);
 			  const newCoordinate = {
 				latitude,
 				longitude
@@ -69,8 +70,10 @@ class MyLocationScreen extends React.Component {
 				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
 				 distanceTravelled:
 				 distanceTravelled + this.calcDistance(newCoordinate),
+				 speed: position.coords.speed,
 				 prevLatLng: newCoordinate
 			   });
+
 			 },
 			 error => console.log(error),
 			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
@@ -126,6 +129,7 @@ class MyLocationScreen extends React.Component {
 		console.log("latitude3-"+newLatLng.latitude);
 		console.log("latitude4-"+prevLatLng.latitude);
 		console.log("distance-"+haversine(prevLatLng, newLatLng));
+		console.log("speed-"+this.state.speed);
 		return haversine(prevLatLng, newLatLng) || 0;
 	  };
 	
@@ -150,18 +154,17 @@ class MyLocationScreen extends React.Component {
 	
         </MapView>
 			
-			  <Text>
-				Location: {this.state.locationResult}
-			  </Text>
-
-			  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>{JSON.stringify(this.state.location)}</Text>
-      </View>
+		<Text style={styles.bottomBarContent}>
+      Distance traveled: {parseFloat(this.state.distanceTravelled).toFixed(2)} km
+    </Text>
+	<Text style={styles.bottomBarContent}>
+     Speed: {parseFloat(this.state.speed).toFixed(2)} km/hr
+    </Text>
+	
+			
 			  <View style={styles.buttonContainer}>
   <TouchableOpacity style={[styles.bubble, styles.button]}>
-    <Text style={styles.bottomBarContent}>
-      {parseFloat(this.state.distanceTravelled).toFixed(2)} km
-    </Text>
+   
   </TouchableOpacity>
 </View>
 			  <Text>
