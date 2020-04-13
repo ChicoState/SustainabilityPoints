@@ -1,7 +1,10 @@
 import React from 'react';
 import { Button, Image, StyleSheet, Text, View } from 'react-native';
 import { connect } from 'react-redux'
-import Firebase from '../apis/Firebase'
+import Firebase, { db }from '../apis/Firebase'
+import {Notifications} from 'expo';
+import * as Permissions from 'expo-permissions'
+import { CustomButton } from "../components/CustomButton.js";
 
 
 class ProfileScreen extends React.Component {
@@ -79,9 +82,15 @@ class ProfileScreen extends React.Component {
 						<Text style={styles.userInfo}>Sustainability Points: {this.props.user.points_current} </Text>
 					</View>
 				</View>
-			<Button title='MyLocation' onPress={() => this.MyLocationFunc()} />
-			<Button title='Update Profile' onPress={() => this.ProfileUpdateFunc()} />
-				<Button title='Logout' onPress={this.handleSignout} />
+			<CustomButton
+			style={{marginBottom: 10}}
+			title='MyLocation' onPress={() => this.MyLocationFunc()} />
+			<CustomButton
+			style={{marginBottom: 10}}
+			title='Update Profile' onPress={() => this.ProfileUpdateFunc()} />
+				<CustomButton
+				style={{marginBottom: 10}}
+				title='Logout' onPress={this.handleSignout} />
 			</View>
 		)
 	}
