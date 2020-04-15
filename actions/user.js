@@ -73,8 +73,8 @@ export const signup = () => {
                     email: email,
                     points_current: 0,
                     points_lifetime: 0,
-                    last_logged_in: "",
-                    distance_today: 0
+                    distance_today: 0,
+                    last_logged_in: ""
                 }
 
                 db.collection('users')

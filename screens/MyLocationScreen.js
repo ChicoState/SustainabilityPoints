@@ -168,7 +168,7 @@ class MyLocationScreen extends React.Component {
 		if(this.state.speed<15 && haversine(prevLatLng, newLatLng) > 0){
 			
 		db.collection("users").doc(this.currentUser.uid).set({
-			points_current: haversine(prevLatLng, newLatLng) ,
+			points_current: current_points+haversine(prevLatLng, newLatLng),
 			points_lifetime: current_points+haversine(prevLatLng, newLatLng) ,
 			displayName: this.currentUser.providerData[0].displayName,
 			email: this.currentUser.providerData[0].email,
