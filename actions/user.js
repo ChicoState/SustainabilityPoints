@@ -72,7 +72,9 @@ export const signup = () => {
                     uid: response.user.uid,
                     email: email,
                     points_current: 0,
-                    points_lifetime: 0
+                    points_lifetime: 0,
+                    last_logged_in: "",
+                    distance_today: 0
                 }
 
                 db.collection('users')

@@ -80,6 +80,8 @@ class ProfileScreen extends React.Component {
 						{this.props.user.displayName ? <Text style={styles.name}> {this.props.user.displayName} </Text> : <Text style={styles.name}> {this.props.user.email} </Text> }
 						<Text style={styles.userInfo}> {this.props.user.org_name} </Text>
 						<Text style={styles.userInfo}>Sustainability Points: {this.props.user.points_current} </Text>
+						<Text style={styles.userInfo}>Today's Distance: {this.props.user.distance_today} </Text>
+
 					</View>
 				</View>
 			<CustomButton

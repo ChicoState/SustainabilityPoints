@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Pedometer} from 'expo-sensors';
 import * as Location from 'expo-location';
+import { connect } from 'react-redux'
+import Firebase, { db }from '../apis/Firebase'
 import * as Permissions from 'expo-permissions';
 import MapView, {
 	Marker,
@@ -38,11 +40,16 @@ class MyLocationScreen extends React.Component {
 		   })
 	  };
 	
-	  componentDidMount() {
+	 async componentDidMount() {
 		  //console.log("yeah");
 		
 		//  console.log("bye"+this.watchID);
 		this._getLocationAsync();
+
+		let current_points;
+		let last_loggedin;
+		let daily_distance;
+		this.currentUser = await  Firebase.auth().currentUser;
 
 		this.watchID = navigator.geolocation.watchPosition(
 			  
@@ -69,7 +76,7 @@ class MyLocationScreen extends React.Component {
 				 longitude,
 				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
 				 distanceTravelled:
-				 distanceTravelled + this.calcDistance(newCoordinate),
+				 distanceTravelled +  this.calcDistance(newCoordinate),
 				 speed: position.coords.speed,
 				 prevLatLng: newCoordinate
 			   });
@@ -88,6 +95,8 @@ class MyLocationScreen extends React.Component {
 	  };
 	
 	  _getLocationAsync = async () => {
+				
+		
 	   let { status } = await Permissions.askAsync(Permissions.LOCATION);
 	   if (status !== 'granted') {
 		 this.setState({
@@ -130,6 +139,53 @@ class MyLocationScreen extends React.Component {
 		console.log("latitude4-"+prevLatLng.latitude);
 		console.log("distance-"+haversine(prevLatLng, newLatLng));
 		console.log("speed-"+this.state.speed);
+		let today = new Date();
+		//let last_logged_in_date = new Date(last_loggedin);
+		//console.log("todayys-"+Firebase.firestore.Timestamp.fromDate(new Date()));
+		console.log("uid-"+this.props.user.uid);
+
+		
+			current_points = this.props.user.points_current;
+			last_loggedin = this.props.user.last_logged_in;
+			daily_distance = this.props.user.distance_today;
+
+			console.log("current_points-"+current_points);
+		console.log("todaycheck-"+last_loggedin);
+		let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
+		let distance_today_val = 0;
+		if(todays_date == last_loggedin){
+			console.log("its todayy");
+		}
+		else{
+			console.log("its not today")
+		}
+		
+		
+
+		
+	
+		
+		if(this.state.speed<15 && haversine(prevLatLng, newLatLng) > 0){
+			
+		db.collection("users").doc(this.currentUser.uid).set({
+			points_current: haversine(prevLatLng, newLatLng) ,
+			points_lifetime: current_points+haversine(prevLatLng, newLatLng) ,
+			displayName: this.currentUser.providerData[0].displayName,
+			email: this.currentUser.providerData[0].email,
+			distance_today: today == last_logged_in_date ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
+			last_logged_in : new Date().getDate(),
+			uid: this.currentUser.uid
+
+	
+		})
+		.then(function() {
+			console.log("Document successfully written!");
+		})
+		.catch(function(error) {
+			console.error("Error writing document: ", error);
+		})
+	}
+		
 		return haversine(prevLatLng, newLatLng) || 0;
 	  };
 	
@@ -222,4 +278,10 @@ const styles = StyleSheet.create({
 	  height: Dimensions.get('window').height/2,
 	},
   });
-export default MyLocationScreen;
+  const mapStateToProps = state => {
+	return {
+		user: state.user
+	}
+}
+export default connect(mapStateToProps)(MyLocationScreen)
+
