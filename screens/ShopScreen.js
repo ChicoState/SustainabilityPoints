@@ -159,20 +159,30 @@ class ShopScreen extends React.Component {
 				 prevLatLng: newCoordinate
 			   });
 
-			   console.log("yooo4");
+			  // console.log("cooo4");
 			   const config = {
 				 headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
 				 params: {
 					 latitude: latitude, 
 					 longitude: longitude, 
+					 limit: 10,
+				radius: 10000
 				 }
 			   };
 			 return axios
 			   .get('https://api.yelp.com/v3/businesses/search', config)
-			   .then(responseJson => {
+			   //.then((res) => res.json())
+			   //.then((data) => {
+					 .then(responseJson => {
+						responseJson.data.businesses.sort((a, b) => a.distance - b.distance);
 				 this.setState({
 					 markers: responseJson.data.businesses.map(x => x),
 				   });
+
+				  this.state.markers.sort(function(a,b) { return parseInt(a.distance)-parseInt(b.distance)});
+
+			//	console.log("markers2");
+			//	  console.log(this.state.markers);
 			   })
 			   .catch(error => {
 				 console.log(error);
@@ -254,20 +264,29 @@ class ShopScreen extends React.Component {
 	   console.log("locationResult_longitude-"+location.coords.longitude);
 	   this.setState({ locationResult: JSON.stringify(location), location, });
 
-	   console.log("yooo3");
+	  // console.log("yooo3");
 		  const config2 = {
 			headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
 			params: {
 				latitude: location.coords.latitude, 
 				longitude: location.coords.longitude, 
+				limit: 10,
+				radius: 10
 			}
 		  };
 		return axios
 		  .get('https://api.yelp.com/v3/businesses/search', config2)
-		  .then(responseJson => {
+		//.then((res) => res.json())
+			   //.then((data) => {
+				.then(responseJson => {
+					responseJson.data.businesses.sort((a, b) => a.distance - b.distance);
+			data.sort((a, b) => a.distance - b.distance);
 			this.setState({
 				markers: responseJson.data.businesses.map(x => x),
 			  });
+			  this.state.markers.sort(function(a,b) { return parseInt(a.distance)-parseInt(b.distance)});
+			//  console.log("markers1");
+			  //console.log(this.state.markers);
 		  })
 		  .catch(error => {
 			console.log(error);
@@ -363,7 +382,7 @@ class ShopScreen extends React.Component {
         </MapView>
 <Text>Shops List:</Text>
 		{this.state.markers.map(marker => (
-    <Text>{marker.name}</Text>
+    <Text>Name: {marker.name} ZipCode: {marker.location.zip_code} Distance: {marker.distance}</Text>
 	
   ))}
 			
