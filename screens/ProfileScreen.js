@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Image, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, View} from 'react-native';
 import { connect } from 'react-redux'
 import Firebase, { db }from '../apis/Firebase'
 import {Notifications} from 'expo';
@@ -89,6 +89,9 @@ class ProfileScreen extends React.Component {
 			title='MyLocation' onPress={() => this.MyLocationFunc()} />
 			<CustomButton
 			style={{marginBottom: 10}}
+			title='Shops' onPress={() => this.ShopFunc()} />
+			<CustomButton
+			style={{marginBottom: 10}}
 			title='Update Profile' onPress={() => this.ProfileUpdateFunc()} />
 				<CustomButton
 				style={{marginBottom: 10}}
@@ -100,6 +103,11 @@ class ProfileScreen extends React.Component {
 		MyLocationFunc() {
 			const { navigation } = this.props;
 			navigation.navigate("MyLocation");
+		  }
+
+		  ShopFunc() {
+			const { navigation } = this.props;
+			navigation.navigate("Shops");
 		  }
 
 		  ProfileUpdateFunc() {

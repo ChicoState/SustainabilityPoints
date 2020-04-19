@@ -6,6 +6,7 @@ import SignUpScreen from "./screens/SignUpScreen.js";
 import LoginScreen from "./screens/LoginScreen.js";
 import RecoverScreen from "./screens/RecoverScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
+import ShopScreen from "./screens/ShopScreen.js";
 import MyLocationScreen from "./screens/MyLocationScreen.js";
 import ProfileUpdateScreen from './screens/ProfileUpdateScreen'
 import { NavigationContainer } from "@react-navigation/native";
@@ -26,6 +27,7 @@ const Tab = createBottomTabNavigator();
 const LoginStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 const MyLocationStack = createStackNavigator();
+const ShopStack = createStackNavigator();
 
 const middleware = applyMiddleware(thunkMiddleware)
 const store = createStore(reducer, middleware)
@@ -37,6 +39,7 @@ const ProfileStackScreen = () => (
 );
 
 function App() {
+  
   /*
   comment out the first one to be forced into the main app stack
   or comment out the second one to return to the login stages
@@ -56,6 +59,7 @@ function App() {
     };
   }, []);
 
+ 
   return (
     <Provider store={store}>
     <AuthContext.Provider value={AuthContext}>
@@ -72,6 +76,7 @@ function App() {
             <LoginStack.Screen name="Profile" component={ProfileScreen} />
             <LoginStack.Screen name="MyLocation" component={MyLocationScreen} />
             <LoginStack.Screen name="ProfileUpdate" component={ProfileUpdateScreen} />
+            <LoginStack.Screen name="Shops" component={ShopScreen} />
           </LoginStack.Navigator>
         )}
       </NavigationContainer>
