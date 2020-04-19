@@ -382,7 +382,7 @@ class ShopScreen extends React.Component {
         </MapView>
 <Text>Shops List:</Text>
 		{this.state.markers.map(marker => (
-    <Text>Name: {marker.name} ZipCode: {marker.location.zip_code} Distance: {marker.distance}</Text>
+    <Text>Name: {marker.name} ZipCode: {marker.location.zip_code} Distance: {marker.distance} meters</Text>
 	
   ))}
 			
