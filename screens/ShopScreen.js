@@ -351,8 +351,9 @@ class ShopScreen extends React.Component {
       coordinate={marker.coordinates}
       title={marker.title}
     />
+	
   ))}
-		
+	 	
   <MapView.Marker
     coordinate={{ "latitude": this.state.location.coords.latitude,   
     "longitude": this.state.location.coords.longitude }}
@@ -360,13 +361,13 @@ class ShopScreen extends React.Component {
     draggable />
 	
         </MapView>
+<Text>Shops List:</Text>
+		{this.state.markers.map(marker => (
+    <Text>{marker.name}</Text>
+	
+  ))}
 			
-		<Text style={styles.bottomBarContent}>
-      Distance traveled: {parseFloat(this.state.distanceTravelled).toFixed(2)} km
-    </Text>
-	<Text style={styles.bottomBarContent}>
-     Speed: {parseFloat(this.state.speed).toFixed(2)} km/hr
-    </Text>
+	
 	
 			
 			  <View style={styles.buttonContainer}>
