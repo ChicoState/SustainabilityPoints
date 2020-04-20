@@ -24,6 +24,8 @@ const LATITUDE_DELTA = 0.009;
 const LONGITUDE_DELTA = 0.009;
 const LATITUDE = 37.78825;
 const LONGITUDE = -122.4324;
+var geoLoc;
+var watchID;
 
 class MyLocationScreen extends React.Component {
 	state = {
@@ -51,40 +53,7 @@ class MyLocationScreen extends React.Component {
 		let daily_distance;
 		this.currentUser = await  Firebase.auth().currentUser;
 
-		this.watchID = navigator.geolocation.watchPosition(
-			  
-			position => {
-			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
-			  const { latitude, longitude } = position.coords;
-			 // console.log("latitude2-"+latitude);
-			  const newCoordinate = {
-				latitude,
-				longitude
-			  };
-			  if (Platform.OS === "android") {
-				if (this.marker) {
-				  this.marker._component.animateMarkerToCoordinate(
-					newCoordinate,
-					500
-				  );
-				 }
-			   } else {
-				 coordinate.timing(newCoordinate).start();
-			   }
-			   this.setState({
-				 latitude,
-				 longitude,
-				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
-				 distanceTravelled:
-				 distanceTravelled +  this.calcDistance(newCoordinate),
-				 speed: position.coords.speed,
-				 prevLatLng: newCoordinate
-			   });
-
-			 },
-			 error => console.log(error),
-			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
-		  );
+		
 
 		 
 	  }
@@ -172,8 +141,8 @@ class MyLocationScreen extends React.Component {
 			points_lifetime: current_points+haversine(prevLatLng, newLatLng) ,
 			displayName: this.currentUser.providerData[0].displayName,
 			email: this.currentUser.providerData[0].email,
-			distance_today: today == last_logged_in_date ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
-			last_logged_in : new Date().getDate(),
+			distance_today: today == last_loggedin ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
+			last_logged_in : new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear(),
 			uid: this.currentUser.uid
 
 	
@@ -190,8 +159,65 @@ class MyLocationScreen extends React.Component {
 	  };
 	
 	 
-	
+	  start_tracking = () => {
+		if(navigator.geolocation){
+			geoLoc = navigator.geolocation;
+		watchID = geoLoc.watchPosition(
+			  
+			position => {
+			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
+			  const { latitude, longitude } = position.coords;
+			 // console.log("latitude2-"+latitude);
+			  const newCoordinate = {
+				latitude,
+				longitude
+			  };
+			  if (Platform.OS === "android") {
+				if (this.marker) {
+				  this.marker._component.animateMarkerToCoordinate(
+					newCoordinate,
+					500
+				  );
+				 }
+			   } else {
+				 coordinate.timing(newCoordinate).start();
+			   }
+			   this.setState({
+				 latitude,
+				 longitude,
+				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
+				 distanceTravelled:
+				 distanceTravelled +  this.calcDistance(newCoordinate),
+				 speed: position.coords.speed,
+				 prevLatLng: newCoordinate
+			   });
+
+			 },
+			 error => console.log(error),
+			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
+		  );
+			}
+	  }
 		
+	  stop_tracking = () => {
+		//navigator.geolocation.clearWatch(this.watchId);
+		geoLoc.clearWatch(watchID);
+		 //this.start_tracking.remove();
+		//this.start_tracking = null;
+
+	}
+
+	test_start_tracking = () => {
+
+
+	}
+
+
+	test_stop_tracking = () => {
+
+
+	}
+
 	render() {
 	
 		return (
@@ -217,6 +243,12 @@ class MyLocationScreen extends React.Component {
      Speed: {parseFloat(this.state.speed).toFixed(2)} km/hr
     </Text>
 	
+	<CustomButton
+			style={{marginBottom: 10}}
+			title='Start Tracking'  onPress={this.start_tracking}  />
+			<CustomButton
+			style={{marginBottom: 10}}
+			title='Stop Tracking' onPress={this.stop_tracking}   />
 			
 			  <View style={styles.buttonContainer}>
   <TouchableOpacity style={[styles.bubble, styles.button]}>
