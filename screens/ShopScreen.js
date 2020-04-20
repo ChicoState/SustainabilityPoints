@@ -159,7 +159,7 @@ class ShopScreen extends React.Component {
 				 prevLatLng: newCoordinate
 			   });
 
-			  // console.log("cooo4");
+			  console.log("cooo4");
 			   const config = {
 				 headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
 				 params: {
@@ -181,8 +181,8 @@ class ShopScreen extends React.Component {
 
 				  this.state.markers.sort(function(a,b) { return parseInt(a.distance)-parseInt(b.distance)});
 
-			//	console.log("markers2");
-			//	  console.log(this.state.markers);
+				console.log("markers2");
+			  console.log(this.state.markers);
 			   })
 			   .catch(error => {
 				 console.log(error);
@@ -285,8 +285,8 @@ class ShopScreen extends React.Component {
 				markers: responseJson.data.businesses.map(x => x),
 			  });
 			  this.state.markers.sort(function(a,b) { return parseInt(a.distance)-parseInt(b.distance)});
-			//  console.log("markers1");
-			  //console.log(this.state.markers);
+			 console.log("markers1");
+			  console.log(this.state.markers);
 		  })
 		  .catch(error => {
 			console.log(error);
@@ -382,7 +382,7 @@ class ShopScreen extends React.Component {
         </MapView>
 <Text>Shops List:</Text>
 		{this.state.markers.map(marker => (
-    <Text>Name: {marker.name} ZipCode: {marker.location.zip_code} Distance: {marker.distance} meters</Text>
+    <Text>Name: {marker.name} , City: {marker.location.city} , State: {marker.location.state} , Street Address: {marker.location.address1} , ZipCode: {marker.location.zip_code} , Distance: {marker.distance} meters </Text>
 	
   ))}
 			
