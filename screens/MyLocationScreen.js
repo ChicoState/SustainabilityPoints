@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {Pedometer} from 'expo-sensors';
 import * as Location from 'expo-location';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getUser } from '../actions/user'
 import Firebase, { db }from '../apis/Firebase'
 import * as Permissions from 'expo-permissions';
 import MapView, {
@@ -52,10 +54,45 @@ class MyLocationScreen extends React.Component {
 		let last_loggedin;
 		let daily_distance;
 		this.currentUser = await  Firebase.auth().currentUser;
+/*
+		if(navigator.geolocation){
+			geoLoc = navigator.geolocation;
+		watchID = geoLoc.watchPosition(
+			  
+			position => {
+			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
+			  const { latitude, longitude } = position.coords;
+			 // console.log("latitude2-"+latitude);
+			  const newCoordinate = {
+				latitude,
+				longitude
+			  };
+			  if (Platform.OS === "android") {
+				if (this.marker) {
+				  this.marker._component.animateMarkerToCoordinate(
+					newCoordinate,
+					500
+				  );
+				 }
+			   } else {
+				 coordinate.timing(newCoordinate).start();
+			   }
+			   this.setState({
+				 latitude,
+				 longitude,
+				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
+				 distanceTravelled: distanceTravelled +  this.calcDistance(newCoordinate),
+				 speed: position.coords.speed,
+				 prevLatLng: newCoordinate
+			   });
 
-		
+			 },
+			 error => console.log(error),
+			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
+		  );
+			}
 
-		 
+		 */
 	  }
 	  
 	  _handleMapRegionChange = mapRegion => {
@@ -91,7 +128,7 @@ class MyLocationScreen extends React.Component {
 
 	   }
 	 
-	   console.log("chii");
+	   console.log("checks_check");
 	   //alert("chi");
 	   let location = await Location.getCurrentPositionAsync({});
 	   //alert(location.coords.latitude);
@@ -117,43 +154,34 @@ class MyLocationScreen extends React.Component {
 			current_points = this.props.user.points_current;
 			last_loggedin = this.props.user.last_logged_in;
 			daily_distance = this.props.user.distance_today;
-
+		
 			console.log("current_points-"+current_points);
 		console.log("todaycheck-"+last_loggedin);
-		let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
-		let distance_today_val = 0;
-		if(todays_date == last_loggedin){
-			console.log("its todayy");
-		}
-		else{
-			console.log("its not today")
-		}
+		//this.props.getUser(this.props.user.uid)
+		//console.log("updated_distance"+this.props.user.distance_today );
+			console.log("daily_distance2-"+daily_distance);
 		
+			if(this.state.speed<15 && haversine(prevLatLng, newLatLng) > 0){
+	/*
+				db.collection("users").doc(this.props.user.uid).set({
+					points_current: current_points+haversine(prevLatLng, newLatLng),
+					points_lifetime: current_points+haversine(prevLatLng, newLatLng) ,
+					displayName: this.currentUser.providerData[0].displayName,
+					email: this.currentUser.providerData[0].email,
+					distance_today: todays_date == last_loggedin ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
+					last_logged_in : new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear(),
+					uid: this.currentUser.uid
 		
-
-		
-	
-		
-		if(this.state.speed<15 && haversine(prevLatLng, newLatLng) > 0){
 			
-		db.collection("users").doc(this.currentUser.uid).set({
-			points_current: current_points+haversine(prevLatLng, newLatLng),
-			points_lifetime: current_points+haversine(prevLatLng, newLatLng) ,
-			displayName: this.currentUser.providerData[0].displayName,
-			email: this.currentUser.providerData[0].email,
-			distance_today: today == last_loggedin ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
-			last_logged_in : new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear(),
-			uid: this.currentUser.uid
-
-	
-		})
-		.then(function() {
-			console.log("Document successfully written!");
-		})
-		.catch(function(error) {
-			console.error("Error writing document: ", error);
-		})
-	}
+				})
+				.then(function() {
+					console.log("Document successfully written!");
+				})
+				.catch(function(error) {
+					console.error("Error writing document: ", error);
+				})
+				*/
+			}
 		
 		return haversine(prevLatLng, newLatLng) || 0;
 	  };
@@ -167,7 +195,7 @@ class MyLocationScreen extends React.Component {
 			position => {
 			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
 			  const { latitude, longitude } = position.coords;
-			 // console.log("latitude2-"+latitude);
+			 console.log("latitude5	-"+latitude);
 			  const newCoordinate = {
 				latitude,
 				longitude
@@ -183,15 +211,23 @@ class MyLocationScreen extends React.Component {
 				 coordinate.timing(newCoordinate).start();
 			   }
 			   this.setState({
+				latitude,
+				longitude,
+				routeCoordinates: routeCoordinates.concat([newCoordinate]),
+				distanceTravelled: distanceTravelled +  this.calcDistance(newCoordinate),
+				speed: position.coords.speed,
+				//prevLatLng: position.coords
+			   prevLatLng: newCoordinate
+			   });
+			/*   this.setState({
 				 latitude,
 				 longitude,
 				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
-				 distanceTravelled:
-				 distanceTravelled +  this.calcDistance(newCoordinate),
+				 distanceTravelled: distanceTravelled +  this.calcDistance(newCoordinate),
 				 speed: position.coords.speed,
 				 prevLatLng: newCoordinate
 			   });
-
+*/
 			 },
 			 error => console.log(error),
 			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
@@ -204,6 +240,7 @@ class MyLocationScreen extends React.Component {
 		geoLoc.clearWatch(watchID);
 		 //this.start_tracking.remove();
 		//this.start_tracking = null;
+		console.log("stop tracking");
 
 	}
 
@@ -310,10 +347,19 @@ const styles = StyleSheet.create({
 	  height: Dimensions.get('window').height/2,
 	},
   });
+
+  const mapDispatchToProps = dispatch => {
+	return bindActionCreators({ getUser}, dispatch)
+  }
+  
   const mapStateToProps = state => {
 	return {
 		user: state.user
 	}
 }
-export default connect(mapStateToProps)(MyLocationScreen)
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(MyLocationScreen)
 
