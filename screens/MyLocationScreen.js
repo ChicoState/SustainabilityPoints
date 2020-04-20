@@ -54,45 +54,10 @@ class MyLocationScreen extends React.Component {
 		let last_loggedin;
 		let daily_distance;
 		this.currentUser = await  Firebase.auth().currentUser;
-/*
-		if(navigator.geolocation){
-			geoLoc = navigator.geolocation;
-		watchID = geoLoc.watchPosition(
-			  
-			position => {
-			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
-			  const { latitude, longitude } = position.coords;
-			 // console.log("latitude2-"+latitude);
-			  const newCoordinate = {
-				latitude,
-				longitude
-			  };
-			  if (Platform.OS === "android") {
-				if (this.marker) {
-				  this.marker._component.animateMarkerToCoordinate(
-					newCoordinate,
-					500
-				  );
-				 }
-			   } else {
-				 coordinate.timing(newCoordinate).start();
-			   }
-			   this.setState({
-				 latitude,
-				 longitude,
-				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
-				 distanceTravelled: distanceTravelled +  this.calcDistance(newCoordinate),
-				 speed: position.coords.speed,
-				 prevLatLng: newCoordinate
-			   });
 
-			 },
-			 error => console.log(error),
-			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
-		  );
-			}
+		
 
-		 */
+		 
 	  }
 	  
 	  _handleMapRegionChange = mapRegion => {
@@ -128,7 +93,7 @@ class MyLocationScreen extends React.Component {
 
 	   }
 	 
-	   console.log("checks_check");
+	   console.log("chii");
 	   //alert("chi");
 	   let location = await Location.getCurrentPositionAsync({});
 	   //alert(location.coords.latitude);
@@ -157,12 +122,13 @@ class MyLocationScreen extends React.Component {
 		
 			console.log("current_points-"+current_points);
 		console.log("todaycheck-"+last_loggedin);
-		//this.props.getUser(this.props.user.uid)
-		//console.log("updated_distance"+this.props.user.distance_today );
+		this.props.getUser(this.props.user.uid)
+		console.log("updated_distance"+this.props.user.distance_today );
 			console.log("daily_distance2-"+daily_distance);
 		
+			let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
 			if(this.state.speed<15 && haversine(prevLatLng, newLatLng) > 0){
-	/*
+			
 				db.collection("users").doc(this.props.user.uid).set({
 					points_current: current_points+haversine(prevLatLng, newLatLng),
 					points_lifetime: current_points+haversine(prevLatLng, newLatLng) ,
@@ -180,7 +146,6 @@ class MyLocationScreen extends React.Component {
 				.catch(function(error) {
 					console.error("Error writing document: ", error);
 				})
-				*/
 			}
 		
 		return haversine(prevLatLng, newLatLng) || 0;
@@ -195,7 +160,7 @@ class MyLocationScreen extends React.Component {
 			position => {
 			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
 			  const { latitude, longitude } = position.coords;
-			 console.log("latitude5	-"+latitude);
+			 // console.log("latitude2-"+latitude);
 			  const newCoordinate = {
 				latitude,
 				longitude
@@ -211,23 +176,15 @@ class MyLocationScreen extends React.Component {
 				 coordinate.timing(newCoordinate).start();
 			   }
 			   this.setState({
-				latitude,
-				longitude,
-				routeCoordinates: routeCoordinates.concat([newCoordinate]),
-				distanceTravelled: distanceTravelled +  this.calcDistance(newCoordinate),
-				speed: position.coords.speed,
-				//prevLatLng: position.coords
-			   prevLatLng: newCoordinate
-			   });
-			/*   this.setState({
 				 latitude,
 				 longitude,
 				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
-				 distanceTravelled: distanceTravelled +  this.calcDistance(newCoordinate),
+				 distanceTravelled:
+				 distanceTravelled +  this.calcDistance(newCoordinate),
 				 speed: position.coords.speed,
 				 prevLatLng: newCoordinate
 			   });
-*/
+
 			 },
 			 error => console.log(error),
 			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
