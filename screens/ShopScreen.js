@@ -381,8 +381,8 @@ class ShopScreen extends React.Component {
 	
         </MapView>
 <Text>Shops List:</Text>
-		{this.state.markers.map(marker => (
-    <Text>Name: {marker.name} , City: {marker.location.city} , State: {marker.location.state} , Street Address: {marker.location.address1} , ZipCode: {marker.location.zip_code} , Distance: {marker.distance} meters </Text>
+		{this.state.markers.map((marker, index)  => (
+    <Text>Name: {marker.name} , City: {marker.location.city} , State: {marker.location.state} , Street Address: {marker.location.address1} , ZipCode: {marker.location.zip_code} , Distance: {marker.distance} meters, Keywords: {marker.categories.map((j, index2) => <Text>{index2+1}. {j.title} </Text>)}</Text>
 	
   ))}
 			
