@@ -272,7 +272,7 @@ class ShopScreen extends React.Component {
 			   //.then((data) => {
 				.then(responseJson => {
 					responseJson.data.businesses.sort((a, b) => a.distance - b.distance);
-			data.sort((a, b) => a.distance - b.distance);
+			//data.sort((a, b) => a.distance - b.distance);
 			this.setState({
 				markers: responseJson.data.businesses.map(x => x),
 			  });
