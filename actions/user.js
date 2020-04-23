@@ -6,6 +6,20 @@ export const UPDATE_DISPLAYNAME = 'UPDATE_DISPLAYNAME'
 export const UPDATE_ORGNAME = 'UPDATE_ORGNAME'
 export const LOGIN = 'LOGIN'
 export const SIGNUP = 'SIGNUP'
+export const LOGINTOKEN = 'LOGINTOKEN'
+export const SIGNOUT = 'SIGNOUT'
+
+export const LoginToken = () => (
+    {
+        type: LOGINTOKEN
+    }
+);
+
+export const SignOut = () => (
+    {
+        type: SIGNOUT
+    }
+);
 
 export const updateEmail = email => {
     return {

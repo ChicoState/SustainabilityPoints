@@ -149,7 +149,8 @@ class ShopScreen extends React.Component {
 				 coordinate.timing(newCoordinate).start();
 			   }
 			   
-	
+			
+
 			  console.log("cooo4");
 			   const config = {
 				 headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
@@ -271,7 +272,7 @@ class ShopScreen extends React.Component {
 			   //.then((data) => {
 				.then(responseJson => {
 					responseJson.data.businesses.sort((a, b) => a.distance - b.distance);
-			data.sort((a, b) => a.distance - b.distance);
+			//data.sort((a, b) => a.distance - b.distance);
 			this.setState({
 				markers: responseJson.data.businesses.map(x => x),
 			  });
@@ -287,7 +288,8 @@ class ShopScreen extends React.Component {
 	
 	
 
-
+	
+	
 	 
 	
 		
