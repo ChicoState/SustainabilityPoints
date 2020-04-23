@@ -335,7 +335,7 @@ class ShopScreen extends React.Component {
 			points_lifetime: current_points+haversine(prevLatLng, newLatLng) ,
 			displayName: this.currentUser.providerData[0].displayName,
 			email: this.currentUser.providerData[0].email,
-			distance_today: todays_date == last_logged_in ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
+			distance_today: todays_date == last_loggedin ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
 			last_logged_in : new Date().getDate(),
 			uid: this.currentUser.uid
 
