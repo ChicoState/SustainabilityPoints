@@ -36,6 +36,7 @@ class MyLocationScreen extends React.Component {
 		routeCoordinates: [],
 	distanceTravelled: 0,
 	speed: 0,
+	myDistance: 0,
     prevLatLng: {},
 		location: {coords: { latitude: 37.78825, longitude: -122.4324}},
 		coordinate: new AnimatedRegion({
@@ -46,7 +47,8 @@ class MyLocationScreen extends React.Component {
 	
 	 async componentDidMount() {
 		  //console.log("yeah");
-		
+		//  this.currentUser = await Firebase.auth().currentUser
+
 		//  console.log("bye"+this.watchID);
 		this._getLocationAsync();
 
@@ -55,7 +57,7 @@ class MyLocationScreen extends React.Component {
 		let daily_distance;
 		this.currentUser = await  Firebase.auth().currentUser;
 
-		
+		this.setState({myDistance: this.props.user.distance_today});
 
 		 
 	  }
@@ -113,28 +115,46 @@ class MyLocationScreen extends React.Component {
 		let today = new Date();
 		//let last_logged_in_date = new Date(last_loggedin);
 		//console.log("todayys-"+Firebase.firestore.Timestamp.fromDate(new Date()));
-		console.log("uid-"+this.props.user.uid);
+		console.log("uid-"+this.currentUser.uid);
 
 		
 			current_points = this.props.user.points_current;
 			last_loggedin = this.props.user.last_logged_in;
 			daily_distance = this.props.user.distance_today;
-		
+			this.props.getUser(this.currentUser.uid);
 			console.log("current_points-"+current_points);
 		console.log("todaycheck-"+last_loggedin);
-		this.props.getUser(this.props.user.uid)
-		console.log("updated_distance"+this.props.user.distance_today );
+		//this.props.getUser(this.currentUser.uid)
+		console.log("check_updated_distance"+this.props.user.distance_today );
+
+		console.log("updated_distance"+this.currentUser.distance_today );
 			console.log("daily_distance2-"+daily_distance);
 		
+
 			let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
+			
 			if(this.state.speed<15 && haversine(prevLatLng, newLatLng) > 0){
 			
-				db.collection("users").doc(this.props.user.uid).set({
+
+				if(todays_date==last_loggedin){
+					console.log("It's today");
+					this.setState({myDistance: this.props.user.distance_today+haversine(prevLatLng, newLatLng)});
+
+				}
+				else {
+					this.setState({myDistance: haversine(prevLatLng, newLatLng)});
+					console.log("It's not today");
+				}
+
+
+				db.collection("users").doc(this.currentUser.uid).update({
 					points_current: current_points+haversine(prevLatLng, newLatLng),
 					points_lifetime: current_points+haversine(prevLatLng, newLatLng) ,
+					//points_current: haversine(prevLatLng, newLatLng),
+					//points_lifetime: haversine(prevLatLng, newLatLng) ,
 					displayName: this.currentUser.providerData[0].displayName,
 					email: this.currentUser.providerData[0].email,
-					distance_today: todays_date == last_loggedin ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
+					distance_today: todays_date == last_loggedin && daily_distance >= 0 ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
 					last_logged_in : new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear(),
 					uid: this.currentUser.uid
 		
@@ -236,7 +256,8 @@ class MyLocationScreen extends React.Component {
 	<Text style={styles.bottomBarContent}>
      Speed: {parseFloat(this.state.speed).toFixed(2)} km/hr
     </Text>
-	
+	<Text style={styles.userInfo}>Today's Total Distance: {this.state.myDistance} </Text>
+
 	<CustomButton
 			style={{marginBottom: 10}}
 			title='Start Tracking'  onPress={this.start_tracking}  />
