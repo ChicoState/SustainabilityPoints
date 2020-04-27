@@ -28,26 +28,9 @@ class LoginScreen extends React.Component {
       if (user) {
         
         if (this.props.user != null) {
-          let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
-  
+   
     this.props.getUser(user.uid);   
           this.props.LoginToken();
-          if(todays_date!=this.props.user.last_logged_in){
-            db.collection("users").doc(user.uid).update({
-              distance_today: 0,
-            }).then(function() {
-              console.log("Document successfully updated!");
-      
-          })
-          .catch(function(error) {
-              // The document probably doesn't exist.
-              console.error("Error updating document: ", error);
-          });
-      
-          }
-          else{
-            console.log("Its today");   
-          }
         }
       }
     });
