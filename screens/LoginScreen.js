@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
-import Firebase from "./../apis/Firebase";
+import Firebase, { db } from "../apis/Firebase";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {
@@ -29,24 +29,25 @@ class LoginScreen extends React.Component {
         
         if (this.props.user != null) {
           let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
-    if(todays_date!=this.props.user.last_logged_in){
-      db.collection("users").doc(user.uid).update({
-        distance_today: 0,
-      }).then(function() {
-        console.log("Document successfully updated!");
-
-    })
-    .catch(function(error) {
-        // The document probably doesn't exist.
-        console.error("Error updating document: ", error);
-    });
-
-    }
-    else{
-      console.log("Its today");   
-    }
+  
     this.props.getUser(user.uid);   
           this.props.LoginToken();
+          if(todays_date!=this.props.user.last_logged_in){
+            db.collection("users").doc(user.uid).update({
+              distance_today: 5,
+            }).then(function() {
+              console.log("Document successfully updated!");
+      
+          })
+          .catch(function(error) {
+              // The document probably doesn't exist.
+              console.error("Error updating document: ", error);
+          });
+      
+          }
+          else{
+            console.log("Its today");   
+          }
         }
       }
     });
