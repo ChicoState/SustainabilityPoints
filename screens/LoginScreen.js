@@ -34,7 +34,7 @@ class LoginScreen extends React.Component {
           this.props.LoginToken();
           if(todays_date!=this.props.user.last_logged_in){
             db.collection("users").doc(user.uid).update({
-              distance_today: 5,
+              distance_today: 0,
             }).then(function() {
               console.log("Document successfully updated!");
       
