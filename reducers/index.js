@@ -4,6 +4,7 @@ import { combineReducers } from "redux";
 import {
   LOGIN,
   SIGNUP,
+  GETUSER,
   UPDATE_EMAIL,
   UPDATE_PASSWORD,
   UPDATE_DISPLAYNAME,
@@ -26,6 +27,8 @@ const user = (state = {}, action) => {
       return { ...state, displayname: action.payload };
     case UPDATE_ORGNAME:
       return { ...state, orgname: action.payload };
+    case GETUSER:
+      return action.payload;
     default:
       return state;
   }

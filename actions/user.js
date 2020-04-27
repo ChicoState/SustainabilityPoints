@@ -8,6 +8,7 @@ export const LOGIN = 'LOGIN'
 export const SIGNUP = 'SIGNUP'
 export const LOGINTOKEN = 'LOGINTOKEN'
 export const SIGNOUT = 'SIGNOUT'
+export const GETUSER = 'GETUSER'
 
 export const LoginToken = () => (
     {
