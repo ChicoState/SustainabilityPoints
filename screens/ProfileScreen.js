@@ -8,13 +8,45 @@ import { Notifications } from "expo";
 import * as Permissions from "expo-permissions";
 import { CustomButton } from "../components/CustomButton.js";
 import { bindActionCreators } from "redux";
-import { SignOut } from "../actions/user";
+import { SignOut, getUser } from "../actions/user";
 
 class ProfileScreen extends React.Component {
   handleSignout = () => {
     Firebase.auth().signOut();
 	this.props.SignOut();
   };
+
+  checkTodaysDistanceAsync = async () => {
+    await  db.collection("users").doc(this.currentUser.uid).get().then(function(doc) {
+      if (doc.exists) {
+        last_logged_in_date = doc.data().last_logged_in;
+        console.log("Document data:", doc.data());
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+       });
+    let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
+    console.log("last_logged_in_date4"+last_logged_in_date)
+    if(todays_date!=last_logged_in_date){
+      console.log("Its not today");   
+      db.collection("users").doc(this.currentUser.uid).update({
+        distance_today: 0,
+      }).then(function() {
+        console.log("Document successfully updated!");
+
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+
+    }
+    else{
+      console.log("Its today");   
+    }
+    this.props.getUser(this.currentUser.uid);  
+  }
 
   registerForPushNotificationsAsync = async () => {
     const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
@@ -37,7 +69,7 @@ class ProfileScreen extends React.Component {
       console.log("TOKEN", token);
       console.log("USER", db.collection("users"));
 
-      console.log(this.currentUser);
+      console.log(this.props.user.uid);
       db.collection("users").doc(this.props.user.uid).update({
         pushToken: token,
       });
@@ -47,7 +79,12 @@ class ProfileScreen extends React.Component {
   };
 
   async componentDidMount() {
+    let last_logged_in_date;
+      
+
     this.currentUser = await Firebase.auth().currentUser;
+    
+    await this.checkTodaysDistanceAsync();
     await this.registerForPushNotificationsAsync();
   }
 
@@ -162,7 +199,7 @@ const styles = StyleSheet.create({
 });
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ SignOut }, dispatch);
+  return bindActionCreators({ SignOut, getUser }, dispatch);
 };
 
 const mapStateToProps = (state) => {
