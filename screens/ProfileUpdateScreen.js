@@ -2,10 +2,13 @@ import React from 'react';
 import { Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { updateDisplayName, updateOrgName, updateProfile } from '../actions/user'
+import { updateDisplayName, updateOrgName, updateProfile, getUser } from '../actions/user'
 import { Colors, Spacing, Typography } from '../styles'
 
 class ProfileUpdateScreen extends React.Component {
+	componentDidMount = () => {
+		
+	  };
 
 	render() {
 		return (
@@ -37,11 +40,16 @@ class ProfileUpdateScreen extends React.Component {
 				onChangeText={orgname => this.props.updateOrgName( orgname )}
 			  />
 				<Button title='UpdateProfile' onPress={this.props.updateProfile} />
-				{/* <Button title='Cancel' onPress={this.Cancel} /> */}
+				<Button title='Cancel' onPress={() => this.Cancel()} />
 			</View>
 		)
-		}
-
+	}
+	
+	Cancel() {
+		this.props.getUser(this.props.user.uid);
+		const { navigation } = this.props;
+		navigation.navigate("Profile");
+	}
 }
 
 const styles = StyleSheet.create({
@@ -79,7 +87,7 @@ const styles = StyleSheet.create({
 })
 
 const mapDispatchToProps = dispatch => {
-	return bindActionCreators({ updateDisplayName, updateOrgName, updateProfile }, dispatch)
+	return bindActionCreators({ updateDisplayName, updateOrgName, updateProfile, getUser }, dispatch)
   }
   
   const mapStateToProps = state => {
