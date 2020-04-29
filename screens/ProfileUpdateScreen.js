@@ -7,7 +7,8 @@ import { Colors, Spacing, Typography } from '../styles'
 
 class ProfileUpdateScreen extends React.Component {
 	componentDidMount = () => {
-		
+		this.props.updateDisplayName( this.props.user.displayName )
+		this.props.updateOrgName( this.props.user.org_name )
 	  };
 
 	render() {
@@ -19,7 +20,7 @@ class ProfileUpdateScreen extends React.Component {
 						source={{uri: 'https://i.kym-cdn.com/entries/icons/original/000/020/260/nilesyy-nilez.jpg'}}/>
 
 						{this.props.user.displayName ? <Text style={styles.name}> {this.props.user.displayName} </Text> : <Text style={styles.name}> {this.props.user.email} </Text> }
-						<Text style={styles.userInfo}> {this.props.user.org_name} </Text>
+						{this.props.user.org_name ? <Text style={styles.userInfo}> {this.props.user.org_name} </Text> : <Text style={styles.name}>  </Text> }
 						<Text style={styles.userInfo}>Sustainability Points: {this.props.user.points_current} </Text>
 					</View>
 				</View>
@@ -29,6 +30,7 @@ class ProfileUpdateScreen extends React.Component {
 				placeholderTextColor="#4D786E"
 				style={styles.textbox}
 				autoCapitalize="none"
+				defaultValue={this.props.user.displayName}
 				onChangeText={displayname => this.props.updateDisplayName( displayname )}
 			  />
   
@@ -37,14 +39,19 @@ class ProfileUpdateScreen extends React.Component {
 				placeholderTextColor="#4D786E"
 				style={styles.textbox}
 				autoCapitalize="none"
+				defaultValue={this.props.user.org_name}
 				onChangeText={orgname => this.props.updateOrgName( orgname )}
 			  />
-				<Button title='UpdateProfile' onPress={this.props.updateProfile} />
+				<Button title='UpdateProfile' onPress={() => this.UpdateProfile()} />
 				<Button title='Cancel' onPress={() => this.Cancel()} />
 			</View>
 		)
 	}
-	
+	UpdateProfile() {
+		this.props.updateProfile();
+		const { navigation } = this.props;
+		navigation.navigate("Profile");
+	}
 	Cancel() {
 		this.props.getUser(this.props.user.uid);
 		const { navigation } = this.props;
