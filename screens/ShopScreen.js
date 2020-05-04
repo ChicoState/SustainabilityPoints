@@ -79,6 +79,7 @@ class ShopScreen extends React.Component {
 		routeCoordinates: [],
 	distanceTravelled: 0,
 	speed: 0,
+	current_zipcode: null,
 	markers: [],
 	busArr: [],
 	markers2: [],
@@ -164,7 +165,7 @@ class ShopScreen extends React.Component {
 				longitude
 			  };
 			  console.log(names);
-			  console.log("red");
+			  console.log("reddd");
 			 
 			  //console.log(index+key.city);
 			  const config2 = {
@@ -173,6 +174,7 @@ class ShopScreen extends React.Component {
 					latitude: latitude, 
 					longitude: longitude, 
 					limit: 10,
+					sort_by: "distance",
 					radius: 10000
 				}
 			  };
@@ -186,9 +188,11 @@ class ShopScreen extends React.Component {
 				this.setState({
 					markers: responseJson.data.businesses.map(x => x),
 				  });
+				  console.log(responseJson.data.businesses[0]);
+				  this.setState({ current_zipcode: responseJson.data.businesses[0].location.zip_code });
 				  this.state.markers.sort(function(a,b) { return parseInt(a.distance)-parseInt(b.distance)});
 				 console.log("markers1");
-				 console.log(this.state.markers);
+				// console.log(this.state.markers);
 			  })
 			  .catch(error => {
 				console.log(error);
@@ -205,7 +209,7 @@ class ShopScreen extends React.Component {
 				 coordinate.timing(newCoordinate).start();
 			   }
 			   
-			
+		//	console.log("zip_code->"+this.state.current_zipcode);
 
 			  console.log("cooo4");
 			 
@@ -326,12 +330,15 @@ class ShopScreen extends React.Component {
 <Text>Shops List:</Text>
 	
 
-			{this.state.busArr.map((key, index)  => (
-    <Text>Name: {key.name} , City: {key.city} , State: {key.state} , Street Address: {key.street} , ZipCode: {key.zip} </Text>
 	
-  ))}
 	
-			
+	{this.state.busArr.map((key, index) => {
+    if (this.state.current_zipcode == key.zip) {
+         return (
+			<Text>Name: {key.name} , City: {key.city} , State: {key.state} , Street Address: {key.street} , ZipCode: {key.zip}</Text>
+      )}
+    }
+   )}
 			  <View style={styles.buttonContainer}>
   <TouchableOpacity style={[styles.bubble, styles.button]}>
    
