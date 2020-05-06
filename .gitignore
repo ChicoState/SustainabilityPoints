@@ -14,4 +14,4 @@ web-report/
 
 .env
 
-test.html
+test*.html
