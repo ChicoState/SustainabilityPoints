@@ -79,7 +79,10 @@ class ShopScreen extends React.Component {
 		routeCoordinates: [],
 	distanceTravelled: 0,
 	speed: 0,
+	current_zipcode: null,
 	markers: [],
+	busArr: [],
+	markers2: [],
     prevLatLng: {},
 		location: {coords: { latitude: 37.78825, longitude: -122.4324}},
 		coordinate: new AnimatedRegion({
@@ -111,7 +114,32 @@ class ShopScreen extends React.Component {
 		}
 	 async componentDidMount() {
 		  //console.log("yeah");
-	
+		  const busArr = [];
+		  const names = [];
+		  db.collection("business").get().then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc) {
+				// doc.data() is never undefined for query doc snapshots
+				busArr.push({
+					key: doc.id,
+					  city: doc.data().address.city,
+					  number: doc.data().address.number,
+					  state: doc.data().address.state,
+					  street: doc.data().address.street,
+					  zip: doc.data().address.zip,
+					  name: doc.data().name,
+					  keywords: doc.data().keywords
+				  });
+				  names.push(doc.data().name);
+			//	this.state.markers2.push(doc.data().address.zip);
+			
+			//	console.log(doc.id, " => ", doc.data());
+			
+			});
+		});
+		this.setState({
+			busArr:busArr
+		 });
+		
 		 
 		//  console.log("bye"+this.watchID);
 		this._getLocationAsync();
@@ -136,8 +164,40 @@ class ShopScreen extends React.Component {
 				latitude,
 				longitude
 			  };
+			  console.log(names);
+			  console.log("reddd");
+			 
+			  //console.log(index+key.city);
+			  const config2 = {
+				headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
+				params: {
+					latitude: latitude, 
+					longitude: longitude, 
+					limit: 10,
+					sort_by: "distance",
+					radius: 10000
+				}
+			  };
+			 axios
+			  .get('https://api.yelp.com/v3/businesses/search', config2)
+			//.then((res) => res.json())
+				   //.then((data) => {
+					.then(responseJson => {
+						responseJson.data.businesses.sort((a, b) => a.distance - b.distance);
+				//data.sort((a, b) => a.distance - b.distance);
+				this.setState({
+					markers: responseJson.data.businesses.map(x => x),
+				  });
+				  console.log(responseJson.data.businesses[0]);
+				  this.setState({ current_zipcode: responseJson.data.businesses[0].location.zip_code });
+				  this.state.markers.sort(function(a,b) { return parseInt(a.distance)-parseInt(b.distance)});
+				 console.log("markers1");
+				// console.log(this.state.markers);
+			  })
+			  .catch(error => {
+				console.log(error);
+			  });
 
-			
 			  if (Platform.OS === "android") {
 				if (this.marker) {
 				  this.marker._component.animateMarkerToCoordinate(
@@ -149,36 +209,10 @@ class ShopScreen extends React.Component {
 				 coordinate.timing(newCoordinate).start();
 			   }
 			   
-			
+		//	console.log("zip_code->"+this.state.current_zipcode);
 
 			  console.log("cooo4");
-			   const config = {
-				 headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
-				 params: {
-					 latitude: latitude, 
-					 longitude: longitude, 
-					 limit: 10,
-				radius: 10000
-				 }
-			   };
-			 return axios
-			   .get('https://api.yelp.com/v3/businesses/search', config)
-			   //.then((res) => res.json())
-			   //.then((data) => {
-					 .then(responseJson => {
-						responseJson.data.businesses.sort((a, b) => a.distance - b.distance);
-				 this.setState({
-					 markers: responseJson.data.businesses.map(x => x),
-				   });
-
-				  this.state.markers.sort(function(a,b) { return parseInt(a.distance)-parseInt(b.distance)});
-
-				console.log("markers2");
-			  console.log(this.state.markers);
-			   })
-			   .catch(error => {
-				 console.log(error);
-			   });
+			 
 			 },
 			 error => console.log(error),
 			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
@@ -257,32 +291,7 @@ class ShopScreen extends React.Component {
 	   this.setState({ locationResult: JSON.stringify(location), location, });
 
 	  // console.log("yooo3");
-		  const config2 = {
-			headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
-			params: {
-				latitude: location.coords.latitude, 
-				longitude: location.coords.longitude, 
-				limit: 10,
-				radius: 10
-			}
-		  };
-		return axios
-		  .get('https://api.yelp.com/v3/businesses/search', config2)
-		//.then((res) => res.json())
-			   //.then((data) => {
-				.then(responseJson => {
-					responseJson.data.businesses.sort((a, b) => a.distance - b.distance);
-			//data.sort((a, b) => a.distance - b.distance);
-			this.setState({
-				markers: responseJson.data.businesses.map(x => x),
-			  });
-			  this.state.markers.sort(function(a,b) { return parseInt(a.distance)-parseInt(b.distance)});
-			 console.log("markers1");
-			  console.log(this.state.markers);
-		  })
-		  .catch(error => {
-			console.log(error);
-		  });
+		 
 
 	 };
 	
@@ -319,14 +328,17 @@ class ShopScreen extends React.Component {
 	
         </MapView>
 <Text>Shops List:</Text>
-		{this.state.markers.map((marker, index)  => (
-    <Text>Name: {marker.name} , City: {marker.location.city} , State: {marker.location.state} , Street Address: {marker.location.address1} , ZipCode: {marker.location.zip_code} , Distance: {marker.distance} meters, Keywords: {marker.categories.map((j, index2) => <Text>{index2+1}. {j.title} </Text>)}</Text>
 	
-  ))}
-			
+
 	
 	
-			
+	{this.state.busArr.map((key, index) => {
+    if (this.state.current_zipcode == key.zip) {
+         return (
+			<Text>Name: {key.name} , City: {key.city} , State: {key.state} , Street Address: {key.street} , ZipCode: {key.zip}</Text>
+      )}
+    }
+   )}
 			  <View style={styles.buttonContainer}>
   <TouchableOpacity style={[styles.bubble, styles.button]}>
    
