@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import logo from '../assets/SPplaceholder-02.png';
 import { CustomButton } from '../components/CustomButton.js'
-import * as Font from 'expo-font'
-import { Platform, Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View } from 'react-native';
+import { Alert, Image, TextInput, Button, StyleSheet, Text, View } from 'react-native';
 
 class LoginActivity extends React.Component {
 static navigationOptions = {

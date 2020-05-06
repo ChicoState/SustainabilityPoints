@@ -63,7 +63,7 @@ export const login = () => {
 }
 
 export const getUser = uid => {
-    return async (dispatch, getState) => {
+    return async (dispatch) => {
         try {
             const user = await db
                 .collection('users')

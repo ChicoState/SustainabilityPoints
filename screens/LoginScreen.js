@@ -5,12 +5,11 @@ import { Image, TextInput, Button, StyleSheet, Text, View } from "react-native";
 import {
   ScrollView,
   KeyboardAvoidingView,
-  Keyboard,
   Platform,
 } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
-import Firebase, { db } from "../apis/Firebase";
+import Firebase from "../apis/Firebase";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {

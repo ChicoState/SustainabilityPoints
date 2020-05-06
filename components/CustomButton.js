@@ -14,22 +14,21 @@ export const CustomButton = (props) => {
 
 const styles = StyleSheet.create({
     button: {
+        alignItems: 'center',
+        backgroundColor: '#2AC062',
+        borderRadius: 5,
         display: 'flex',
         height: 50,
-        borderRadius: 5,
         justifyContent: 'center',
-        alignItems: 'center',
-
-        backgroundColor: '#2AC062',
         shadowColor: '#2AC062',
-        shadowOpacity: 0.4,
         shadowOffset: { height: 10, width: 0 },
+        shadowOpacity: 0.4,
         shadowRadius: 20,
     },
 
     text: {
+        color: '#FFFFFF',
         fontSize: 16,
         textTransform: 'uppercase',
-        color: '#FFFFFF',
     },
 });
