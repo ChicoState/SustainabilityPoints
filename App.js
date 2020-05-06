@@ -7,6 +7,7 @@ import { decode, encode } from "base-64";
 import Navigator from "./navigation/Navigator.js";
 import store from "./navigation/store.js";
 
+
 if (!global.btoa) {
   global.btoa = encode;
 }

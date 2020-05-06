@@ -16,7 +16,7 @@ class ProfileUpdateScreen extends React.Component {
 			<View style={styles.container}>
 				<View style={styles.header}>
 					<View style={styles.headerContent}>
-						<Image style={styles.avatar}
+					<Image style={styles.avatar}
 						source={{uri: 'https://i.kym-cdn.com/entries/icons/original/000/020/260/nilesyy-nilez.jpg'}}/>
 
 						{this.props.user.displayName ? <Text style={styles.name}> {this.props.user.displayName} </Text> : <Text style={styles.name}> {this.props.user.email} </Text> }
@@ -62,6 +62,9 @@ class ProfileUpdateScreen extends React.Component {
 const styles = StyleSheet.create({
 	header:{
 		backgroundColor: "#00B09B",
+	},
+	settings: {
+		
 	},
 	headerContent:{
 		padding:30,

@@ -178,6 +178,11 @@ const styles = StyleSheet.create({
     padding: 30,
     alignItems: "center",
   },
+  settings: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+  },
   avatar: {
     width: 130,
     height: 130,
