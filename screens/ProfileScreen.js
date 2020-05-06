@@ -29,7 +29,7 @@ class ProfileScreen extends React.Component {
     let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
     console.log("last_logged_in_date4"+last_logged_in_date)
     if(todays_date!=last_logged_in_date){
-      console.log("Its not today");   
+      console.log("Its not today");
       db.collection("users").doc(this.currentUser.uid).update({
         distance_today: 0,
       }).then(function() {
@@ -43,9 +43,9 @@ class ProfileScreen extends React.Component {
 
     }
     else{
-      console.log("Its today");   
+      console.log("Its today");
     }
-    this.props.getUser(this.currentUser.uid);  
+    this.props.getUser(this.currentUser.uid);
   }
 
   registerForPushNotificationsAsync = async () => {
@@ -80,10 +80,10 @@ class ProfileScreen extends React.Component {
 
   async componentDidMount() {
     let last_logged_in_date;
-      
+
 
     this.currentUser = await Firebase.auth().currentUser;
-    
+
     await this.checkTodaysDistanceAsync();
     await this.registerForPushNotificationsAsync();
   }
@@ -122,12 +122,24 @@ class ProfileScreen extends React.Component {
               <Text style={styles.name}> {this.props.user.email} </Text>
             )}
             <Text style={styles.userInfo}> {this.props.user.org_name} </Text>
-            <Text style={styles.userInfo}>
-              Sustainability Points: {this.props.user.points_current}{" "}
-            </Text>
-            <Text style={styles.userInfo}>
-              Today's Distance: {this.props.user.distance_today}{" "}
-            </Text>
+
+
+            <View style={styles.statsContainer}>
+
+            <View style={styles.statsBox}>
+ <Text style={[styles.text, {fontSize: 24}]}>{Number(this.props.user.distance_today.toFixed(2))}{" "}</Text>
+  <Text style={[styles.text, styles.subText]}>Today's Distance</Text>
+</View>
+<View style={[styles.statsBox, {borderColor: "#DFD8C8", borderLeftWidth: 1, borderRightWidth: 1}]}>
+   <Text style={[styles.text, {fontSize: 24}]}>{Number(this.props.user.points_current.toFixed(2))}{" "}</Text>
+   	<Text style={[styles.text, styles.subText]}>points</Text>
+ 	</View>
+  <View style={styles.statsBox}>
+     <Text style={[styles.text, {fontSize: 24}]}>0</Text>
+     	<Text style={[styles.text, styles.subText]}>all time points</Text>
+   	</View>
+            </View>
+
           </View>
         </View>
 		<CustomButton
@@ -197,11 +209,30 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "600",
   },
+  subText: {
+        fontSize: 12,
+        color: "#AEB5BC",
+        textTransform: "uppercase",
+        fontWeight: "500"
+    },
+    text: {
+        fontFamily: "HelveticaNeue",
+        color: "#52575D"
+    },
   userInfo: {
     color: "#000000",
     fontSize: 16,
     fontWeight: "600",
   },
+  statsContainer: {
+        flexDirection: "row",
+        alignSelf: "center",
+        marginTop: 32
+    },
+    statsBox: {
+        alignItems: "center",
+        flex: 1
+    }
 });
 
 const mapDispatchToProps = (dispatch) => {
