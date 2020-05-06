@@ -127,11 +127,11 @@ class ProfileScreen extends React.Component {
             <View style={styles.statsContainer}>
 
             <View style={styles.statsBox}>
- <Text style={[styles.text, {fontSize: 24}]}>{Number(this.props.user.distance_today.toFixed(2))}{" "}</Text>
+ <Text style={[styles.text, {fontSize: 24}]}>{Math.round(Number(this.props.user.distance_today)*100)/100}{" "}</Text>
   <Text style={[styles.text, styles.subText]}>Today's Distance</Text>
 </View>
 <View style={[styles.statsBox, {borderColor: "#DFD8C8", borderLeftWidth: 1, borderRightWidth: 1}]}>
-   <Text style={[styles.text, {fontSize: 24}]}>{Number(this.props.user.points_current.toFixed(2))}{" "}</Text>
+   <Text style={[styles.text, {fontSize: 24}]}>{Math.round(Number(this.props.user.points_current)*100)/100}{" "}</Text>
    	<Text style={[styles.text, styles.subText]}>points</Text>
  	</View>
   <View style={styles.statsBox}>
