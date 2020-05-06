@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
-import { ScrollView, KeyboardAvoidingView, Keyboard, Platform } from "react-native";
+import { ScrollView, KeyboardAvoidingView, Platform } from "react-native";
 
 import { Colors, Spacing, Typography } from '../styles'
 
@@ -95,16 +95,16 @@ class SignUpScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: Colors.background,
     alignItems: "center",
+    backgroundColor: Colors.background,
+    flex: 1,
     justifyContent: "center",
     ...Spacing.screen
   },
   titleText: {
     alignItems: "center",
-    justifyContent: "center",
     color: Colors.titleText,
+    justifyContent: "center",
     ...Typography.titleText
   },
   textbox: {

@@ -3,7 +3,7 @@ import { Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { updateDisplayName, updateOrgName, updateProfile, getUser } from '../actions/user'
-import { Colors, Spacing, Typography } from '../styles'
+import { Colors, Spacing } from '../styles'
 
 class ProfileUpdateScreen extends React.Component {
 	componentDidMount = () => {
@@ -63,29 +63,26 @@ const styles = StyleSheet.create({
 	header:{
 		backgroundColor: "#00B09B",
 	},
-	settings: {
-		
-	},
 	headerContent:{
-		padding:30,
 		alignItems: 'center',
+		padding:30,
 	},
 	avatar: {
-		width: 130,
-		height: 130,
+		borderColor: "white",
 		borderRadius: 63,
 		borderWidth: 4,
-		borderColor: "white",
-		marginBottom:10,
+		height: 130,
+		marginBottom: 10,
+		width: 130,
 	},
 	name:{
-		fontSize:22,
 		color:"#000000",
+		fontSize:22,
 		fontWeight:'600',
 	},
 	userInfo:{
-		fontSize:16,
 		color:"#000000",
+		fontSize:16,
 		fontWeight:'600',
 	},
 	textbox: {

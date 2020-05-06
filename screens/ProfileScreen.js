@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { connect } from "react-redux";
 import Firebase, { db } from "../apis/Firebase";
 import { Notifications } from "expo";
@@ -175,30 +175,31 @@ const styles = StyleSheet.create({
     backgroundColor: "#00B09B",
   },
   headerContent: {
-    padding: 30,
     alignItems: "center",
+    padding: 30,
+
   },
   settings: {
+    left: 10,
     position: 'absolute',
     top: 10,
-    left: 10,
   },
   avatar: {
-    width: 130,
-    height: 130,
+    borderColor: "white",
     borderRadius: 63,
     borderWidth: 4,
-    borderColor: "white",
+    height: 130,
     marginBottom: 10,
+    width: 130,
   },
   name: {
-    fontSize: 22,
     color: "#000000",
+    fontSize: 22,
     fontWeight: "600",
   },
   userInfo: {
-    fontSize: 16,
     color: "#000000",
+    fontSize: 16,
     fontWeight: "600",
   },
 });

@@ -46,6 +46,7 @@ module.exports = {
                 "ignoreStyleProperties": false
             }
         ],
-        "react-redux/no-unused-prop-types": 0
+        "react/no-unused-prop-types": 0,
+        "react-redux/no-unused-prop-types": 2
     }
 }
