@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Pedometer} from 'expo-sensors';
 import * as Location from 'expo-location';
-import {SafeAreaView } from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 import { connect } from 'react-redux'
 import Firebase, { db }from '../apis/Firebase'
 import * as Permissions from 'expo-permissions';
@@ -49,8 +49,8 @@ const api = axios.create({
 	longitudeDelta: 0.0421
   }
 
-  
-  
+
+
   const getCoffeeShops = userLocation => {
 	console.log("reached3");
 	return api
@@ -90,13 +90,13 @@ class ShopScreen extends React.Component {
 			longitude: LONGITUDE
 		   })
 	  };
-	
+
 	  componentWillMount() {
 	/*	const config = {
 			headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
 			params: {
-				latitude: this.state.location.coords.latitude, 
-				longitude: this.state.location.coords.longitude, 
+				latitude: this.state.location.coords.latitude,
+				longitude: this.state.location.coords.longitude,
 			}
 		  };
 		axios
@@ -131,16 +131,16 @@ class ShopScreen extends React.Component {
 				  });
 				  names.push(doc.data().name);
 			//	this.state.markers2.push(doc.data().address.zip);
-			
+
 			//	console.log(doc.id, " => ", doc.data());
-			
+
 			});
 		});
 		this.setState({
 			busArr:busArr
 		 });
-		
-		 
+
+
 		//  console.log("bye"+this.watchID);
 		this._getLocationAsync();
 		// this.fetchMarkerData();
@@ -151,7 +151,7 @@ class ShopScreen extends React.Component {
 		this.currentUser = await  Firebase.auth().currentUser;
 
 		this.watchID = navigator.geolocation.watchPosition(
-			  
+
 			position => {
 			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
 			  const { latitude, longitude } = position.coords;
@@ -159,20 +159,20 @@ class ShopScreen extends React.Component {
 			 // console.log("latitude2-"+latitude);
 
 
-		
+
 			  const newCoordinate = {
 				latitude,
 				longitude
 			  };
 			  console.log(names);
 			  console.log("reddd");
-			 
+
 			  //console.log(index+key.city);
 			  const config2 = {
 				headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
 				params: {
-					latitude: latitude, 
-					longitude: longitude, 
+					latitude: latitude,
+					longitude: longitude,
 					limit: 10,
 					sort_by: "distance",
 					radius: 10000
@@ -208,25 +208,25 @@ class ShopScreen extends React.Component {
 			   } else {
 				 coordinate.timing(newCoordinate).start();
 			   }
-			   
+
 		//	console.log("zip_code->"+this.state.current_zipcode);
 
 			  console.log("cooo4");
-			 
+
 			 },
 			 error => console.log(error),
 			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
 		  );
-		 
+
 	  }
-	  
+
 	 /* fetchMarkerData() {
 		  console.log("yooo2");
 		  const config = {
 			headers: {'Authorization': `Bearer ${YELP_API_KEY}`},
 			params: {
-				latitude: this.state.location.coords.latitude, 
-				longitude: this.state.location.coords.longitude, 
+				latitude: this.state.location.coords.latitude,
+				longitude: this.state.location.coords.longitude,
 			}
 		  };
 		return axios
@@ -244,7 +244,7 @@ class ShopScreen extends React.Component {
 		  console.log("yeah");
 		this.setState({ mapRegion });
 	  };
-	
+
 	  getCoffeeShops = async () => {
 		  console.log("reached");
 		const { latitude, longitude } = this.state.region;
@@ -254,8 +254,8 @@ class ShopScreen extends React.Component {
 		this.setState({ coffeeShops });
 	  };
 	  _getLocationAsync = async () => {
-				
-		
+
+
 	   let { status } = await Permissions.askAsync(Permissions.LOCATION);
 	   if (status !== 'granted') {
 		 this.setState({
@@ -280,7 +280,7 @@ class ShopScreen extends React.Component {
 	   else{
 
 	   }
-	 
+
 	   console.log("chii3");
 	   //this.getCoffeeShops();
 	   //alert("chi");
@@ -291,63 +291,66 @@ class ShopScreen extends React.Component {
 	   this.setState({ locationResult: JSON.stringify(location), location, });
 
 	  // console.log("yooo3");
-		 
+
 
 	 };
-	
-	
 
-	
-	
-	 
-	
-		
+
+
+
+
+
+
+
 	render() {
-	
+
 		return (
 			<View style={styles.container}>
-			 
+
 			 <MapView
           style={{ alignSelf: 'stretch', height: 200 }}
           region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
 		  places={this.state.coffeeShops}
 		>
 			{this.state.markers.map(marker => (
-    <MapView.Marker 
+    <MapView.Marker
       coordinate={marker.coordinates}
       title={marker.title}
     />
-	
+
   ))}
-	 	
+
   <MapView.Marker
-    coordinate={{ "latitude": this.state.location.coords.latitude,   
+    coordinate={{ "latitude": this.state.location.coords.latitude,
     "longitude": this.state.location.coords.longitude }}
     title={"Your Location"}
     draggable />
-	
-        </MapView>
-<Text>Shops List:</Text>
-	
 
-	
-	
-	{this.state.busArr.map((key, index) => {
-    if (this.state.current_zipcode == key.zip) {
-         return (
-			<Text>Name: {key.name} , City: {key.city} , State: {key.state} , Street Address: {key.street} , ZipCode: {key.zip}</Text>
-      )}
-    }
-   )}
+        </MapView>
+<Text style={styles.text}>Shops List</Text>
+
+
+
+
+
 			  <View style={styles.buttonContainer}>
   <TouchableOpacity style={[styles.bubble, styles.button]}>
-   
+
   </TouchableOpacity>
 </View>
 			  <Text>
 
 </Text>
-			</View>
+<ScrollView>
+{this.state.busArr.map(item => (
+	<View key={item.zip}>
+	<Text style={styles.item}>{item.name} on {item.street}</Text>
+	</View>
+))}
+</ScrollView>
+
+</View>
+
 		  );
 };
 }
@@ -367,11 +370,27 @@ const styles = StyleSheet.create({
 	  width: Dimensions.get('window').width,
 	  height: Dimensions.get('window').height/2,
 	},
+	item: {
+    backgroundColor: '#00B78D',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+		fontSize: 16
+  },
+  title: {
+    fontSize: 32,
+  },
+	text: {
+			fontFamily: "HelveticaNeue",
+			color: "#2BB700",
+			fontSize: 30,
+
+	},
   });
   const mapStateToProps = state => {
 	return {
 		user: state.user
 	}
 }
-export default connect(mapStateToProps)(ShopScreen)
 
+export default connect(mapStateToProps)(ShopScreen)
