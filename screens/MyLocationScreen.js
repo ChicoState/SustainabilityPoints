@@ -44,7 +44,7 @@ class MyLocationScreen extends React.Component {
 			longitude: LONGITUDE
 		   })
 	  };
-	
+
 	 async componentDidMount() {
 		  //console.log("yeah");
 		//  this.currentUser = await Firebase.auth().currentUser
@@ -59,17 +59,17 @@ class MyLocationScreen extends React.Component {
 
 		this.setState({myDistance: this.props.user.distance_today});
 
-		 
+
 	  }
-	  
+
 	  _handleMapRegionChange = mapRegion => {
 		  console.log("yeah");
 		this.setState({ mapRegion });
 	  };
-	
+
 	  _getLocationAsync = async () => {
-				
-		
+
+
 	   let { status } = await Permissions.askAsync(Permissions.LOCATION);
 	   if (status !== 'granted') {
 		 this.setState({
@@ -94,7 +94,7 @@ class MyLocationScreen extends React.Component {
 	   else{
 
 	   }
-	 
+
 	   console.log("chii");
 	   //alert("chi");
 	   let location = await Location.getCurrentPositionAsync({});
@@ -103,8 +103,8 @@ class MyLocationScreen extends React.Component {
 	   console.log("locationResult_longitude-"+location.coords.longitude);
 	   this.setState({ locationResult: JSON.stringify(location), location, });
 	 };
-	
-	
+
+
 
 	 calcDistance = newLatLng => {
 		const { prevLatLng } = this.state;
@@ -117,7 +117,7 @@ class MyLocationScreen extends React.Component {
 		//console.log("todayys-"+Firebase.firestore.Timestamp.fromDate(new Date()));
 		console.log("uid-"+this.currentUser.uid);
 
-		
+
 			current_points = this.props.user.points_current;
 			last_loggedin = this.props.user.last_logged_in;
 			daily_distance = this.props.user.distance_today;
@@ -129,12 +129,12 @@ class MyLocationScreen extends React.Component {
 
 		console.log("updated_distance"+this.currentUser.distance_today );
 			console.log("daily_distance2-"+daily_distance);
-		
+
 
 			let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
-			
+
 			if(this.state.speed<15 && haversine(prevLatLng, newLatLng) > 0){
-			
+
 
 				if(todays_date==last_loggedin){
 					console.log("It's today");
@@ -157,8 +157,8 @@ class MyLocationScreen extends React.Component {
 					distance_today: todays_date == last_loggedin && daily_distance >= 0 ? daily_distance+haversine(prevLatLng, newLatLng) : haversine(prevLatLng, newLatLng),
 					last_logged_in : new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear(),
 					uid: this.currentUser.uid
-		
-			
+
+
 				})
 				.then(function() {
 					console.log("Document successfully written!");
@@ -167,16 +167,16 @@ class MyLocationScreen extends React.Component {
 					console.error("Error writing document: ", error);
 				})
 			}
-		
+
 		return haversine(prevLatLng, newLatLng) || 0;
 	  };
-	
-	 
+
+
 	  start_tracking = () => {
 		if(navigator.geolocation){
 			geoLoc = navigator.geolocation;
 		watchID = geoLoc.watchPosition(
-			  
+
 			position => {
 			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
 			  const { latitude, longitude } = position.coords;
@@ -211,7 +211,7 @@ class MyLocationScreen extends React.Component {
 		  );
 			}
 	  }
-		
+
 	  stop_tracking = () => {
 		//navigator.geolocation.clearWatch(this.watchId);
 		geoLoc.clearWatch(watchID);
@@ -233,41 +233,55 @@ class MyLocationScreen extends React.Component {
 	}
 
 	render() {
-	
+
 		return (
 			<View style={styles.container}>
-			 
+
 			 <MapView
           style={{ alignSelf: 'stretch', height: 200 }}
           region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
         >
 			<Polyline coordinates={this.state.routeCoordinates} strokeWidth={5} />
   <MapView.Marker
-    coordinate={{ "latitude": this.state.location.coords.latitude,   
+    coordinate={{ "latitude": this.state.location.coords.latitude,
     "longitude": this.state.location.coords.longitude }}
     title={"Your Location"}
     draggable />
-	
+
         </MapView>
-			
-		<Text style={styles.bottomBarContent}>
-      Distance traveled: {parseFloat(this.state.distanceTravelled).toFixed(2)} km
+				<View style={styles.statsContainers}>
+				<View style={styles.statsBox}>
+
+				<CustomButton
+						style={{marginBottom: 10}}
+						title='Start Tracking'  onPress={this.start_tracking}  />
+						</View>
+						<View style={styles.statsBox}>
+
+						<CustomButton
+						style={{marginBottom: 10}}
+						title='Stop Tracking' onPress={this.stop_tracking}   />
+						</View>
+	</View>
+
+
+		<Text style={styles.text}>
+      Distance traveled:
     </Text>
-	<Text style={styles.bottomBarContent}>
+		<Text style={styles.text, {color:'#2BB700'}}>
+		{parseFloat(this.state.distanceTravelled).toFixed(2)} km
+		</Text>
+
+	<Text style={styles.text}>
      Speed: {parseFloat(this.state.speed).toFixed(2)} km/hr
     </Text>
-	<Text style={styles.userInfo}>Today's Total Distance: {this.state.myDistance} </Text>
+	<Text style={styles.text}>Today's Total Distance: {parseFloat(this.state.myDistance).toFixed(2)} </Text>
 
-	<CustomButton
-			style={{marginBottom: 10}}
-			title='Start Tracking'  onPress={this.start_tracking}  />
-			<CustomButton
-			style={{marginBottom: 10}}
-			title='Stop Tracking' onPress={this.stop_tracking}   />
-			
+
+
 			  <View style={styles.buttonContainer}>
   <TouchableOpacity style={[styles.bubble, styles.button]}>
-   
+
   </TouchableOpacity>
 </View>
 			  <Text>
@@ -320,16 +334,30 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		textAlign: 'center',
 	  },
+		text: {
+        fontFamily: "HelveticaNeue",
+        color: "#52575D",
+				fontSize: 30
+    },
 	mapStyle: {
 	  width: Dimensions.get('window').width,
 	  height: Dimensions.get('window').height/2,
+	},
+	statsContainers: {
+		flexDirection: "row",
+		alignSelf: "center",
+		marginTop: 32,
+	},
+	statsBox: {
+			alignItems: "center",
+			flex: 1
 	},
   });
 
   const mapDispatchToProps = dispatch => {
 	return bindActionCreators({ getUser}, dispatch)
   }
-  
+
   const mapStateToProps = state => {
 	return {
 		user: state.user
@@ -340,4 +368,3 @@ export default connect(
 	mapStateToProps,
 	mapDispatchToProps
 )(MyLocationScreen)
-
