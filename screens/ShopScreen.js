@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Location from 'expo-location';
-import {ScrollView} from 'react-native';
+import {Platform, ScrollView} from 'react-native';
 import { connect } from 'react-redux'
 import Firebase, { db }from '../apis/Firebase'
 import * as Permissions from 'expo-permissions';
@@ -169,6 +169,7 @@ class ShopScreen extends React.Component {
 		location,
 		});
 		console.log('Starting watchPositionAsync')
+		/*
 		this.watchId = Location.watchPositionAsync({
 		enableHighAccuracy: false,
 		distanceInterval: 2000,
@@ -180,6 +181,7 @@ class ShopScreen extends React.Component {
 			console.log('ignored newLoc')
 		}
 		})
+		*/
 	}
 	
 

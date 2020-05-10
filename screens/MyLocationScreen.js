@@ -9,7 +9,7 @@ import MapView, {
 	AnimatedRegion,
 	Polyline
   } from "react-native-maps"; 
-import { TouchableOpacity, StyleSheet, Text, View, Dimensions } from 'react-native';
+import { Platform, TouchableOpacity, StyleSheet, Text, View, Dimensions } from 'react-native';
 import { CustomButton } from '../components/CustomButton.js'
 import haversine from "haversine";
 
@@ -50,7 +50,7 @@ class MyLocationScreen extends React.Component {
 		//let daily_distance;
 		this.currentUser = await  Firebase.auth().currentUser;
 
-		this.setState({myDistance: this.props.user.distance_today});
+	//	this.setState({myDistance: this.props.user.distance_today});
 
 
 	}
@@ -70,6 +70,7 @@ class MyLocationScreen extends React.Component {
  location,
 	});
 	console.log('Starting watchPositionAsync')
+	/*
 	this.watchId = Location.watchPositionAsync({
   enableHighAccuracy: false,
   distanceInterval: 2000,
@@ -80,7 +81,7 @@ class MyLocationScreen extends React.Component {
   } else {
  console.log('ignored newLoc')
    }
- })
+ })*/
 	}
 	
 
