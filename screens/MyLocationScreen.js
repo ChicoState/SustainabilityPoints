@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import {Pedometer} from 'expo-sensors';
+import React from 'react';
 import * as Location from 'expo-location';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -7,23 +6,17 @@ import { getUser } from '../actions/user'
 import Firebase, { db }from '../apis/Firebase'
 import * as Permissions from 'expo-permissions';
 import MapView, {
-	Marker,
 	AnimatedRegion,
-	Polyline,
-	PROVIDER_GOOGLE
-  } from "react-native-maps";  import { DeviceMotion } from 'expo-sensors';
-import { Alert, LinearGradient, Image, TouchableOpacity, TextInput, Button, StyleSheet, Text, View, Dimensions } from 'react-native';
+	Polyline
+  } from "react-native-maps"; 
+import { TouchableOpacity, StyleSheet, Text, View, Dimensions } from 'react-native';
 import { CustomButton } from '../components/CustomButton.js'
-import * as Font from 'expo-font'
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import haversine from "haversine";
 
 
 
 //var Pedometer = require('react-native-pedometer');
-const LATITUDE_DELTA = 0.009;
-const LONGITUDE_DELTA = 0.009;
+
 const LATITUDE = 37.78825;
 const LONGITUDE = -122.4324;
 var geoLoc;
@@ -42,77 +35,76 @@ class MyLocationScreen extends React.Component {
 		coordinate: new AnimatedRegion({
 			latitude: LATITUDE,
 			longitude: LONGITUDE
-		   })
-	  };
+	})
+	};
 
-	 async componentDidMount() {
-		  //console.log("yeah");
+	async componentDidMount() {
+  //console.log("yeah");
 		//  this.currentUser = await Firebase.auth().currentUser
 
 		//  console.log("bye"+this.watchID);
 		this._getLocationAsync();
 
-		let current_points;
-		let last_loggedin;
-		let daily_distance;
+		//let current_points;
+		//let last_loggedin;
+		//let daily_distance;
 		this.currentUser = await  Firebase.auth().currentUser;
 
 		this.setState({myDistance: this.props.user.distance_today});
 
 
-	  }
+	}
 
-	  _handleMapRegionChange = mapRegion => {
-		  console.log("yeah");
+	_handleMapRegionChange = mapRegion => {
+ console.log("yeah");
 		this.setState({ mapRegion });
-	  };
+};
 
-	  _getLocationAsync = async () => {
+	_getLocationAsync = async () => {
 
 
-	   let { status } = await Permissions.askAsync(Permissions.LOCATION);
-	   if (status !== 'granted') {
-		 this.setState({
-		   locationResult: 'Permission to access location was denied',
-		   location,
-		 });
-		 console.log('Starting watchPositionAsync')
-		 this.watchId = Location.watchPositionAsync({
-		   enableHighAccuracy: false,
-		   distanceInterval: 2000,
-		   timeInterval: 200000
-		 }, newLoc => {
-		   if(newLoc.timestamp && !!this.props.currentRecords) {
-			 console.log('newLoc ', counter)
-			 this.updateLoc(newLoc)
-			 counter++
-		   } else {
-			 console.log('ignored newLoc')
-		   }
-		 })
-	   }
-	   else{
+ let { status } = await Permissions.askAsync(Permissions.LOCATION);
+ if (status !== 'granted') {
+ this.setState({
+ locationResult: 'Permission to access location was denied',
+ location,
+	});
+	console.log('Starting watchPositionAsync')
+	this.watchId = Location.watchPositionAsync({
+  enableHighAccuracy: false,
+  distanceInterval: 2000,
+  timeInterval: 200000
+	}, newLoc => {
+  if(newLoc.timestamp && !!this.props.currentRecords) {
+	this.updateLoc(newLoc)
+  } else {
+ console.log('ignored newLoc')
+   }
+ })
+	}
+	
 
-	   }
-
-	   console.log("chii");
-	   //alert("chi");
-	   let location = await Location.getCurrentPositionAsync({});
-	   //alert(location.coords.latitude);
-	   console.log("locationResult_ latitude-"+location.coords.latitude);
-	   console.log("locationResult_longitude-"+location.coords.longitude);
-	   this.setState({ locationResult: JSON.stringify(location), location, });
-	 };
+	console.log("chii");
+	//alert("chi");
+	let location = await Location.getCurrentPositionAsync({});
+	//alert(location.coords.latitude);
+	console.log("locationResult_ latitude-"+location.coords.latitude);
+	console.log("locationResult_longitude-"+location.coords.longitude);
+	this.setState({ locationResult: JSON.stringify(location), location, });
+	};
 
 
 
-	 calcDistance = newLatLng => {
+	calcDistance = newLatLng => {
+
+		let current_points;
+		let last_loggedin;
+		let daily_distance;
 		const { prevLatLng } = this.state;
 		console.log("latitude3-"+newLatLng.latitude);
 		console.log("latitude4-"+prevLatLng.latitude);
 		console.log("distance-"+haversine(prevLatLng, newLatLng));
 		console.log("speed-"+this.state.speed);
-		let today = new Date();
 		//let last_logged_in_date = new Date(last_loggedin);
 		//console.log("todayys-"+Firebase.firestore.Timestamp.fromDate(new Date()));
 		console.log("uid-"+this.currentUser.uid);
@@ -169,53 +161,53 @@ class MyLocationScreen extends React.Component {
 			}
 
 		return haversine(prevLatLng, newLatLng) || 0;
-	  };
+	};
 
 
-	  start_tracking = () => {
+	start_tracking = () => {
 		if(navigator.geolocation){
 			geoLoc = navigator.geolocation;
 		watchID = geoLoc.watchPosition(
 
 			position => {
-			  const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
-			  const { latitude, longitude } = position.coords;
-			 // console.log("latitude2-"+latitude);
-			  const newCoordinate = {
+	const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
+	const { latitude, longitude } = position.coords;
+		// console.log("latitude2-"+latitude);
+	const newCoordinate = {
 				latitude,
 				longitude
-			  };
-			  if (Platform.OS === "android") {
+	};
+		if (Platform.OS === "android") {
 				if (this.marker) {
-				  this.marker._component.animateMarkerToCoordinate(
+	this.marker._component.animateMarkerToCoordinate(
 					newCoordinate,
 					500
-				  );
-				 }
-			   } else {
-				 coordinate.timing(newCoordinate).start();
-			   }
-			   this.setState({
-				 latitude,
-				 longitude,
-				 routeCoordinates: routeCoordinates.concat([newCoordinate]),
-				 distanceTravelled:
-				 distanceTravelled +  this.calcDistance(newCoordinate),
-				 speed: position.coords.speed,
-				 prevLatLng: newCoordinate
-			   });
+	);
+		}
+	} else {
+	coordinate.timing(newCoordinate).start();
+	}
+	this.setState({
+		latitude,
+		longitude,
+		routeCoordinates: routeCoordinates.concat([newCoordinate]),
+		distanceTravelled:
+				distanceTravelled +  this.calcDistance(newCoordinate),
+				speed: position.coords.speed,
+				prevLatLng: newCoordinate
+			});
 
-			 },
-			 error => console.log(error),
-			 { enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
-		  );
+			},
+			error => console.log(error),
+			{ enableHighAccuracy: false, timeout: 200, maximumAge: 100 }
+		);
 			}
-	  }
+	}
 
-	  stop_tracking = () => {
+	stop_tracking = () => {
 		//navigator.geolocation.clearWatch(this.watchId);
 		geoLoc.clearWatch(watchID);
-		 //this.start_tracking.remove();
+		//this.start_tracking.remove();
 		//this.start_tracking = null;
 		console.log("stop tracking");
 
@@ -237,7 +229,7 @@ class MyLocationScreen extends React.Component {
 		return (
 			<View style={styles.container}>
 
-			 <MapView
+			<MapView
           style={{ alignSelf: 'stretch', height: 200 }}
           region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
         >
@@ -279,17 +271,17 @@ class MyLocationScreen extends React.Component {
 
 
 
-			  <View style={styles.buttonContainer}>
+			<View style={styles.buttonContainer}>
   <TouchableOpacity style={[styles.bubble, styles.button]}>
 
   </TouchableOpacity>
 </View>
-			  <Text>
+			<Text>
 
 </Text>
 			</View>
-		  );
-};
+		);
+}
 }
 /*
 const styles = StyleSheet.create({
@@ -324,7 +316,7 @@ const styles = StyleSheet.create({
 });*/
 const styles = StyleSheet.create({
 	container: {
-	  flex: 1,
+	   flex: 1,
 	  backgroundColor: '#fff',
 	  alignItems: 'center',
 	  justifyContent: 'center',
