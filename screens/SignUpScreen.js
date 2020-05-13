@@ -1,81 +1,72 @@
 /** @format */
 
 import React from "react";
-import {
-  Image,
-  TextInput,
-  Button,
-  StyleSheet,
-  Text,
-  View
-} from "react-native";
+import { Image, TextInput, Button, StyleSheet, Text, View } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
 import { ScrollView, KeyboardAvoidingView, Platform } from "react-native";
-
-import { Colors, Spacing, Typography } from '../styles'
-
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import { updateEmail, updatePassword, signup } from '../actions/user'
+import { Colors, Spacing, Typography } from "../styles";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { updateEmail, updatePassword, signup } from "../actions/user";
 
 class SignUpScreen extends React.Component {
   SignUp = () => {
-    this.props.signup()
-  }
+    this.props.signup();
+  };
 
   render() {
     return (
       <ScrollView>
-         <KeyboardAvoidingView
-      behavior={Platform.Os == "ios" ? "padding" : "height"}
-      style={styles.container}
-    >
-        <View style={styles.container}>
-          <View>
-            <View style={{ justifyContent: "center", alignItems: "center" }}>
-              <Image source={logo} style={{ marginBottom: "2%" }} />
-            </View>
-            <Text style={styles.titleText}>Sustainability Points</Text>
-            <TextInput
-              placeholder="Email"
-              placeholderTextColor="#4D786E"
-              style={styles.textbox}
-              autoCapitalize="none"
-              onChangeText={email => this.props.updateEmail( email )}
-            />
-            <TextInput
-              placeholder="Password"
-              placeholderTextColor="#4D786E"
-              secureTextEntry={true}
-              style={styles.textbox}
-              autoCapitalize="none"
-              onChangeText={password => this.props.updatePassword( password )}
-            />
-            <CustomButton
-              title="Register"
-              onPress={this.SignUp}
-              style={{ backgroundColor: "#00B78D" }}
-              textStyle={{ color: "#FFF" }}
-            />
-
-            <View style={{ padding: 15 }}>
-              <Button
-                title="Forgot Password?"
-                color="#B7002A"
-                onPress={() => this.RecoveryPage()}
+        <KeyboardAvoidingView
+          behavior={Platform.Os == "ios" ? "padding" : "height"}
+          style={styles.container}
+        >
+          <View style={styles.container}>
+            <View>
+              <View style={{ justifyContent: "center", alignItems: "center" }}>
+                <Image source={logo} style={{ marginBottom: "2%" }} />
+              </View>
+              <Text style={styles.titleText}>Sustainability Points</Text>
+              <TextInput
+                placeholder="Email"
+                placeholderTextColor="#4D786E"
+                style={styles.textbox}
+                autoCapitalize="none"
+                onChangeText={(email) => this.props.updateEmail(email)}
+              />
+              <TextInput
+                placeholder="Password"
+                placeholderTextColor="#4D786E"
+                secureTextEntry={true}
+                style={styles.textbox}
+                autoCapitalize="none"
+                onChangeText={(password) => this.props.updatePassword(password)}
+              />
+              <CustomButton
+                title="Register"
+                onPress={this.SignUp}
+                style={{ backgroundColor: "#00B78D" }}
+                textStyle={{ color: "#FFF" }}
               />
 
-              <View style={{ padding: 10 }}>
+              <View style={{ padding: 15 }}>
                 <Button
-                  title="Already a User? Login"
-                  color="#00B78D"
-                  onPress={() => this.LoginFunc()}
+                  title="Forgot Password?"
+                  color="#B7002A"
+                  onPress={() => this.RecoveryPage()}
                 />
+
+                <View style={{ padding: 10 }}>
+                  <Button
+                    title="Already a User? Login"
+                    color="#00B78D"
+                    onPress={() => this.LoginFunc()}
+                  />
+                </View>
               </View>
             </View>
           </View>
-        </View>
         </KeyboardAvoidingView>
       </ScrollView>
     );
@@ -99,33 +90,30 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
     flex: 1,
     justifyContent: "center",
-    ...Spacing.screen
+    ...Spacing.screen,
   },
   titleText: {
     alignItems: "center",
     color: Colors.titleText,
     justifyContent: "center",
-    ...Typography.titleText
+    ...Typography.titleText,
   },
   textbox: {
     borderRadius: 5,
     borderWidth: 1,
     ...Colors.textbox,
-    ...Spacing.textbox
-  }
-})
+    ...Spacing.textbox,
+  },
+});
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ updateEmail, updatePassword, signup }, dispatch)
-}
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ updateEmail, updatePassword, signup }, dispatch);
+};
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-      user: state.user
-  }
-}
+    user: state.user,
+  };
+};
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SignUpScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpScreen);

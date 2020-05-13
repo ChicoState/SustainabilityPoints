@@ -1,21 +1,12 @@
 /** @format */
 
 import React from "react";
-import {
-  Image,
-  TextInput,
-  Button,
-  StyleSheet,
-  Text,
-  View
-} from "react-native";
+import { Image, TextInput, Button, StyleSheet, Text, View } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
 import { ScrollView, KeyboardAvoidingView, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
-import { Colors, Spacing, Typography } from '../styles'
-
+import { Colors, Spacing, Typography } from "../styles";
 import Firebase from "./../apis/Firebase";
 
 class RecoverScreen extends React.Component {
@@ -23,14 +14,14 @@ class RecoverScreen extends React.Component {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
     };
   }
   Recover = (email, password) => {
     try {
       Firebase.auth()
         .sendPasswordResetEmail(email)
-        .then(res => {
+        .then((res) => {
           //console.log(res.user.email);
           navigation.navigate("Login");
         });
@@ -43,53 +34,53 @@ class RecoverScreen extends React.Component {
     return (
       <ScrollView>
         <KeyboardAvoidingView
-      behavior={Platform.Os == "ios" ? "padding" : "height"}
-      style={styles.container}
-    >
-        <View style={styles.container}>
-          <View>
-            <View style={{ justifyContent: "center", alignItems: "center" }}>
-              <Image source={logo} style={{ marginBottom: "2%" }} />
-            </View>
-            <Text style={styles.titleText}>Sustainability Points</Text>
-            <TextInput
-              placeholder="Username"
-              placeholderTextColor="#4D786E"
-              style={styles.textbox}
-              autoCapitalize="none"
-            />
-            <TextInput
-              placeholder="Email"
-              placeholderTextColor="#4D786E"
-              style={styles.textbox}
-              autoCapitalize="none"
-              onChangeText={email => this.setState({ email })}
-            />
+          behavior={Platform.Os == "ios" ? "padding" : "height"}
+          style={styles.container}
+        >
+          <View style={styles.container}>
+            <View>
+              <View style={{ justifyContent: "center", alignItems: "center" }}>
+                <Image source={logo} style={{ marginBottom: "2%" }} />
+              </View>
+              <Text style={styles.titleText}>Sustainability Points</Text>
+              <TextInput
+                placeholder="Username"
+                placeholderTextColor="#4D786E"
+                style={styles.textbox}
+                autoCapitalize="none"
+              />
+              <TextInput
+                placeholder="Email"
+                placeholderTextColor="#4D786E"
+                style={styles.textbox}
+                autoCapitalize="none"
+                onChangeText={(email) => this.setState({ email })}
+              />
 
-            <CustomButton
-              title="Recover Password"
-              onPress={() =>
-                this.Recover(this.state.email, this.state.password)
-              }
-              style={{ backgroundColor: "#00B78D" }}
-              textStyle={{ color: "#FFF" }}
-            />
+              <CustomButton
+                title="Recover Password"
+                onPress={() =>
+                  this.Recover(this.state.email, this.state.password)
+                }
+                style={{ backgroundColor: "#00B78D" }}
+                textStyle={{ color: "#FFF" }}
+              />
 
-            <View style={{ padding: 15 }}>
+              <View style={{ padding: 15 }}>
+                <Button
+                  title="Already a User? Login"
+                  color="#00B78D"
+                  onPress={() => this.LoginFunc()}
+                />
+              </View>
+
               <Button
-                title="Already a User? Login"
+                title="Sign Up"
                 color="#00B78D"
-                onPress={() => this.LoginFunc()}
+                onPress={() => this.SignUpFunc()}
               />
             </View>
-
-            <Button
-              title="Sign Up"
-              color="#00B78D"
-              onPress={() => this.SignUpFunc()}
-            />
           </View>
-        </View>
         </KeyboardAvoidingView>
       </ScrollView>
     );
@@ -113,23 +104,23 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
     flex: 1,
     justifyContent: "center",
-    ...Spacing.screen
+    ...Spacing.screen,
   },
   titleText: {
     alignItems: "center",
     color: Colors.titleText,
     justifyContent: "center",
-    ...Typography.titleText
+    ...Typography.titleText,
   },
   textbox: {
     borderRadius: 5,
     borderWidth: 1,
     ...Colors.textbox,
-    ...Spacing.textbox
-  }
+    ...Spacing.textbox,
+  },
 });
 
-export default function(props) {
+export default function (props) {
   const navigation = useNavigation();
   return <RecoverScreen {...props} navigation={navigation} />;
 }

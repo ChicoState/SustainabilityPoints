@@ -2,11 +2,7 @@
 
 import React from "react";
 import { Image, TextInput, Button, StyleSheet, Text, View } from "react-native";
-import {
-  ScrollView,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
+import { ScrollView, KeyboardAvoidingView, Platform } from "react-native";
 import logo from "../assets/SPplaceholder-02.png";
 import { CustomButton } from "../components/CustomButton.js";
 import Firebase from "../apis/Firebase";
@@ -17,7 +13,7 @@ import {
   updatePassword,
   login,
   getUser,
-  LoginToken
+  LoginToken,
 } from "../actions/user";
 import { Colors, Spacing, Typography } from "../styles";
 
@@ -25,10 +21,8 @@ class LoginScreen extends React.Component {
   componentDidMount = () => {
     Firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        
         if (this.props.user != null) {
-   
-    this.props.getUser(user.uid);   
+          this.props.getUser(user.uid);
           this.props.LoginToken();
         }
       }
@@ -114,7 +108,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     alignItems: "center",
-    
+
     color: Colors.titleText,
     justifyContent: "center",
     ...Typography.titleText,

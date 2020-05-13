@@ -13,40 +13,49 @@ import { SignOut, getUser } from "../actions/user";
 class ProfileScreen extends React.Component {
   handleSignout = () => {
     Firebase.auth().signOut();
-	this.props.SignOut();
+    this.props.SignOut();
   };
 
   checkTodaysDistanceAsync = async () => {
-    await  db.collection("users").doc(this.currentUser.uid).get().then(function(doc) {
-      if (doc.exists) {
-        last_logged_in_date = doc.data().last_logged_in;
-        console.log("Document data:", doc.data());
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-       });
-    let todays_date = new Date().getMonth()+"/"+new Date().getDate()+"/"+new Date().getYear();
-    console.log("last_logged_in_date4"+last_logged_in_date)
-    if(todays_date!=last_logged_in_date){
+    await db
+      .collection("users")
+      .doc(this.currentUser.uid)
+      .get()
+      .then(function (doc) {
+        if (doc.exists) {
+          last_logged_in_date = doc.data().last_logged_in;
+          console.log("Document data:", doc.data());
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
+      });
+    let todays_date =
+      new Date().getMonth() +
+      "/" +
+      new Date().getDate() +
+      "/" +
+      new Date().getYear();
+    console.log("last_logged_in_date4" + last_logged_in_date);
+    if (todays_date != last_logged_in_date) {
       console.log("Its not today");
-      db.collection("users").doc(this.currentUser.uid).update({
-        distance_today: 0,
-      }).then(function() {
-        console.log("Document successfully updated!");
-
-    })
-    .catch(function(error) {
-        // The document probably doesn't exist.
-        console.error("Error updating document: ", error);
-    });
-
-    }
-    else{
+      db.collection("users")
+        .doc(this.currentUser.uid)
+        .update({
+          distance_today: 0,
+        })
+        .then(function () {
+          console.log("Document successfully updated!");
+        })
+        .catch(function (error) {
+          // The document probably doesn't exist.
+          console.error("Error updating document: ", error);
+        });
+    } else {
       console.log("Its today");
     }
     this.props.getUser(this.currentUser.uid);
-  }
+  };
 
   registerForPushNotificationsAsync = async () => {
     const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
@@ -80,7 +89,6 @@ class ProfileScreen extends React.Component {
 
   async componentDidMount() {
     let last_logged_in_date;
-
 
     this.currentUser = await Firebase.auth().currentUser;
 
@@ -123,31 +131,47 @@ class ProfileScreen extends React.Component {
             )}
             <Text style={styles.userInfo}> {this.props.user.org_name} </Text>
 
-
             <View style={styles.statsContainer}>
-
-            <View style={styles.statsBox}>
- <Text style={[styles.text, {fontSize: 24}]}>{Math.round(Number(this.props.user.distance_today)*100)/100}{" "}</Text>
-  <Text style={[styles.text, styles.subText]}>Today's Distance</Text>
-</View>
-<View style={[styles.statsBox, {borderColor: "#DFD8C8", borderLeftWidth: 1, borderRightWidth: 1}]}>
-   <Text style={[styles.text, {fontSize: 24}]}>{Math.round(Number(this.props.user.points_current)*100)/100}{" "}</Text>
-   	<Text style={[styles.text, styles.subText]}>points</Text>
- 	</View>
-  <View style={styles.statsBox}>
-     <Text style={[styles.text, {fontSize: 24}]}>0</Text>
-     	<Text style={[styles.text, styles.subText]}>all time points</Text>
-   	</View>
+              <View style={styles.statsBox}>
+                <Text style={[styles.text, { fontSize: 24 }]}>
+                  {Math.round(Number(this.props.user.distance_today) * 100) /
+                    100}{" "}
+                </Text>
+                <Text style={[styles.text, styles.subText]}>
+                  Today's Distance
+                </Text>
+              </View>
+              <View
+                style={[
+                  styles.statsBox,
+                  {
+                    borderColor: "#DFD8C8",
+                    borderLeftWidth: 1,
+                    borderRightWidth: 1,
+                  },
+                ]}
+              >
+                <Text style={[styles.text, { fontSize: 24 }]}>
+                  {Math.round(Number(this.props.user.points_current) * 100) /
+                    100}{" "}
+                </Text>
+                <Text style={[styles.text, styles.subText]}>points</Text>
+              </View>
+              <View style={styles.statsBox}>
+                <Text style={[styles.text, { fontSize: 24 }]}>0</Text>
+                <Text style={[styles.text, styles.subText]}>
+                  all time points
+                </Text>
+              </View>
             </View>
-
           </View>
         </View>
-		<CustomButton
+        <CustomButton
           style={{ marginBottom: 10 }}
           title="Update Profile"
           onPress={() => this.ProfileUpdateFunc()}
         />
-		<CustomButton
+        <CustomButton
           style={{ marginBottom: 10 }}
           title="Shops"
           onPress={() => this.ShopFunc()}
@@ -189,11 +213,10 @@ const styles = StyleSheet.create({
   headerContent: {
     alignItems: "center",
     padding: 30,
-
   },
   settings: {
     left: 10,
-    position: 'absolute',
+    position: "absolute",
     top: 10,
   },
   avatar: {
@@ -210,29 +233,29 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   subText: {
-        fontSize: 12,
-        color: "#AEB5BC",
-        textTransform: "uppercase",
-        fontWeight: "500"
-    },
-    text: {
-        fontFamily: "HelveticaNeue",
-        color: "#52575D"
-    },
+    fontSize: 12,
+    color: "#AEB5BC",
+    textTransform: "uppercase",
+    fontWeight: "500",
+  },
+  text: {
+    fontFamily: "HelveticaNeue",
+    color: "#52575D",
+  },
   userInfo: {
     color: "#000000",
     fontSize: 16,
     fontWeight: "600",
   },
   statsContainer: {
-        flexDirection: "row",
-        alignSelf: "center",
-        marginTop: 32
-    },
-    statsBox: {
-        alignItems: "center",
-        flex: 1
-    }
+    flexDirection: "row",
+    alignSelf: "center",
+    marginTop: 32,
+  },
+  statsBox: {
+    alignItems: "center",
+    flex: 1,
+  },
 });
 
 const mapDispatchToProps = (dispatch) => {
