@@ -14,15 +14,13 @@ class RecoverScreen extends React.Component {
     super(props);
     this.state = {
       email: "",
-      password: "",
     };
   }
-  Recover = (email, password) => {
+  Recover = (email) => {
     try {
       Firebase.auth()
         .sendPasswordResetEmail(email)
-        .then((res) => {
-          //console.log(res.user.email);
+        .then(() => {
           navigation.navigate("Login");
         });
     } catch (error) {
@@ -84,7 +82,6 @@ class RecoverScreen extends React.Component {
         </KeyboardAvoidingView>
       </ScrollView>
     );
-    const { navigation } = this.props;
   }
 
   LoginFunc() {
@@ -106,17 +103,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     ...Spacing.screen,
   },
-  titleText: {
-    alignItems: "center",
-    color: Colors.titleText,
-    justifyContent: "center",
-    ...Typography.titleText,
-  },
   textbox: {
     borderRadius: 5,
     borderWidth: 1,
     ...Colors.textbox,
     ...Spacing.textbox,
+  },
+  titleText: {
+    alignItems: "center",
+    color: Colors.titleText,
+    justifyContent: "center",
+    ...Typography.titleText,
   },
 });
 

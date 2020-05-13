@@ -138,7 +138,7 @@ class ProfileScreen extends React.Component {
                     100}{" "}
                 </Text>
                 <Text style={[styles.text, styles.subText]}>
-                  Today's Distance
+                  Today&apos;s Distance
                 </Text>
               </View>
               <View
@@ -207,18 +207,6 @@ class ProfileScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#00B09B",
-  },
-  headerContent: {
-    alignItems: "center",
-    padding: 30,
-  },
-  settings: {
-    left: 10,
-    position: "absolute",
-    top: 10,
-  },
   avatar: {
     borderColor: "white",
     borderRadius: 63,
@@ -227,34 +215,41 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: 130,
   },
+  header: {
+    backgroundColor: "#00B09B",
+  },
+  headerContent: {
+    alignItems: "center",
+    padding: 30,
+  },
   name: {
     color: "#000000",
     fontSize: 22,
     fontWeight: "600",
   },
+  statsBox: {
+    alignItems: "center",
+    flex: 1,
+  },
+  statsContainer: {
+    alignSelf: "center",
+    flexDirection: "row",
+    marginTop: 32,
+  },
   subText: {
-    fontSize: 12,
     color: "#AEB5BC",
-    textTransform: "uppercase",
+    fontSize: 12,
     fontWeight: "500",
+    textTransform: "uppercase",
   },
   text: {
-    fontFamily: "HelveticaNeue",
     color: "#52575D",
+    fontFamily: "HelveticaNeue",
   },
   userInfo: {
     color: "#000000",
     fontSize: 16,
     fontWeight: "600",
-  },
-  statsContainer: {
-    flexDirection: "row",
-    alignSelf: "center",
-    marginTop: 32,
-  },
-  statsBox: {
-    alignItems: "center",
-    flex: 1,
   },
 });
 

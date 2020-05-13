@@ -70,7 +70,6 @@ class SignUpScreen extends React.Component {
         </KeyboardAvoidingView>
       </ScrollView>
     );
-    const { navigation } = this.props;
   }
 
   LoginFunc() {
@@ -92,17 +91,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     ...Spacing.screen,
   },
-  titleText: {
-    alignItems: "center",
-    color: Colors.titleText,
-    justifyContent: "center",
-    ...Typography.titleText,
-  },
   textbox: {
     borderRadius: 5,
     borderWidth: 1,
     ...Colors.textbox,
     ...Spacing.textbox,
+  },
+  titleText: {
+    alignItems: "center",
+    color: Colors.titleText,
+    justifyContent: "center",
+    ...Typography.titleText,
   },
 });
 

@@ -38,8 +38,8 @@ class LoginScreen extends React.Component {
         >
           <View style={styles.container}>
             <View>
-              <View style={{ justifyContent: "center", alignItems: "center" }}>
-                <Image source={logo} style={{ marginBottom: "2%" }} />
+              <View style={styles.logo}>
+                <Image source={logo} />
               </View>
 
               <Text style={styles.titleText}>Sustainability Points</Text>
@@ -100,24 +100,28 @@ class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.background,
     alignItems: "center",
+    backgroundColor: Colors.background,    
     flex: 1,
     justifyContent: "center",
     ...Spacing.screen,
   },
-  titleText: {
-    alignItems: "center",
-
-    color: Colors.titleText,
+  logo: {
+    alignItems: "center", 
     justifyContent: "center",
-    ...Typography.titleText,
+    marginBottom: "2%", 
   },
   textbox: {
     borderRadius: 5,
     borderWidth: 1,
     ...Colors.textbox,
     ...Spacing.textbox,
+  },
+  titleText: {
+    alignItems: "center",
+    color: Colors.titleText,
+    justifyContent: "center",
+    ...Typography.titleText,
   },
 });
 

@@ -14,7 +14,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Dimensions,
 } from "react-native";
 import { CustomButton } from "../components/CustomButton.js";
 import haversine from "haversine";
@@ -276,7 +275,7 @@ class MyLocationScreen extends React.Component {
           Speed: {parseFloat(this.state.speed).toFixed(2)} km/hr
         </Text>
         <Text style={styles.text}>
-          Today's Total Distance: {parseFloat(this.state.myDistance).toFixed(2)}{" "}
+          Today&apos;s Total Distance: {parseFloat(this.state.myDistance).toFixed(2)}{" "}
         </Text>
 
         <View style={styles.buttonContainer}>
@@ -289,66 +288,27 @@ class MyLocationScreen extends React.Component {
     );
   }
 }
-/*
-const styles = StyleSheet.create({
-	header:{
-		backgroundColor: "#00B09B",
-	},
-	headerContent:{
-		padding:30,
-		alignItems: 'center',
-	},
-	avatar: {
-		width: 130,
-		height: 130,
-		borderRadius: 63,
-		borderWidth: 4,
-		borderColor: "white",
-		marginBottom:10,
-	},
-	name:{
-		fontSize:22,
-		color:"#000000",
-		fontWeight:'600',
-	},
-	userInfo:{
-		fontSize:16,
-		color:"#000000",
-		fontWeight:'600',
-	}
-	, map: {
-		...StyleSheet.absoluteFillObject,
-	  }
-});*/
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
+    backgroundColor: "#fff",
+    flex: 1,
     justifyContent: "center",
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    textAlign: "center",
-  },
-  text: {
-    fontFamily: "HelveticaNeue",
-    color: "#52575D",
-    fontSize: 30,
-  },
-  mapStyle: {
-    width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height / 2,
-  },
-  statsContainers: {
-    flexDirection: "row",
-    alignSelf: "center",
-    marginTop: 32,
   },
   statsBox: {
     alignItems: "center",
     flex: 1,
+  },
+  statsContainers: {
+    alignSelf: "center",
+    flexDirection: "row",
+    marginTop: 32,
+  },
+  text: {
+    color: "#52575D",
+    fontFamily: "HelveticaNeue",
+    fontSize: 30,
   },
 });
 

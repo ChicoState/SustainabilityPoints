@@ -12,7 +12,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Dimensions,
 } from "react-native";
 import axios from "axios";
 
@@ -247,33 +246,21 @@ class ShopScreen extends React.Component {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
+    backgroundColor: "#fff",
+    flex: 1,
     justifyContent: "center",
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    textAlign: "center",
-  },
-  mapStyle: {
-    width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height / 2,
   },
   item: {
     backgroundColor: "#00B78D",
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
     fontSize: 16,
-  },
-  title: {
-    fontSize: 32,
+    marginHorizontal: 16,
+    marginVertical: 8,
+    padding: 20,
   },
   text: {
-    fontFamily: "HelveticaNeue",
     color: "#2BB700",
+    fontFamily: "HelveticaNeue",
     fontSize: 30,
   },
 });

@@ -84,13 +84,6 @@ class ProfileUpdateScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#00B09B",
-  },
-  headerContent: {
-    alignItems: "center",
-    padding: 30,
-  },
   avatar: {
     borderColor: "white",
     borderRadius: 63,
@@ -99,14 +92,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: 130,
   },
+  header: {
+    backgroundColor: "#00B09B",
+  },
+  headerContent: {
+    alignItems: "center",
+    padding: 30,
+  },
   name: {
     color: "#000000",
     fontSize: 22,
-    fontWeight: "600",
-  },
-  userInfo: {
-    color: "#000000",
-    fontSize: 16,
     fontWeight: "600",
   },
   textbox: {
@@ -114,6 +109,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     ...Colors.textbox,
     ...Spacing.textbox,
+  },
+  userInfo: {
+    color: "#000000",
+    fontSize: 16,
+    fontWeight: "600",
   },
 });
 
