@@ -13,5 +13,3 @@ web-report/
 .DS_Store
 
 .env
-
-test*.html

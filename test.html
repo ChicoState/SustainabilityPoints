@@ -1,0 +1,5607 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ESLint Report</title>
+        <style>
+            body {
+                font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+                font-size:16px;
+                font-weight:normal;
+                margin:0;
+                padding:0;
+                color:#333
+            }
+            #overview {
+                padding:20px 30px
+            }
+            td, th {
+                padding:5px 10px
+            }
+            h1 {
+                margin:0
+            }
+            table {
+                margin:30px;
+                width:calc(100% - 60px);
+                max-width:1000px;
+                border-radius:5px;
+                border:1px solid #ddd;
+                border-spacing:0px;
+            }
+            th {
+                font-weight:400;
+                font-size:medium;
+                text-align:left;
+                cursor:pointer
+            }
+            td.clr-1, td.clr-2, th span {
+                font-weight:700
+            }
+            th span {
+                float:right;
+                margin-left:20px
+            }
+            th span:after {
+                content:"";
+                clear:both;
+                display:block
+            }
+            tr:last-child td {
+                border-bottom:none
+            }
+            tr td:first-child, tr td:last-child {
+                color:#9da0a4
+            }
+            #overview.bg-0, tr.bg-0 th {
+                color:#468847;
+                background:#dff0d8;
+                border-bottom:1px solid #d6e9c6
+            }
+            #overview.bg-1, tr.bg-1 th {
+                color:#f0ad4e;
+                background:#fcf8e3;
+                border-bottom:1px solid #fbeed5
+            }
+            #overview.bg-2, tr.bg-2 th {
+                color:#b94a48;
+                background:#f2dede;
+                border-bottom:1px solid #eed3d7
+            }
+            td {
+                border-bottom:1px solid #ddd
+            }
+            td.clr-1 {
+                color:#f0ad4e
+            }
+            td.clr-2 {
+                color:#b94a48
+            }
+            td a {
+                color:#3a33d1;
+                text-decoration:none
+            }
+            td a:hover {
+                color:#272296;
+                text-decoration:underline
+            }
+        </style>
+    </head>
+    <body>
+        <div id="overview" class="bg-2">
+            <h1>ESLint Report</h1>
+            <div>
+                <span>588 problems (588 errors, 0 warnings)</span> - Generated on Wed May 06 2020 09:05:10 GMT-0700 (Pacific Daylight Time)
+            </div>
+        </div>
+        <table>
+            <tbody>
+                <tr class="bg-2" data-group="f-0">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\actions\user.js
+        <span>1 problem (1 error, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-0">
+    <td>66:29</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;getState&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-1">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\apis\Firebase.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-2">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\App.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-3">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\babel.config.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-4">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\components\CustomButton.js
+        <span>10 problems (10 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-4">
+    <td>6:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;title&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
+    <td>6:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;title&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
+    <td>6:30</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;style&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
+    <td>6:42</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;textStyle&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
+    <td>6:58</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;onPress&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
+    <td>10:59</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;title&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
+    <td>16:13</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#2AC062&#39;, shadowColor: &#39;#2AC062&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
+    <td>19:9</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;borderRadius&#39; should be before &#39;height&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
+    <td>30:11</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#FFFFFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-4">
+    <td>33:9</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;textTransform&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-5">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\components\Header.js
+        <span>5 problems (5 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-5">
+    <td>1:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;useState&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-5">
+    <td>7:49</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;title&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-5">
+    <td>13:9</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#f7287b&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-5">
+    <td>15:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;height&#39; should be before &#39;width&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-5">
+    <td>21:14</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;black&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-6">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\components\LoginActivity.js
+        <span>33 problems (33 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-6">
+    <td>1:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Component&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>4:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Font&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>5:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Platform&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>5:27</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;LinearGradient&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>5:50</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;TouchableOpacity&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>20:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { padding: 50, backgroundColor: &#39;#FFFFFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>20:18</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#FFFFFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>22:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { justifyContent: &#39;center&#39;, alignItems: &#39;center&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>26:35</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: &#39;2%&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>37:15</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: {
+  backgroundColor: &#39;rgba(247,247,247,0.6)&#39;,
+  borderRadius: 5,
+  borderColor: &#39;#00B78D&#39;,
+  borderWidth: 1,
+  padding: 10,
+  marginBottom: &#39;8%&#39;,
+  height: 50
+}</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>37:15</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;rgba(247,247,247,0.6)&#39;, borderColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>43:16</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: {
+  backgroundColor: &#39;rgba(247,247,247,0.6)&#39;,
+  borderRadius: 5,
+  height: 50,
+  borderColor: &#39;#00B78D&#39;,
+  borderWidth: 1,
+  padding: 10,
+  marginBottom: &#39;8%&#39;
+}</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>43:16</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;rgba(247,247,247,0.6)&#39;, borderColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>49:28</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>49:28</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>50:32</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>50:32</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>53:14</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { padding: 30 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>54:73</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>54:84</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>66:5</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.container</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>66:16</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#00B09B&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>68:7</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;backgroundColor&#39; should be before &#39;flex&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>72:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected class names to be in ascending order. &#39;button&#39; should be before &#39;container&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>72:5</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.button</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>72:13</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#2AC062&#39;, shadowColor: &#39;#2AC062&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>75:11</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;borderRadius&#39; should be before &#39;height&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>85:7</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.text</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>85:13</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#FFFFFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>88:12</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;textTransform&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>91:14</td>
+    <td class="clr-2">Error</td>
+    <td>Duplicate key &#39;alignItems&#39;.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-dupe-keys" target="_blank" rel="noopener noreferrer">no-dupe-keys</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>93:17</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#2BB700&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-6">
+    <td>97:11</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;fontWeight&#39; should be before &#39;textAlign&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-7">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\components\SignUpActivity.js
+        <span>35 problems (35 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-7">
+    <td>1:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Component&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>4:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Font&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>5:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Platform&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>5:27</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;LinearGradient&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>5:50</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;TouchableOpacity&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>20:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { padding: 50, backgroundColor: &#39;#FFFFFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>20:18</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#FFFFFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>22:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { justifyContent: &#39;center&#39;, alignItems: &#39;center&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>26:35</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: &#39;2%&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>37:15</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: {
+  backgroundColor: &#39;rgba(247,247,247,0.6)&#39;,
+  borderRadius: 5,
+  borderColor: &#39;#00B78D&#39;,
+  borderWidth: 1,
+  padding: 10,
+  marginBottom: &#39;8%&#39;,
+  height: 50
+}</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>37:15</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;rgba(247,247,247,0.6)&#39;, borderColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>43:15</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: {
+  backgroundColor: &#39;rgba(247,247,247,0.6)&#39;,
+  borderRadius: 5,
+  borderColor: &#39;#00B78D&#39;,
+  borderWidth: 1,
+  padding: 10,
+  marginBottom: &#39;8%&#39;,
+  height: 50
+}</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>43:15</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;rgba(247,247,247,0.6)&#39;, borderColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>49:16</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: {
+  backgroundColor: &#39;rgba(247,247,247,0.6)&#39;,
+  borderRadius: 5,
+  height: 50,
+  borderColor: &#39;#00B78D&#39;,
+  borderWidth: 1,
+  padding: 10,
+  marginBottom: &#39;8%&#39;
+}</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>49:16</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;rgba(247,247,247,0.6)&#39;, borderColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>56:28</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>56:28</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>57:32</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>57:32</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>60:14</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { padding: 30 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>61:71</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>61:82</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.goBack&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>73:5</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.container</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>73:16</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#00B09B&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>75:7</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;backgroundColor&#39; should be before &#39;flex&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>79:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected class names to be in ascending order. &#39;button&#39; should be before &#39;container&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>79:5</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.button</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>79:13</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#2AC062&#39;, shadowColor: &#39;#2AC062&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>82:11</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;borderRadius&#39; should be before &#39;height&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>92:7</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.text</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>92:13</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#FFFFFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>95:12</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;textTransform&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>98:14</td>
+    <td class="clr-2">Error</td>
+    <td>Duplicate key &#39;alignItems&#39;.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-dupe-keys" target="_blank" rel="noopener noreferrer">no-dupe-keys</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>100:17</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#2BB700&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-7">
+    <td>104:11</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;fontWeight&#39; should be before &#39;textAlign&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-8">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\CustomButton.js
+        <span>10 problems (10 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-8">
+    <td>6:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;title&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-8">
+    <td>6:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;title&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-8">
+    <td>6:30</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;style&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-8">
+    <td>6:42</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;textStyle&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-8">
+    <td>6:58</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;onPress&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-8">
+    <td>10:59</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;title&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-8">
+    <td>16:13</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#2AC062&#39;, shadowColor: &#39;#2AC062&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-8">
+    <td>19:9</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;borderRadius&#39; should be before &#39;height&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-8">
+    <td>30:11</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#FFFFFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-8">
+    <td>33:9</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;textTransform&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-9">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\navigation\Navigator.js
+        <span>1 problem (1 error, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-9">
+    <td>12:27</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;auth&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-10">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\navigation\SignedInStack.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-11">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\navigation\SignedOutStack.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-12">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\navigation\store.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-13">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\reducers\index.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-14">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\screens\LoginScreen.js
+        <span>22 problems (22 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-14">
+    <td>8:3</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Keyboard&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>13:20</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;db&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>30:24</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>32:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;getUser&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>33:22</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;LoginToken&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>48:28</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { justifyContent: &#39;center&#39;, alignItems: &#39;center&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>49:45</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: &#39;2%&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>59:53</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;updateEmail&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>67:56</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;updatePassword&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>72:43</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;login&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>73:24</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>73:24</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>74:28</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>74:28</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>77:28</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { padding: 15 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>98:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>99:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>103:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>104:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>111:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;backgroundColor&#39; should be before &#39;flex&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>119:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;justifyContent&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-14">
+    <td>122:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected class names to be in ascending order. &#39;textbox&#39; should be before &#39;titleText&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-15">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\screens\MyLocationScreen.js
+        <span>149 problems (149 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-15">
+    <td>1:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;useState&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>2:9</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Pedometer&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>10:2</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Marker&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>13:2</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;PROVIDER_GOOGLE&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>14:41</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;DeviceMotion&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>15:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Alert&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>15:17</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;LinearGradient&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>15:33</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Image&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>15:58</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;TextInput&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>15:69</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Button&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>17:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Font&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>18:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;NavigationContainer&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>19:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;createStackNavigator&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>25:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;LATITUDE_DELTA&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>26:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;LONGITUDE_DELTA&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>45:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>46:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>48:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>49:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>55:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;current_points&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>56:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_loggedin&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>57:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;daily_distance&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>60:41</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>60:46</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.distance_today&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>62:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>63:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>64:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>65:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>66:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>68:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>70:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>73:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>74:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>75:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>76:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>77:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>78:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>79:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>80:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>81:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>82:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>83:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>84:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>85:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>85:42</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;currentRecords&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>86:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>86:28</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;counter&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>87:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>88:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>88:5</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;counter&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>89:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>90:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>91:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>92:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>93:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>94:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>94:9</td>
+    <td class="clr-2">Error</td>
+    <td>Empty block statement.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-empty" target="_blank" rel="noopener noreferrer">no-empty</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>96:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>97:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>98:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>99:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>100:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>101:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>102:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>103:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>104:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>105:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>109:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>115:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;today&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>121:4</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;current_points&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>121:32</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>121:37</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.points_current&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>122:4</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_loggedin&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>122:31</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>122:36</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.last_logged_in&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>123:4</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;daily_distance&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>123:32</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>123:37</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.distance_today&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>124:15</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;getUser&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>125:34</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;current_points&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>126:29</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_loggedin&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>128:51</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>128:56</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.distance_today&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>131:35</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;daily_distance&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>139:21</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_loggedin&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>141:44</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>141:49</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.distance_today&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>151:22</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;current_points&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>152:23</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;current_points&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>157:37</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_loggedin&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>157:54</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;daily_distance&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>157:76</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;daily_distance&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>172:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>174:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>175:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>179:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>181:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>182:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>183:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>184:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>187:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>188:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>188:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Platform&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>190:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>193:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>194:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>195:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>196:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>197:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>198:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>199:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>200:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>201:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>202:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>203:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>204:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>205:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>206:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>208:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>209:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>210:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>211:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>213:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>215:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>218:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>239:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>240:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>241:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { alignSelf: &#39;stretch&#39;, height: 200 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>259:37</td>
+    <td class="clr-2">Error</td>
+    <td>`&#39;` can be escaped with `&amp;apos;`, `&amp;lsquo;`, `&amp;#39;`, `&amp;rsquo;`.</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/no-unescaped-entities.md" target="_blank" rel="noopener noreferrer">react/no-unescaped-entities</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>262:11</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: 10 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>265:11</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: 10 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>268:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>273:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>277:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>278:2</td>
+    <td class="clr-2">Error</td>
+    <td>Unnecessary semicolon.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-extra-semi" target="_blank" rel="noopener noreferrer">no-extra-semi</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>312:13</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#fff&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>313:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>314:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>314:4</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;backgroundColor&#39; should be before &#39;flex&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>315:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>316:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>318:2</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.paragraph</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>320:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;fontSize&#39; should be before &#39;margin&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>322:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>323:2</td>
+    <td class="clr-2">Error</td>
+    <td>Expected class names to be in ascending order. &#39;mapStyle&#39; should be before &#39;paragraph&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>323:2</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.mapStyle</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>324:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>325:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-15">
+    <td>325:4</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;height&#39; should be before &#39;width&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-16">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\screens\ProfileScreen.js
+        <span>48 problems (48 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-16">
+    <td>4:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Button&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>16:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;SignOut&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>22:9</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_logged_in_date&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>30:40</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_logged_in_date&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>31:21</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_logged_in_date&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>48:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;getUser&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>72:30</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>72:35</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.uid&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>73:45</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>73:50</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.uid&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>82:9</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_logged_in_date&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>92:9</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;response&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>99:24</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;users&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>99:30</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;users.pushToken&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>119:25</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>119:30</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.displayName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>120:54</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>120:59</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.displayName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>122:54</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>122:59</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.email&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>124:56</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>124:61</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.org_name&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>126:50</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>126:55</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.points_current&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>129:20</td>
+    <td class="clr-2">Error</td>
+    <td>`&#39;` can be escaped with `&amp;apos;`, `&amp;lsquo;`, `&amp;#39;`, `&amp;rsquo;`.</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/no-unescaped-entities.md" target="_blank" rel="noopener noreferrer">react/no-unescaped-entities</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>129:45</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>129:50</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.distance_today&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>134:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: 10 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>139:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: 10 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>144:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: 10 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>149:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: 10 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>158:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>159:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>163:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>164:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>168:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>169:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>174:11</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#00B09B&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>179:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;alignItems&#39; should be before &#39;padding&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>181:3</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.settings</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>184:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;left&#39; should be before &#39;top&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>186:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected class names to be in ascending order. &#39;avatar&#39; should be before &#39;settings&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>186:11</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { borderColor: &#39;white&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>188:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;height&#39; should be before &#39;width&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>194:9</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#000000&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>196:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;fontSize&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>199:13</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#000000&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-16">
+    <td>201:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;fontSize&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-17">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\screens\ProfileUpdateScreen.js
+        <span>52 problems (52 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-17">
+    <td>6:27</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Typography&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>10:14</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;updateDisplayName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>10:44</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>10:49</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.displayName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>11:14</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;updateOrgName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>11:40</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>11:45</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.org_name&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>12:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>22:19</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>22:24</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.displayName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>22:77</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>22:82</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.displayName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>22:144</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>22:149</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.email&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>23:19</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>23:24</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.org_name&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>23:78</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>23:83</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.org_name&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>24:72</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>24:77</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.points_current&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>33:30</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>33:35</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.displayName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>34:45</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;updateDisplayName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>35:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>37:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>42:30</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>42:35</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.org_name&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>43:41</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;updateOrgName&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>44:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>51:14</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;updateProfile&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>52:11</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>53:14</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>56:14</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;getUser&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>56:33</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>56:38</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;user.uid&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>57:11</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>58:14</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>63:9</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#00B09B&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>66:2</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.settings</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>69:2</td>
+    <td class="clr-2">Error</td>
+    <td>Expected class names to be in ascending order. &#39;headerContent&#39; should be before &#39;settings&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>71:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;alignItems&#39; should be before &#39;padding&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>73:10</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { borderColor: &#39;white&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>75:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;height&#39; should be before &#39;width&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>81:7</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#000000&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>83:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;fontSize&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>86:11</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#000000&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>88:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;fontSize&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>104:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>105:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>106:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>110:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-17">
+    <td>111:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-18">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\screens\RecoverScreen.js
+        <span>23 problems (23 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-18">
+    <td>14:44</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Keyboard&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>29:21</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;password&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>33:15</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;res&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>35:11</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>49:22</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;style&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>51:26</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { justifyContent: &#39;center&#39;, alignItems: &#39;center&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>52:43</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: &#39;2%&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>74:22</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>74:22</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>75:26</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>75:26</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>78:26</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { padding: 15 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>96:5</td>
+    <td class="clr-2">Error</td>
+    <td>Unreachable code.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unreachable" target="_blank" rel="noopener noreferrer">no-unreachable</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>96:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>96:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>100:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>101:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>105:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>106:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>113:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;backgroundColor&#39; should be before &#39;flex&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>121:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;justifyContent&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>124:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected class names to be in ascending order. &#39;textbox&#39; should be before &#39;titleText&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-18">
+    <td>132:16</td>
+    <td class="clr-2">Error</td>
+    <td>Component definition is missing display name</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/display-name.md" target="_blank" rel="noopener noreferrer">react/display-name</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-19">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\screens\ShopScreen.js
+        <span>177 problems (177 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-19">
+    <td>1:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;useState&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>2:9</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Pedometer&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>4:9</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;SafeAreaView&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>6:20</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;db&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>9:2</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Marker&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>11:2</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Polyline&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>12:2</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;PROVIDER_GOOGLE&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>13:41</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;DeviceMotion&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>14:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Alert&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>14:17</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;LinearGradient&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>14:33</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Image&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>14:58</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;TextInput&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>14:69</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Button&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>15:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;CustomButton&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>16:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Font&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>17:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;NavigationContainer&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>18:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;createStackNavigator&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>19:8</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;haversine&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>28:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;LATITUDE_DELTA&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>29:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;LONGITUDE_DELTA&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>36:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>40:9</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;deltas&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>45:9</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;region&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>54:9</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;getCoffeeShops&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>57:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>59:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>60:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>61:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>63:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>64:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>66:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>69:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>71:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>72:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>88:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>89:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>91:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>91:4</td>
+    <td class="clr-2">Error</td>
+    <td>componentWillMount is deprecated since React 16.9.0, use UNSAFE_componentWillMount instead, see https://reactjs.org/docs/react-component.html#unsafe_componentwillmount. Use https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles to automatically update your components.</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/no-deprecated.md" target="_blank" rel="noopener noreferrer">react/no-deprecated</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>112:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>113:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>115:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>120:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;current_points&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>121:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;last_loggedin&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>122:7</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;daily_distance&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>126:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>128:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>128:26</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;routeCoordinates&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>128:44</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;distanceTravelled&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>129:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>131:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>135:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>138:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>141:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>141:10</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Platform&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>143:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>146:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>147:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>148:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>149:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>150:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>151:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>154:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>155:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>156:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>157:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>158:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>159:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>160:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>162:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>163:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>164:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>165:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>166:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>167:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>168:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>170:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>171:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>172:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>174:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>177:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>178:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>179:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>180:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>181:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>182:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>183:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>184:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>185:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>186:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>187:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>188:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>189:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>209:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>210:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>212:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>214:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>215:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>218:29</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;YelpService&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>221:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>222:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>225:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>226:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>227:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>228:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>229:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>230:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>231:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>232:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>233:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>234:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>235:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>236:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>237:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>237:42</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;currentRecords&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>238:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>238:28</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;counter&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>239:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>240:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>240:5</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;counter&#39; is not defined.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-undef" target="_blank" rel="noopener noreferrer">no-undef</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>241:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>242:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>243:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>244:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>245:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>246:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>246:9</td>
+    <td class="clr-2">Error</td>
+    <td>Empty block statement.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-empty" target="_blank" rel="noopener noreferrer">no-empty</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>248:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>249:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>250:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>251:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>252:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>253:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>254:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>255:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>256:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>257:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>259:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>260:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>268:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>270:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>272:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>278:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>279:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>280:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>281:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>282:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>283:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>285:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>287:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>293:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>300:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>301:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>302:18</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { alignSelf: &#39;stretch&#39;, height: 200 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>304:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>307:5</td>
+    <td class="clr-2">Error</td>
+    <td>Missing &quot;key&quot; prop for element in iterator</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/jsx-key.md" target="_blank" rel="noopener noreferrer">react/jsx-key</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>313:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>322:36</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;index&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>323:5</td>
+    <td class="clr-2">Error</td>
+    <td>Missing &quot;key&quot; prop for element in iterator</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/jsx-key.md" target="_blank" rel="noopener noreferrer">react/jsx-key</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>323:264</td>
+    <td class="clr-2">Error</td>
+    <td>Missing &quot;key&quot; prop for element in iterator</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/jsx-key.md" target="_blank" rel="noopener noreferrer">react/jsx-key</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>330:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>335:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>339:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>340:2</td>
+    <td class="clr-2">Error</td>
+    <td>Unnecessary semicolon.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-extra-semi" target="_blank" rel="noopener noreferrer">no-extra-semi</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>343:13</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#fff&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>344:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>345:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>345:4</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;backgroundColor&#39; should be before &#39;flex&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>346:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>347:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>349:2</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.paragraph</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>351:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;fontSize&#39; should be before &#39;margin&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>353:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>354:2</td>
+    <td class="clr-2">Error</td>
+    <td>Expected class names to be in ascending order. &#39;mapStyle&#39; should be before &#39;paragraph&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>354:2</td>
+    <td class="clr-2">Error</td>
+    <td>Unused style detected: styles.mapStyle</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-unused-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>355:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>356:2</td>
+    <td class="clr-2">Error</td>
+    <td>Mixed spaces and tabs.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" target="_blank" rel="noopener noreferrer">no-mixed-spaces-and-tabs</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-19">
+    <td>356:4</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;height&#39; should be before &#39;width&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-20">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\screens\SignUpScreen.js
+        <span>22 problems (22 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display:none" class="f-20">
+    <td>14:44</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;Keyboard&#39; is defined but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>24:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;signup&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>36:26</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { justifyContent: &#39;center&#39;, alignItems: &#39;center&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>37:43</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { marginBottom: &#39;2%&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>45:49</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;updateEmail&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>53:52</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;updatePassword&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>58:22</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>58:22</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { backgroundColor: &#39;#00B78D&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>59:26</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>59:26</td>
+    <td class="clr-2">Error</td>
+    <td>Color literal: { color: &#39;#FFF&#39; }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-color-literals</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>62:26</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { padding: 15 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>69:28</td>
+    <td class="clr-2">Error</td>
+    <td>Inline style: { padding: 10 }</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/no-inline-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>82:5</td>
+    <td class="clr-2">Error</td>
+    <td>Unreachable code.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unreachable" target="_blank" rel="noopener noreferrer">no-unreachable</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>82:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>82:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is assigned a value but never used.</td>
+    <td>
+        <a href="https://eslint.org/docs/rules/no-unused-vars" target="_blank" rel="noopener noreferrer">no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>86:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>87:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>91:13</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>92:16</td>
+    <td class="clr-2">Error</td>
+    <td>&#39;navigation.navigate&#39; is missing in props validation</td>
+    <td>
+        <a href="https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules/prop-types.md" target="_blank" rel="noopener noreferrer">react/prop-types</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>99:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;backgroundColor&#39; should be before &#39;flex&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>107:5</td>
+    <td class="clr-2">Error</td>
+    <td>Expected style properties to be in ascending order. &#39;color&#39; should be before &#39;justifyContent&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr style="display:none" class="f-20">
+    <td>110:3</td>
+    <td class="clr-2">Error</td>
+    <td>Expected class names to be in ascending order. &#39;textbox&#39; should be before &#39;titleText&#39;.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">react-native/sort-styles</a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-21">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\styles\colors.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-22">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\styles\index.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-23">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\styles\spacing.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-24">
+    <th colspan="4">
+        [+] D:\SustainabilityPoints\styles\typography.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+            </tbody>
+        </table>
+        <script type="text/javascript">
+            var groups = document.querySelectorAll("tr[data-group]");
+            for (i = 0; i < groups.length; i++) {
+                groups[i].addEventListener("click", function() {
+                    var inGroup = document.getElementsByClassName(this.getAttribute("data-group"));
+                    this.innerHTML = (this.innerHTML.indexOf("+") > -1) ? this.innerHTML.replace("+", "-") : this.innerHTML.replace("-", "+");
+                    for (var j = 0; j < inGroup.length; j++) {
+                        inGroup[j].style.display = (inGroup[j].style.display !== "none") ? "none" : "table-row";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
